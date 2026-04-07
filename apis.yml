@@ -6,12 +6,10 @@ type: Index
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
+tags: []
 created: '2025-02-08'
 modified: '2026-03-16'
-url: 
-  https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
   - aid: ukg:ukg
@@ -19,8 +17,7 @@ apis:
     description: >-
       UKG HR Service Delivery API.
     humanURL: ' https://doc.people-doc.com/api/?urls.primaryName=Client'
-    tags:
-      - API
+    tags: []
     properties:
       - type: Documentation
         url: ' https://doc.people-doc.com/api/?urls.primaryName=Client'
