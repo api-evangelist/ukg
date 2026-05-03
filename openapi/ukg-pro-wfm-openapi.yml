@@ -1,0 +1,644 @@
+openapi: 3.0.3
+info:
+  title: UKG Pro Workforce Management API
+  description: >-
+    The UKG Pro Workforce Management (WFM) API provides programmatic access to
+    time and labor management data including punches, shifts, schedules, accruals,
+    and attendance. The API supports workforce scheduling, timekeeping, and
+    compliance workflows for hourly and salaried employees. Authentication uses
+    OAuth 2.0 with tenant-specific API keys.
+  version: '1.0'
+  contact:
+    name: UKG Developer Support
+    url: https://developer.ukg.com
+  termsOfService: https://www.ukg.com/legal/terms
+  x-generated-from: documentation
+servers:
+- url: https://api.ultipro.com/workforce/v1
+  description: UKG Pro WFM API
+security:
+- bearerAuth: []
+tags:
+- name: Employees
+  description: Employee profiles and workforce data
+- name: Timekeeping
+  description: Punches, time entries, and timecards
+- name: Scheduling
+  description: Shifts, schedules, and schedule management
+- name: Accruals
+  description: Accrual balances and transactions
+- name: Attendance
+  description: Attendance records and patterns
+paths:
+  /v1/employees:
+    get:
+      operationId: listWfmEmployees
+      summary: UKG Pro WFM List Employees
+      description: Retrieve employee records from the WFM system including workforce attributes.
+      tags:
+      - Employees
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+        description: Maximum number of records to return
+        example: 50
+      - name: offset
+        in: query
+        schema:
+          type: integer
+        description: Number of records to skip
+        example: 0
+      - name: locationId
+        in: query
+        schema:
+          type: string
+        description: Filter by work location
+        example: LOC-NYC
+      responses:
+        '200':
+          description: List of WFM employee records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WfmEmployee'
+              examples:
+                listWfmEmployees200Example:
+                  summary: Default listWfmEmployees 200 response
+                  x-microcks-default: true
+                  value:
+                  - employeeId: example-value
+                    firstName: example-value
+                    lastName: example-value
+                    badge: example-value
+                    homeLocationId: example-value
+                    jobCode: example-value
+                    workRule: example-value
+                    status: example-value
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /v1/employees/{employeeId}/timecards:
+    get:
+      operationId: getEmployeeTimecards
+      summary: UKG Pro WFM Get Employee Timecards
+      description: Retrieve timecard records for an employee within a date range.
+      tags:
+      - Timekeeping
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      - name: startDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+        description: Start date for timecard retrieval
+        example: '2026-01-01'
+      - name: endDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+        description: End date for timecard retrieval
+        example: '2026-01-14'
+      responses:
+        '200':
+          description: Employee timecards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Timecard'
+              examples:
+                getEmployeeTimecards200Example:
+                  summary: Default getEmployeeTimecards 200 response
+                  x-microcks-default: true
+                  value:
+                  - timecardId: example-value
+                    employeeId: example-value
+                    periodStart: '2026-01-15'
+                    periodEnd: '2026-01-15'
+                    totalHours: 1.0
+                    regularHours: 1.0
+                    overtimeHours: 1.0
+                    status: Open
+        '404':
+          description: Employee not found
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /v1/employees/{employeeId}/punches:
+    get:
+      operationId: getEmployeePunches
+      summary: UKG Pro WFM Get Employee Punches
+      description: Retrieve clock punch records for an employee.
+      tags:
+      - Timekeeping
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      - name: startDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Start date for punch retrieval
+        example: '2026-01-01'
+      - name: endDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: End date for punch retrieval
+        example: '2026-01-14'
+      responses:
+        '200':
+          description: Employee punch records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Punch'
+              examples:
+                getEmployeePunches200Example:
+                  summary: Default getEmployeePunches 200 response
+                  x-microcks-default: true
+                  value:
+                  - punchId: example-value
+                    employeeId: example-value
+                    punchTime: '2026-01-15T10:30:00Z'
+                    punchType: In
+                    locationId: example-value
+                    jobCode: example-value
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createPunch
+      summary: UKG Pro WFM Create Punch
+      description: Submit a clock punch for an employee (in, out, or transfer).
+      tags:
+      - Timekeeping
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      requestBody:
+        required: true
+        description: Punch details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PunchRequest'
+            examples:
+              createPunchRequestExample:
+                summary: Default createPunch request
+                x-microcks-default: true
+                value:
+                  punchTime: '2026-01-15T10:30:00Z'
+                  punchType: In
+                  locationId: example-value
+                  jobCode: example-value
+      responses:
+        '201':
+          description: Punch created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Punch'
+              examples:
+                createPunch201Example:
+                  summary: Default createPunch 201 response
+                  x-microcks-default: true
+                  value:
+                    punchId: example-value
+                    employeeId: example-value
+                    punchTime: '2026-01-15T10:30:00Z'
+                    punchType: In
+                    locationId: example-value
+                    jobCode: example-value
+        '400':
+          description: Invalid punch data
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /v1/employees/{employeeId}/accruals:
+    get:
+      operationId: getEmployeeAccruals
+      summary: UKG Pro WFM Get Employee Accruals
+      description: Retrieve accrual balances for an employee including vacation, sick, and PTO.
+      tags:
+      - Accruals
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Accrual balances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AccrualBalance'
+              examples:
+                getEmployeeAccruals200Example:
+                  summary: Default getEmployeeAccruals 200 response
+                  x-microcks-default: true
+                  value:
+                  - accrualCodeId: example-value
+                    accrualName: example-value
+                    balance: 1.0
+                    pendingBalance: 1.0
+                    takingBalance: 1.0
+                    asOfDate: '2026-01-15'
+        '404':
+          description: Employee not found
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /v1/schedules:
+    get:
+      operationId: listSchedules
+      summary: UKG Pro WFM List Schedules
+      description: Retrieve employee schedules for a location and date range.
+      tags:
+      - Scheduling
+      parameters:
+      - name: locationId
+        in: query
+        schema:
+          type: string
+        description: Location to retrieve schedules for
+        example: LOC-NYC
+      - name: startDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+        description: Start date for schedule retrieval
+        example: '2026-01-01'
+      - name: endDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+        description: End date for schedule retrieval
+        example: '2026-01-07'
+      responses:
+        '200':
+          description: Schedule data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shift'
+              examples:
+                listSchedules200Example:
+                  summary: Default listSchedules 200 response
+                  x-microcks-default: true
+                  value:
+                  - shiftId: example-value
+                    employeeId: example-value
+                    locationId: example-value
+                    shiftDate: '2026-01-15'
+                    startTime: example-value
+                    endTime: example-value
+                    totalHours: 1.0
+                    jobCode: example-value
+                    status: Scheduled
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /v1/employees/{employeeId}/shifts:
+    get:
+      operationId: getEmployeeShifts
+      summary: UKG Pro WFM Get Employee Shifts
+      description: Retrieve scheduled shifts for a specific employee.
+      tags:
+      - Scheduling
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      - name: startDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Start date
+        example: '2026-01-01'
+      - name: endDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: End date
+        example: '2026-01-14'
+      responses:
+        '200':
+          description: Employee scheduled shifts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shift'
+              examples:
+                getEmployeeShifts200Example:
+                  summary: Default getEmployeeShifts 200 response
+                  x-microcks-default: true
+                  value:
+                  - shiftId: example-value
+                    employeeId: example-value
+                    locationId: example-value
+                    shiftDate: '2026-01-15'
+                    startTime: example-value
+                    endTime: example-value
+                    totalHours: 1.0
+                    jobCode: example-value
+                    status: Scheduled
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token with WFM API key header
+  schemas:
+    WfmEmployee:
+      type: object
+      description: Employee record in WFM system
+      properties:
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        firstName:
+          type: string
+          description: First name
+          example: Jane
+        lastName:
+          type: string
+          description: Last name
+          example: Smith
+        badge:
+          type: string
+          description: Badge or punch number
+          example: '12345'
+        homeLocationId:
+          type: string
+          description: Home location identifier
+          example: LOC-NYC
+        jobCode:
+          type: string
+          description: Primary job code
+          example: CASHIER
+        workRule:
+          type: string
+          description: Pay rule for overtime and break calculations
+          example: Standard-40hr
+        status:
+          type: string
+          description: Employment status
+          example: Active
+    Timecard:
+      type: object
+      description: Employee timecard for a pay period
+      properties:
+        timecardId:
+          type: string
+          description: Timecard identifier
+          example: EMP001
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        periodStart:
+          type: string
+          format: date
+          description: Pay period start date
+          example: '2026-01-15'
+        periodEnd:
+          type: string
+          format: date
+          description: Pay period end date
+          example: '2026-01-15'
+        totalHours:
+          type: number
+          format: double
+          description: Total hours worked
+          example: 80.0
+        regularHours:
+          type: number
+          format: double
+          description: Regular hours
+          example: 80.0
+        overtimeHours:
+          type: number
+          format: double
+          description: Overtime hours
+          example: 0.0
+        status:
+          type: string
+          description: Timecard approval status
+          example: Approved
+          enum:
+          - Open
+          - Submitted
+          - Approved
+          - Rejected
+    Punch:
+      type: object
+      description: Clock punch record
+      properties:
+        punchId:
+          type: string
+          description: Punch identifier
+          example: EMP001
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        punchTime:
+          type: string
+          format: date-time
+          description: Punch date and time
+          example: '2026-01-15T09:00:00Z'
+        punchType:
+          type: string
+          description: Type of punch
+          example: In
+          enum:
+          - In
+          - Out
+          - Transfer
+          - Meal Start
+          - Meal End
+        locationId:
+          type: string
+          description: Location where punch occurred
+          example: EMP001
+        jobCode:
+          type: string
+          description: Job code for this punch
+          example: example-value
+    PunchRequest:
+      type: object
+      description: Request to create a clock punch
+      required:
+      - punchTime
+      - punchType
+      properties:
+        punchTime:
+          type: string
+          format: date-time
+          description: Punch timestamp
+          example: '2026-01-15T09:00:00Z'
+        punchType:
+          type: string
+          description: Type of punch
+          example: In
+          enum:
+          - In
+          - Out
+          - Transfer
+        locationId:
+          type: string
+          description: Location identifier
+          example: EMP001
+        jobCode:
+          type: string
+          description: Job code for this punch
+          example: example-value
+    AccrualBalance:
+      type: object
+      description: Employee accrual balance for a time-off policy
+      properties:
+        accrualCodeId:
+          type: string
+          description: Accrual code identifier
+          example: EMP001
+        accrualName:
+          type: string
+          description: Accrual policy name
+          example: Vacation
+        balance:
+          type: number
+          format: double
+          description: Current available balance in hours
+          example: 40.0
+        pendingBalance:
+          type: number
+          format: double
+          description: Pending approved requests
+          example: 8.0
+        takingBalance:
+          type: number
+          format: double
+          description: Hours in approved future requests
+          example: 1.0
+        asOfDate:
+          type: string
+          format: date
+          description: Balance as of this date
+          example: '2026-01-15'
+    Shift:
+      type: object
+      description: Scheduled work shift
+      properties:
+        shiftId:
+          type: string
+          description: Shift identifier
+          example: EMP001
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        locationId:
+          type: string
+          description: Work location
+          example: LOC-NYC
+        shiftDate:
+          type: string
+          format: date
+          description: Date of the shift
+          example: '2026-01-15'
+        startTime:
+          type: string
+          description: Shift start time (HH:MM)
+          example: '09:00'
+        endTime:
+          type: string
+          description: Shift end time (HH:MM)
+          example: '17:00'
+        totalHours:
+          type: number
+          format: double
+          description: Total scheduled hours
+          example: 8.0
+        jobCode:
+          type: string
+          description: Job code for the shift
+          example: example-value
+        status:
+          type: string
+          description: Shift status
+          example: Scheduled
+          enum:
+          - Scheduled
+          - Open
+          - Filled
+          - Cancelled

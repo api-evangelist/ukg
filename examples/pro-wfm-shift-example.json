@@ -1,0 +1,11 @@
+{
+  "shiftId": "example-value",
+  "employeeId": "example-value",
+  "locationId": "example-value",
+  "shiftDate": "2026-01-15",
+  "startTime": "example-value",
+  "endTime": "example-value",
+  "totalHours": 1.0,
+  "jobCode": "example-value",
+  "status": "Scheduled"
+}

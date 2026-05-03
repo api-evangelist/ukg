@@ -1,0 +1,9 @@
+{
+  "employeeId": "example-value",
+  "actionType": "Job Change",
+  "effectiveDate": "2026-01-15",
+  "reason": "example-value",
+  "newDepartmentId": "example-value",
+  "newJobTitle": "example-value",
+  "newPayRate": 1.0
+}

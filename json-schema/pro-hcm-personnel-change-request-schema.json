@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-schema/pro-hcm-personnel-change-request-schema.json",
+  "title": "PersonnelChangeRequest",
+  "description": "Request for a personnel action change",
+  "type": "object",
+  "required": [
+    "employeeId",
+    "actionType",
+    "effectiveDate"
+  ],
+  "properties": {
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "actionType": {
+      "type": "string",
+      "description": "Type of personnel action",
+      "example": "Job Change",
+      "enum": [
+        "Job Change",
+        "Pay Change",
+        "Status Change",
+        "Department Transfer",
+        "Termination",
+        "Leave of Absence"
+      ]
+    },
+    "effectiveDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Effective date of the change",
+      "example": "2026-06-01"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason for the change",
+      "example": "Promotion"
+    },
+    "newDepartmentId": {
+      "type": "string",
+      "description": "New department identifier (for transfers)",
+      "example": "EMP001"
+    },
+    "newJobTitle": {
+      "type": "string",
+      "description": "New job title (for job changes)",
+      "example": "example-value"
+    },
+    "newPayRate": {
+      "type": "number",
+      "format": "double",
+      "description": "New pay rate amount (for pay changes)",
+      "example": 1.0
+    }
+  }
+}

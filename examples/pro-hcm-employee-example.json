@@ -1,0 +1,12 @@
+{
+  "employeeId": "example-value",
+  "firstName": "example-value",
+  "lastName": "example-value",
+  "email": "employee@company.com",
+  "employmentStatus": "Active",
+  "hireDate": "2026-01-15",
+  "departmentId": "example-value",
+  "locationId": "example-value",
+  "jobTitle": "example-value",
+  "managerId": "example-value"
+}

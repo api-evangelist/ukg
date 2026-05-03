@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-schema/pro-hcm-direct-deposit-schema.json",
+  "title": "DirectDeposit",
+  "description": "Employee direct deposit banking information",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "type": "string",
+      "description": "Account identifier",
+      "example": "EMP001"
+    },
+    "bankName": {
+      "type": "string",
+      "description": "Bank name",
+      "example": "First National Bank"
+    },
+    "accountType": {
+      "type": "string",
+      "description": "Account type",
+      "example": "Checking",
+      "enum": [
+        "Checking",
+        "Savings"
+      ]
+    },
+    "depositType": {
+      "type": "string",
+      "description": "Deposit distribution type",
+      "example": "Remainder",
+      "enum": [
+        "Amount",
+        "Percentage",
+        "Remainder"
+      ]
+    },
+    "depositAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Deposit amount or percentage",
+      "example": 1.0
+    },
+    "priority": {
+      "type": "integer",
+      "description": "Processing priority order",
+      "example": 1
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "employeeId": "example-value",
+  "payType": "Salary",
+  "basePay": 1.0,
+  "payCurrency": "example-value",
+  "payFrequency": "Weekly",
+  "effectiveDate": "2026-01-15"
+}

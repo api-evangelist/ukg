@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-hcm-location-structure.json",
+  "name": "Location",
+  "description": "Work location",
+  "type": "object",
+  "properties": {
+    "locationId": {
+      "type": "string",
+      "description": "Location identifier",
+      "example": "LOC-NYC"
+    },
+    "locationName": {
+      "type": "string",
+      "description": "Location name",
+      "example": "New York Office"
+    },
+    "address": {
+      "type": "string",
+      "description": "Street address",
+      "example": "123 Main Street"
+    },
+    "city": {
+      "type": "string",
+      "description": "City",
+      "example": "New York"
+    },
+    "stateProvince": {
+      "type": "string",
+      "description": "State or province",
+      "example": "NY"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country code",
+      "example": "US"
+    },
+    "postalCode": {
+      "type": "string",
+      "description": "Postal or ZIP code",
+      "example": "10001"
+    }
+  }
+}

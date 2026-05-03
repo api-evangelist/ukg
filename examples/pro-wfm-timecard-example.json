@@ -1,0 +1,10 @@
+{
+  "timecardId": "example-value",
+  "employeeId": "example-value",
+  "periodStart": "2026-01-15",
+  "periodEnd": "2026-01-15",
+  "totalHours": 1.0,
+  "regularHours": 1.0,
+  "overtimeHours": 1.0,
+  "status": "Open"
+}

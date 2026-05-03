@@ -1,0 +1,10 @@
+{
+  "employeeId": "example-value",
+  "jobCode": "example-value",
+  "jobTitle": "example-value",
+  "departmentId": "example-value",
+  "positionId": "example-value",
+  "flsaStatus": "Exempt",
+  "employmentType": "Full-Time",
+  "effectiveDate": "2026-01-15"
+}

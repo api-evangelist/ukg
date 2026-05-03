@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-wfm-punch-structure.json",
+  "name": "Punch",
+  "description": "Clock punch record",
+  "type": "object",
+  "properties": {
+    "punchId": {
+      "type": "string",
+      "description": "Punch identifier",
+      "example": "EMP001"
+    },
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "punchTime": {
+      "type": "datetime",
+      "description": "Punch date and time",
+      "example": "2026-01-15T09:00:00Z"
+    },
+    "punchType": {
+      "type": "string",
+      "description": "Type of punch",
+      "example": "In",
+      "enum": [
+        "In",
+        "Out",
+        "Transfer",
+        "Meal Start",
+        "Meal End"
+      ]
+    },
+    "locationId": {
+      "type": "string",
+      "description": "Location where punch occurred",
+      "example": "EMP001"
+    },
+    "jobCode": {
+      "type": "string",
+      "description": "Job code for this punch",
+      "example": "example-value"
+    }
+  }
+}

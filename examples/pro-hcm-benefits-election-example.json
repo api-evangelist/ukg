@@ -1,0 +1,10 @@
+{
+  "employeeId": "example-value",
+  "planId": "example-value",
+  "planName": "example-value",
+  "benefitType": "Medical",
+  "enrollmentStatus": "Active",
+  "coverageTier": "example-value",
+  "employeeContribution": 1.0,
+  "effectiveDate": "2026-01-15"
+}

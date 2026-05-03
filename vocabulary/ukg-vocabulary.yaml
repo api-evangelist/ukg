@@ -1,0 +1,476 @@
+vocabulary: "1.0.0"
+
+info:
+  label: "UKG API Vocabulary"
+  description: "Shared vocabulary for UKG Pro HCM and Workforce Management APIs."
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+operational:
+  apis:
+    - id: ukg-pro-hcm-api
+      label: "UKG Pro HCM API"
+      description: "Human capital management API for employee data, payroll, and benefits."
+      baseUri: https://service.ultipro.com
+      authentication: basic
+    - id: ukg-pro-wfm-api
+      label: "UKG Pro WFM API"
+      description: "Workforce management API for timekeeping, scheduling, and accruals."
+      baseUri: https://api.ultipro.com/workforce/v1
+      authentication: bearer
+
+  resources:
+    - id: employees
+      label: "Employees"
+      description: "Employee demographic and employment records"
+      path: /personnel/v2/employees
+    - id: employee-jobs
+      label: "Employee Jobs"
+      description: "Employee job assignment and position data"
+      path: /personnel/v2/employees/{employeeId}/jobs
+    - id: pay-rates
+      label: "Pay Rates"
+      description: "Employee compensation and pay rate records"
+      path: /personnel/v2/employees/{employeeId}/pay-rates
+    - id: benefits-elections
+      label: "Benefits Elections"
+      description: "Employee benefits enrollment and election records"
+      path: /personnel/v2/employees/{employeeId}/benefits-elections
+    - id: direct-deposits
+      label: "Direct Deposits"
+      description: "Employee direct deposit account information"
+      path: /personnel/v2/employees/{employeeId}/direct-deposits
+    - id: departments
+      label: "Departments"
+      description: "Organizational department structure"
+      path: /org/v2/departments
+    - id: locations
+      label: "Locations"
+      description: "Work location records"
+      path: /org/v2/locations
+    - id: pay-statements
+      label: "Pay Statements"
+      description: "Employee payroll pay statement history"
+      path: /payroll/v1/pay-statements
+    - id: personnel-change-requests
+      label: "Personnel Change Requests"
+      description: "Personnel action and change request records"
+      path: /personnel/v2/employee-change-requests
+    - id: wfm-employees
+      label: "WFM Employees"
+      description: "Employee records in the workforce management system"
+      path: /v1/employees
+    - id: timecards
+      label: "Timecards"
+      description: "Employee timecard records by pay period"
+      path: /v1/employees/{employeeId}/timecards
+    - id: punches
+      label: "Punches"
+      description: "Clock punch records for employees"
+      path: /v1/employees/{employeeId}/punches
+    - id: accruals
+      label: "Accruals"
+      description: "Vacation, sick, and PTO accrual balances"
+      path: /v1/employees/{employeeId}/accruals
+    - id: schedules
+      label: "Schedules"
+      description: "Workforce schedule records"
+      path: /v1/schedules
+    - id: shifts
+      label: "Shifts"
+      description: "Scheduled work shift records"
+      path: /v1/employees/{employeeId}/shifts
+
+  actions:
+    - id: list-employees
+      label: "List Employees"
+      description: "Retrieve a paginated list of employee records"
+      method: GET
+      resource: employees
+    - id: get-employee
+      label: "Get Employee"
+      description: "Retrieve a specific employee record by ID"
+      method: GET
+      resource: employees
+    - id: get-employee-jobs
+      label: "Get Employee Jobs"
+      description: "Retrieve job assignment for an employee"
+      method: GET
+      resource: employee-jobs
+    - id: get-pay-rates
+      label: "Get Pay Rates"
+      description: "Retrieve pay rates for an employee"
+      method: GET
+      resource: pay-rates
+    - id: get-benefits-elections
+      label: "Get Benefits Elections"
+      description: "Retrieve benefits elections for an employee"
+      method: GET
+      resource: benefits-elections
+    - id: list-departments
+      label: "List Departments"
+      description: "Retrieve all departments"
+      method: GET
+      resource: departments
+    - id: list-locations
+      label: "List Locations"
+      description: "Retrieve all work locations"
+      method: GET
+      resource: locations
+    - id: list-pay-statements
+      label: "List Pay Statements"
+      description: "Retrieve pay statement history"
+      method: GET
+      resource: pay-statements
+    - id: create-personnel-change-request
+      label: "Create Personnel Change Request"
+      description: "Submit a personnel action change request"
+      method: POST
+      resource: personnel-change-requests
+    - id: list-wfm-employees
+      label: "List WFM Employees"
+      description: "Retrieve WFM employee records"
+      method: GET
+      resource: wfm-employees
+    - id: get-employee-timecards
+      label: "Get Employee Timecards"
+      description: "Retrieve timecard records for an employee"
+      method: GET
+      resource: timecards
+    - id: get-employee-punches
+      label: "Get Employee Punches"
+      description: "Retrieve punch records for an employee"
+      method: GET
+      resource: punches
+    - id: create-punch
+      label: "Create Punch"
+      description: "Submit a clock punch for an employee"
+      method: POST
+      resource: punches
+    - id: get-employee-accruals
+      label: "Get Employee Accruals"
+      description: "Retrieve accrual balances for an employee"
+      method: GET
+      resource: accruals
+    - id: list-schedules
+      label: "List Schedules"
+      description: "Retrieve workforce schedules"
+      method: GET
+      resource: schedules
+    - id: get-employee-shifts
+      label: "Get Employee Shifts"
+      description: "Retrieve scheduled shifts for an employee"
+      method: GET
+      resource: shifts
+
+  schemas:
+    hcm:
+      Employee:
+        description: "Employee demographic and employment record"
+        properties:
+          - employeeId
+          - employeeNumber
+          - firstName
+          - lastName
+          - email
+          - jobTitle
+          - departmentId
+          - locationId
+          - status
+          - hireDate
+      EmployeeJob:
+        description: "Employee job assignment and position data"
+        properties:
+          - employeeId
+          - jobTitle
+          - jobCode
+          - departmentId
+          - locationId
+          - supervisor
+          - fullTimeEquivalent
+          - effectiveDate
+      PayRate:
+        description: "Employee pay rate and compensation record"
+        properties:
+          - employeeId
+          - payType
+          - payRate
+          - payFrequency
+          - effectiveDate
+          - expirationDate
+      BenefitsElection:
+        description: "Employee benefits enrollment election"
+        properties:
+          - employeeId
+          - planId
+          - planName
+          - coverageLevel
+          - effectiveDate
+          - employeeContribution
+          - employerContribution
+      Department:
+        description: "Organizational department record"
+        properties:
+          - departmentId
+          - departmentName
+          - parentDepartmentId
+          - managerId
+      Location:
+        description: "Work location record"
+        properties:
+          - locationId
+          - locationName
+          - address
+          - city
+          - state
+          - country
+      PayStatement:
+        description: "Employee pay statement record"
+        properties:
+          - payStatementId
+          - employeeId
+          - payDate
+          - grossPay
+          - netPay
+          - payPeriodStart
+          - payPeriodEnd
+    wfm:
+      WfmEmployee:
+        description: "Employee record in the WFM system"
+        properties:
+          - employeeId
+          - firstName
+          - lastName
+          - badge
+          - homeLocationId
+          - jobCode
+          - workRule
+          - status
+      Timecard:
+        description: "Employee timecard for a pay period"
+        properties:
+          - timecardId
+          - employeeId
+          - periodStart
+          - periodEnd
+          - totalHours
+          - regularHours
+          - overtimeHours
+          - status
+      Punch:
+        description: "Clock punch record"
+        properties:
+          - punchId
+          - employeeId
+          - punchTime
+          - punchType
+          - locationId
+          - jobCode
+      AccrualBalance:
+        description: "Employee accrual balance for a time-off policy"
+        properties:
+          - accrualCodeId
+          - accrualName
+          - balance
+          - pendingBalance
+          - takingBalance
+          - asOfDate
+      Shift:
+        description: "Scheduled work shift"
+        properties:
+          - shiftId
+          - employeeId
+          - locationId
+          - shiftDate
+          - startTime
+          - endTime
+          - totalHours
+          - jobCode
+          - status
+
+  parameters:
+    pagination:
+      - name: per_page
+        description: "Number of results per page (HCM)"
+        in: query
+        type: integer
+      - name: page
+        description: "Page number for pagination (HCM)"
+        in: query
+        type: integer
+      - name: limit
+        description: "Maximum records to return (WFM)"
+        in: query
+        type: integer
+      - name: offset
+        description: "Number of records to skip (WFM)"
+        in: query
+        type: integer
+    filters:
+      - name: employeeId
+        description: "Filter by employee identifier"
+        in: query
+        type: string
+      - name: locationId
+        description: "Filter by work location"
+        in: query
+        type: string
+      - name: startDate
+        description: "Start date for date range filters"
+        in: query
+        type: string
+        format: date
+      - name: endDate
+        description: "End date for date range filters"
+        in: query
+        type: string
+        format: date
+    identifiers:
+      - name: employeeId
+        description: "Employee identifier (path parameter)"
+        in: path
+        type: string
+        required: true
+
+  enums:
+    timecardStatus:
+      - Open
+      - Submitted
+      - Approved
+      - Rejected
+    punchType:
+      - In
+      - Out
+      - Transfer
+      - Meal Start
+      - Meal End
+    shiftStatus:
+      - Scheduled
+      - Open
+      - Filled
+      - Cancelled
+    employeeStatus:
+      - Active
+      - Inactive
+      - Terminated
+      - Leave of Absence
+    payType:
+      - Hourly
+      - Salary
+      - Commission
+
+  authentication:
+    - id: basic-auth
+      label: "Basic Authentication"
+      description: "Username/password basic auth for HCM API"
+      type: basic
+      apis:
+        - ukg-pro-hcm-api
+    - id: bearer-auth
+      label: "Bearer Token Authentication"
+      description: "OAuth 2.0 bearer token for WFM API"
+      type: bearer
+      apis:
+        - ukg-pro-wfm-api
+
+capability:
+  workflows:
+    - id: workforce-management
+      label: "Workforce Management"
+      description: "Timekeeping, scheduling, and accrual management for hourly and salaried employees"
+      file: capabilities/workforce-management.yaml
+    - id: hr-administration
+      label: "HR Administration"
+      description: "Employee records, benefits, payroll, and organizational management"
+      file: capabilities/hr-administration.yaml
+
+  personas:
+    - id: hr-administrator
+      label: "HR Administrator"
+      description: "Manages employee records, org structure, and HR transactions"
+      workflows:
+        - hr-administration
+    - id: benefits-administrator
+      label: "Benefits Administrator"
+      description: "Manages benefits enrollment, plan administration, and compliance"
+      workflows:
+        - hr-administration
+    - id: payroll-processor
+      label: "Payroll Processor"
+      description: "Processes payroll, manages pay rates, and reviews pay statements"
+      workflows:
+        - hr-administration
+        - workforce-management
+    - id: workforce-manager
+      label: "Workforce Manager"
+      description: "Manages employee schedules, timecards, and attendance"
+      workflows:
+        - workforce-management
+    - id: scheduler
+      label: "Scheduler"
+      description: "Creates and manages workforce schedules and shift assignments"
+      workflows:
+        - workforce-management
+    - id: employee
+      label: "Employee"
+      description: "Views own records, timecards, benefits, and pay statements"
+      workflows:
+        - workforce-management
+        - hr-administration
+
+  domains:
+    - id: human-capital-management
+      label: "Human Capital Management"
+      description: "Core HR functions including employee records, hiring, and organizational management"
+      resources:
+        - employees
+        - departments
+        - locations
+        - personnel-change-requests
+    - id: payroll
+      label: "Payroll"
+      description: "Pay processing, compensation management, and pay statement history"
+      resources:
+        - pay-rates
+        - pay-statements
+        - direct-deposits
+    - id: benefits
+      label: "Benefits"
+      description: "Benefits enrollment, elections, and plan administration"
+      resources:
+        - benefits-elections
+    - id: timekeeping
+      label: "Timekeeping"
+      description: "Clock punches, timecards, and time approval workflows"
+      resources:
+        - timecards
+        - punches
+    - id: scheduling
+      label: "Scheduling"
+      description: "Workforce schedules, shift management, and coverage planning"
+      resources:
+        - schedules
+        - shifts
+    - id: accruals
+      label: "Accruals"
+      description: "Vacation, sick, and PTO accrual policy management"
+      resources:
+        - accruals
+
+crossReference:
+  - term: "employee"
+    ukgHcm: "Employee"
+    ukgWfm: "WfmEmployee"
+    description: "Employee record exists in both HCM and WFM systems; employeeId links them"
+  - term: "location"
+    ukgHcm: "Location"
+    ukgWfm: "homeLocationId / locationId"
+    description: "Work locations defined in HCM org structure, referenced in WFM by locationId"
+  - term: "pay period"
+    ukgHcm: "PayStatement (payPeriodStart/End)"
+    ukgWfm: "Timecard (periodStart/End)"
+    description: "Pay period boundaries align between HCM pay statements and WFM timecards"
+  - term: "job code"
+    ukgHcm: "EmployeeJob.jobCode"
+    ukgWfm: "WfmEmployee.jobCode / Punch.jobCode / Shift.jobCode"
+    description: "Job codes defined in HCM job catalog, used in WFM for labor distribution"

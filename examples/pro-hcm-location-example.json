@@ -1,0 +1,9 @@
+{
+  "locationId": "example-value",
+  "locationName": "example-value",
+  "address": "example-value",
+  "city": "example-value",
+  "stateProvince": "example-value",
+  "country": "example-value",
+  "postalCode": "example-value"
+}

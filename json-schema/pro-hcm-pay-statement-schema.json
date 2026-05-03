@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-schema/pro-hcm-pay-statement-schema.json",
+  "title": "PayStatement",
+  "description": "Employee pay statement for a single pay period",
+  "type": "object",
+  "properties": {
+    "statementId": {
+      "type": "string",
+      "description": "Pay statement identifier",
+      "example": "EMP001"
+    },
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "payPeriodStart": {
+      "type": "string",
+      "format": "date",
+      "description": "Pay period start date",
+      "example": "2026-01-15"
+    },
+    "payPeriodEnd": {
+      "type": "string",
+      "format": "date",
+      "description": "Pay period end date",
+      "example": "2026-01-15"
+    },
+    "payDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Check or deposit date",
+      "example": "2026-01-15"
+    },
+    "grossPay": {
+      "type": "number",
+      "format": "double",
+      "description": "Gross pay amount",
+      "example": 1.0
+    },
+    "netPay": {
+      "type": "number",
+      "format": "double",
+      "description": "Net pay amount",
+      "example": 1.0
+    },
+    "federalTaxWithheld": {
+      "type": "number",
+      "format": "double",
+      "description": "Federal income tax withheld",
+      "example": 1.0
+    },
+    "stateTaxWithheld": {
+      "type": "number",
+      "format": "double",
+      "description": "State income tax withheld",
+      "example": 1.0
+    },
+    "socialSecurityTax": {
+      "type": "number",
+      "format": "double",
+      "description": "Social Security tax withheld",
+      "example": 1.0
+    },
+    "medicareTax": {
+      "type": "number",
+      "format": "double",
+      "description": "Medicare tax withheld",
+      "example": 1.0
+    },
+    "currency": {
+      "type": "string",
+      "description": "Currency code",
+      "example": "USD"
+    }
+  }
+}

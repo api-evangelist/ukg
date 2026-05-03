@@ -1,0 +1,272 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ukg": "https://ukg.com/vocab/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "EmployeeIdList": "ukg:EmployeeIdList",
+    "employeeIds": {
+      "@id": "ukg:employeeIds",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "total": {
+      "@id": "ukg:total",
+      "@type": "xsd:integer"
+    },
+    "page": {
+      "@id": "ukg:page",
+      "@type": "xsd:integer"
+    },
+    "Employee": "ukg:Employee",
+    "employeeId": {
+      "@id": "ukg:employeeId",
+      "@type": "xsd:string"
+    },
+    "firstName": {
+      "@id": "ukg:firstName",
+      "@type": "xsd:string"
+    },
+    "lastName": {
+      "@id": "ukg:lastName",
+      "@type": "xsd:string"
+    },
+    "email": "schema:email",
+    "employmentStatus": {
+      "@id": "ukg:employmentStatus",
+      "@type": "xsd:string"
+    },
+    "hireDate": {
+      "@id": "ukg:hireDate",
+      "@type": "xsd:date"
+    },
+    "departmentId": {
+      "@id": "ukg:departmentId",
+      "@type": "xsd:string"
+    },
+    "locationId": {
+      "@id": "ukg:locationId",
+      "@type": "xsd:string"
+    },
+    "jobTitle": {
+      "@id": "ukg:jobTitle",
+      "@type": "xsd:string"
+    },
+    "managerId": {
+      "@id": "ukg:managerId",
+      "@type": "xsd:string"
+    },
+    "EmployeeList": "ukg:EmployeeList",
+    "employees": {
+      "@id": "ukg:employees",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "EmployeeJob": "ukg:EmployeeJob",
+    "jobCode": {
+      "@id": "ukg:jobCode",
+      "@type": "xsd:string"
+    },
+    "positionId": {
+      "@id": "ukg:positionId",
+      "@type": "xsd:string"
+    },
+    "flsaStatus": {
+      "@id": "ukg:flsaStatus",
+      "@type": "xsd:string"
+    },
+    "employmentType": {
+      "@id": "ukg:employmentType",
+      "@type": "xsd:string"
+    },
+    "effectiveDate": {
+      "@id": "ukg:effectiveDate",
+      "@type": "xsd:date"
+    },
+    "PayRate": "ukg:PayRate",
+    "payType": {
+      "@id": "ukg:payType",
+      "@type": "xsd:string"
+    },
+    "basePay": {
+      "@id": "ukg:basePay",
+      "@type": "xsd:double"
+    },
+    "payCurrency": {
+      "@id": "ukg:payCurrency",
+      "@type": "xsd:string"
+    },
+    "payFrequency": {
+      "@id": "ukg:payFrequency",
+      "@type": "xsd:string"
+    },
+    "BenefitsElection": "ukg:BenefitsElection",
+    "planId": {
+      "@id": "ukg:planId",
+      "@type": "xsd:string"
+    },
+    "planName": {
+      "@id": "ukg:planName",
+      "@type": "xsd:string"
+    },
+    "benefitType": {
+      "@id": "ukg:benefitType",
+      "@type": "xsd:string"
+    },
+    "enrollmentStatus": {
+      "@id": "ukg:enrollmentStatus",
+      "@type": "xsd:string"
+    },
+    "coverageTier": {
+      "@id": "ukg:coverageTier",
+      "@type": "xsd:string"
+    },
+    "employeeContribution": {
+      "@id": "ukg:employeeContribution",
+      "@type": "xsd:double"
+    },
+    "DirectDeposit": "ukg:DirectDeposit",
+    "accountId": {
+      "@id": "ukg:accountId",
+      "@type": "xsd:string"
+    },
+    "bankName": {
+      "@id": "ukg:bankName",
+      "@type": "xsd:string"
+    },
+    "accountType": {
+      "@id": "ukg:accountType",
+      "@type": "xsd:string"
+    },
+    "depositType": {
+      "@id": "ukg:depositType",
+      "@type": "xsd:string"
+    },
+    "depositAmount": {
+      "@id": "ukg:depositAmount",
+      "@type": "xsd:double"
+    },
+    "priority": {
+      "@id": "ukg:priority",
+      "@type": "xsd:integer"
+    },
+    "PersonnelChangeRequest": "ukg:PersonnelChangeRequest",
+    "actionType": {
+      "@id": "ukg:actionType",
+      "@type": "xsd:string"
+    },
+    "reason": {
+      "@id": "ukg:reason",
+      "@type": "xsd:string"
+    },
+    "newDepartmentId": {
+      "@id": "ukg:newDepartmentId",
+      "@type": "xsd:string"
+    },
+    "newJobTitle": {
+      "@id": "ukg:newJobTitle",
+      "@type": "xsd:string"
+    },
+    "newPayRate": {
+      "@id": "ukg:newPayRate",
+      "@type": "xsd:double"
+    },
+    "PersonnelChangeResponse": "ukg:PersonnelChangeResponse",
+    "requestId": {
+      "@id": "ukg:requestId",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "ukg:status",
+      "@type": "xsd:string"
+    },
+    "submittedAt": {
+      "@id": "ukg:submittedAt",
+      "@type": "xsd:dateTime"
+    },
+    "Department": "ukg:Department",
+    "departmentName": {
+      "@id": "ukg:departmentName",
+      "@type": "xsd:string"
+    },
+    "parentDepartmentId": {
+      "@id": "ukg:parentDepartmentId",
+      "@type": "xsd:string"
+    },
+    "costCenterId": {
+      "@id": "ukg:costCenterId",
+      "@type": "xsd:string"
+    },
+    "Location": "ukg:Location",
+    "locationName": {
+      "@id": "ukg:locationName",
+      "@type": "xsd:string"
+    },
+    "address": {
+      "@id": "ukg:address",
+      "@type": "xsd:string"
+    },
+    "city": {
+      "@id": "ukg:city",
+      "@type": "xsd:string"
+    },
+    "stateProvince": {
+      "@id": "ukg:stateProvince",
+      "@type": "xsd:string"
+    },
+    "country": {
+      "@id": "ukg:country",
+      "@type": "xsd:string"
+    },
+    "postalCode": {
+      "@id": "ukg:postalCode",
+      "@type": "xsd:string"
+    },
+    "PayStatement": "ukg:PayStatement",
+    "statementId": {
+      "@id": "ukg:statementId",
+      "@type": "xsd:string"
+    },
+    "payPeriodStart": {
+      "@id": "ukg:payPeriodStart",
+      "@type": "xsd:date"
+    },
+    "payPeriodEnd": {
+      "@id": "ukg:payPeriodEnd",
+      "@type": "xsd:date"
+    },
+    "payDate": {
+      "@id": "ukg:payDate",
+      "@type": "xsd:date"
+    },
+    "grossPay": {
+      "@id": "ukg:grossPay",
+      "@type": "xsd:double"
+    },
+    "netPay": {
+      "@id": "ukg:netPay",
+      "@type": "xsd:double"
+    },
+    "federalTaxWithheld": {
+      "@id": "ukg:federalTaxWithheld",
+      "@type": "xsd:double"
+    },
+    "stateTaxWithheld": {
+      "@id": "ukg:stateTaxWithheld",
+      "@type": "xsd:double"
+    },
+    "socialSecurityTax": {
+      "@id": "ukg:socialSecurityTax",
+      "@type": "xsd:double"
+    },
+    "medicareTax": {
+      "@id": "ukg:medicareTax",
+      "@type": "xsd:double"
+    },
+    "currency": {
+      "@id": "ukg:currency",
+      "@type": "xsd:string"
+    }
+  }
+}

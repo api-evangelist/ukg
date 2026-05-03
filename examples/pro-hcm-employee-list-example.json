@@ -1,0 +1,18 @@
+{
+  "employees": [
+    {
+      "employeeId": {},
+      "firstName": {},
+      "lastName": {},
+      "email": {},
+      "employmentStatus": {},
+      "hireDate": {},
+      "departmentId": {},
+      "locationId": {},
+      "jobTitle": {},
+      "managerId": {}
+    }
+  ],
+  "total": 1,
+  "page": 1
+}

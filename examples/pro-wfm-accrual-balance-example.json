@@ -1,0 +1,8 @@
+{
+  "accrualCodeId": "example-value",
+  "accrualName": "example-value",
+  "balance": 1.0,
+  "pendingBalance": 1.0,
+  "takingBalance": 1.0,
+  "asOfDate": "2026-01-15"
+}

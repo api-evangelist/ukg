@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-schema/pro-wfm-accrual-balance-schema.json",
+  "title": "AccrualBalance",
+  "description": "Employee accrual balance for a time-off policy",
+  "type": "object",
+  "properties": {
+    "accrualCodeId": {
+      "type": "string",
+      "description": "Accrual code identifier",
+      "example": "EMP001"
+    },
+    "accrualName": {
+      "type": "string",
+      "description": "Accrual policy name",
+      "example": "Vacation"
+    },
+    "balance": {
+      "type": "number",
+      "format": "double",
+      "description": "Current available balance in hours",
+      "example": 40.0
+    },
+    "pendingBalance": {
+      "type": "number",
+      "format": "double",
+      "description": "Pending approved requests",
+      "example": 8.0
+    },
+    "takingBalance": {
+      "type": "number",
+      "format": "double",
+      "description": "Hours in approved future requests",
+      "example": 1.0
+    },
+    "asOfDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Balance as of this date",
+      "example": "2026-01-15"
+    }
+  }
+}

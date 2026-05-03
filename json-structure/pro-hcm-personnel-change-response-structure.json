@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-hcm-personnel-change-response-structure.json",
+  "name": "PersonnelChangeResponse",
+  "description": "Response from a personnel change request submission",
+  "type": "object",
+  "properties": {
+    "requestId": {
+      "type": "string",
+      "description": "Change request identifier",
+      "example": "CHG-2026-00123"
+    },
+    "status": {
+      "type": "string",
+      "description": "Processing status",
+      "example": "Pending",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Rejected",
+        "Completed"
+      ]
+    },
+    "submittedAt": {
+      "type": "datetime",
+      "description": "Submission timestamp",
+      "example": "2026-01-15T10:30:00Z"
+    }
+  }
+}

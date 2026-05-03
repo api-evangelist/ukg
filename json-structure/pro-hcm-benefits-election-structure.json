@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-hcm-benefits-election-structure.json",
+  "name": "BenefitsElection",
+  "description": "Employee benefits enrollment information",
+  "type": "object",
+  "properties": {
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "planId": {
+      "type": "string",
+      "description": "Benefits plan identifier",
+      "example": "PLAN-MED-001"
+    },
+    "planName": {
+      "type": "string",
+      "description": "Benefits plan name",
+      "example": "Medical Plan - PPO"
+    },
+    "benefitType": {
+      "type": "string",
+      "description": "Type of benefit",
+      "example": "Medical",
+      "enum": [
+        "Medical",
+        "Dental",
+        "Vision",
+        "Life",
+        "Disability",
+        "401k",
+        "HSA",
+        "FSA"
+      ]
+    },
+    "enrollmentStatus": {
+      "type": "string",
+      "description": "Enrollment status",
+      "example": "Active",
+      "enum": [
+        "Active",
+        "Waived",
+        "Terminated"
+      ]
+    },
+    "coverageTier": {
+      "type": "string",
+      "description": "Coverage tier",
+      "example": "Employee + Spouse"
+    },
+    "employeeContribution": {
+      "type": "double",
+      "description": "Employee contribution amount per pay period",
+      "example": 1.0
+    },
+    "effectiveDate": {
+      "type": "date",
+      "description": "Coverage effective date",
+      "example": "2026-01-15"
+    }
+  }
+}

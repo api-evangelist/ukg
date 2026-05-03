@@ -1,0 +1,970 @@
+openapi: 3.0.3
+info:
+  title: UKG Pro HCM API
+  description: >-
+    The UKG Pro HCM API provides programmatic access to human capital management
+    data including employees, personnel actions, benefits, payroll, performance,
+    and organizational structure. Supports REST-based web services with Basic
+    Authentication and API key authorization, enabling integrations with HR systems,
+    payroll processors, benefits administrators, and analytics platforms.
+    Base URL for US tenants is https://service.ultipro.com.
+  version: '2.0'
+  contact:
+    name: UKG Developer Support
+    url: https://developer.ukg.com
+  termsOfService: https://www.ukg.com/legal/terms
+  x-generated-from: documentation
+servers:
+- url: https://service.ultipro.com
+  description: UKG Pro HCM API (US)
+- url: https://service.ultipro.ca
+  description: UKG Pro HCM API (Canada)
+security:
+- basicAuth: []
+tags:
+- name: Employees
+  description: Employee records and demographic data
+- name: Personnel Actions
+  description: Job changes, status changes, and employment actions
+- name: Benefits
+  description: Benefits enrollment and plan information
+- name: Payroll
+  description: Payroll data and check history
+- name: Performance
+  description: Performance reviews and goals
+- name: Organization
+  description: Departments, locations, and cost centers
+- name: Time
+  description: Time and attendance records
+paths:
+  /personnel/v2/employee-ids:
+    get:
+      operationId: listEmployeeIds
+      summary: UKG Pro HCM List Employee IDs
+      description: Retrieve a list of all employee identifiers accessible to the authenticated service account.
+      tags:
+      - Employees
+      parameters:
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+        description: Number of results per page
+        example: 100
+      - name: page
+        in: query
+        schema:
+          type: integer
+        description: Page number
+        example: 1
+      responses:
+        '200':
+          description: Successful response with list of employee IDs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeIdList'
+              examples:
+                listEmployeeIds200Example:
+                  summary: Default listEmployeeIds 200 response
+                  x-microcks-default: true
+                  value:
+                    employeeIds:
+                    - example-value
+                    total: 1
+                    page: 1
+        '401':
+          description: Unauthorized - invalid credentials
+        '403':
+          description: Forbidden - insufficient permissions
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/employees:
+    get:
+      operationId: listEmployees
+      summary: UKG Pro HCM List Employees
+      description: Retrieve employee records with demographic and employment information.
+      tags:
+      - Employees
+      parameters:
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+        description: Number of results per page
+        example: 25
+      - name: page
+        in: query
+        schema:
+          type: integer
+        description: Page number for pagination
+        example: 1
+      - name: employeeId
+        in: query
+        schema:
+          type: string
+        description: Filter by specific employee ID
+        example: EMP001
+      responses:
+        '200':
+          description: List of employee records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeList'
+              examples:
+                listEmployees200Example:
+                  summary: Default listEmployees 200 response
+                  x-microcks-default: true
+                  value:
+                    employees:
+                    - {}
+                    total: 1
+                    page: 1
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/employees/{employeeId}:
+    get:
+      operationId: getEmployee
+      summary: UKG Pro HCM Get Employee
+      description: Retrieve detailed information for a specific employee.
+      tags:
+      - Employees
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Employee details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+              examples:
+                getEmployee200Example:
+                  summary: Default getEmployee 200 response
+                  x-microcks-default: true
+                  value:
+                    employeeId: example-value
+                    firstName: example-value
+                    lastName: example-value
+                    email: employee@example.com
+                    employmentStatus: Active
+                    hireDate: '2026-01-15'
+                    departmentId: example-value
+                    locationId: example-value
+                    jobTitle: example-value
+                    managerId: example-value
+        '404':
+          description: Employee not found
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/employees/{employeeId}/jobs:
+    get:
+      operationId: getEmployeeJobs
+      summary: UKG Pro HCM Get Employee Jobs
+      description: Retrieve job history and current job assignment for an employee.
+      tags:
+      - Employees
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Employee job assignment details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeJob'
+              examples:
+                getEmployeeJobs200Example:
+                  summary: Default getEmployeeJobs 200 response
+                  x-microcks-default: true
+                  value:
+                    employeeId: example-value
+                    jobCode: example-value
+                    jobTitle: example-value
+                    departmentId: example-value
+                    positionId: example-value
+                    flsaStatus: Exempt
+                    employmentType: Full-Time
+                    effectiveDate: '2026-01-15'
+        '404':
+          description: Employee not found
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/employees/{employeeId}/pay-rates:
+    get:
+      operationId: getEmployeePayRates
+      summary: UKG Pro HCM Get Employee Pay Rates
+      description: Retrieve current and historical pay rates for an employee.
+      tags:
+      - Payroll
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Pay rate information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PayRate'
+              examples:
+                getEmployeePayRates200Example:
+                  summary: Default getEmployeePayRates 200 response
+                  x-microcks-default: true
+                  value:
+                    employeeId: example-value
+                    payType: Salary
+                    basePay: 1.0
+                    payCurrency: example-value
+                    payFrequency: Weekly
+                    effectiveDate: '2026-01-15'
+        '404':
+          description: Employee not found
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/employees/{employeeId}/benefits-elections:
+    get:
+      operationId: getEmployeeBenefitsElections
+      summary: UKG Pro HCM Get Employee Benefits Elections
+      description: Retrieve active benefits elections for a specific employee.
+      tags:
+      - Benefits
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Benefits enrollment data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BenefitsElection'
+              examples:
+                getEmployeeBenefitsElections200Example:
+                  summary: Default getEmployeeBenefitsElections 200 response
+                  x-microcks-default: true
+                  value:
+                    employeeId: example-value
+                    planId: example-value
+                    planName: example-value
+                    benefitType: Medical
+                    enrollmentStatus: Active
+                    coverageTier: example-value
+                    employeeContribution: 1.0
+                    effectiveDate: '2026-01-15'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/employees/{employeeId}/direct-deposits:
+    get:
+      operationId: getEmployeeDirectDeposits
+      summary: UKG Pro HCM Get Employee Direct Deposits
+      description: Retrieve direct deposit banking information for an employee.
+      tags:
+      - Payroll
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Direct deposit accounts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DirectDeposit'
+              examples:
+                getEmployeeDirectDeposits200Example:
+                  summary: Default getEmployeeDirectDeposits 200 response
+                  x-microcks-default: true
+                  value:
+                  - accountId: example-value
+                    bankName: example-value
+                    accountType: Checking
+                    depositType: Amount
+                    depositAmount: 1.0
+                    priority: 1
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/change-requests:
+    post:
+      operationId: createPersonnelChangeRequest
+      summary: UKG Pro HCM Create Personnel Change Request
+      description: Submit a personnel action change request such as a job change, status change, or compensation adjustment.
+      tags:
+      - Personnel Actions
+      requestBody:
+        required: true
+        description: Personnel change request details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonnelChangeRequest'
+            examples:
+              createPersonnelChangeRequestRequestExample:
+                summary: Default createPersonnelChangeRequest request
+                x-microcks-default: true
+                value:
+                  employeeId: example-value
+                  actionType: Job Change
+                  effectiveDate: '2026-01-15'
+                  reason: example-value
+                  newDepartmentId: example-value
+                  newJobTitle: example-value
+                  newPayRate: 1.0
+      responses:
+        '201':
+          description: Change request created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PersonnelChangeResponse'
+              examples:
+                createPersonnelChangeRequest201Example:
+                  summary: Default createPersonnelChangeRequest 201 response
+                  x-microcks-default: true
+                  value:
+                    requestId: example-value
+                    status: Pending
+                    submittedAt: '2026-01-15T10:30:00Z'
+        '400':
+          description: Invalid request
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /org/v2/departments:
+    get:
+      operationId: listDepartments
+      summary: UKG Pro HCM List Departments
+      description: Retrieve a list of all departments in the organization.
+      tags:
+      - Organization
+      parameters:
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+        description: Number of results per page
+        example: 100
+      responses:
+        '200':
+          description: List of departments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Department'
+              examples:
+                listDepartments200Example:
+                  summary: Default listDepartments 200 response
+                  x-microcks-default: true
+                  value:
+                  - departmentId: example-value
+                    departmentName: example-value
+                    parentDepartmentId: example-value
+                    managerId: example-value
+                    costCenterId: example-value
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /org/v2/locations:
+    get:
+      operationId: listLocations
+      summary: UKG Pro HCM List Locations
+      description: Retrieve a list of all work locations in the organization.
+      tags:
+      - Organization
+      parameters:
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+        description: Number of results per page
+        example: 100
+      responses:
+        '200':
+          description: List of locations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+              examples:
+                listLocations200Example:
+                  summary: Default listLocations 200 response
+                  x-microcks-default: true
+                  value:
+                  - locationId: example-value
+                    locationName: example-value
+                    address: example-value
+                    city: example-value
+                    stateProvince: example-value
+                    country: example-value
+                    postalCode: example-value
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /payroll/v1/pay-statements:
+    get:
+      operationId: listPayStatements
+      summary: UKG Pro HCM List Pay Statements
+      description: Retrieve pay statement history for employees.
+      tags:
+      - Payroll
+      parameters:
+      - name: employeeId
+        in: query
+        schema:
+          type: string
+        description: Filter by employee ID
+        example: EMP001
+      - name: startDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Start date for pay statement range
+        example: '2026-01-01'
+      - name: endDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: End date for pay statement range
+        example: '2026-03-31'
+      responses:
+        '200':
+          description: List of pay statements
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PayStatement'
+              examples:
+                listPayStatements200Example:
+                  summary: Default listPayStatements 200 response
+                  x-microcks-default: true
+                  value:
+                  - statementId: example-value
+                    employeeId: example-value
+                    payPeriodStart: '2026-01-15'
+                    payPeriodEnd: '2026-01-15'
+                    payDate: '2026-01-15'
+                    grossPay: 1.0
+                    netPay: 1.0
+                    federalTaxWithheld: 1.0
+                    stateTaxWithheld: 1.0
+                    socialSecurityTax: 1.0
+                    medicareTax: 1.0
+                    currency: example-value
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication with service account credentials plus US-API-Key header
+  schemas:
+    EmployeeIdList:
+      type: object
+      description: Paginated list of employee identifiers
+      properties:
+        employeeIds:
+          type: array
+          items:
+            type: string
+          description: Array of employee identifiers
+          example: EMP001
+        total:
+          type: integer
+          description: Total number of employees
+          example: 1
+        page:
+          type: integer
+          description: Current page number
+          example: 1
+    Employee:
+      type: object
+      description: Employee record with demographic and employment information
+      properties:
+        employeeId:
+          type: string
+          description: Unique employee identifier
+          example: EMP001
+        firstName:
+          type: string
+          description: Employee first name
+          example: Jane
+        lastName:
+          type: string
+          description: Employee last name
+          example: Smith
+        email:
+          type: string
+          format: email
+          description: Work email address
+          example: jsmith@company.com
+        employmentStatus:
+          type: string
+          description: Current employment status
+          example: Active
+          enum:
+          - Active
+          - Inactive
+          - Terminated
+          - Leave
+        hireDate:
+          type: string
+          format: date
+          description: Original hire date
+          example: '2022-06-01'
+        departmentId:
+          type: string
+          description: Department identifier
+          example: DEPT-HR
+        locationId:
+          type: string
+          description: Work location identifier
+          example: LOC-NYC
+        jobTitle:
+          type: string
+          description: Current job title
+          example: Senior HR Analyst
+        managerId:
+          type: string
+          description: Manager employee identifier
+          example: EMP042
+    EmployeeList:
+      type: object
+      description: Paginated list of employee records
+      properties:
+        employees:
+          type: array
+          items:
+            $ref: '#/components/schemas/Employee'
+          example: example-value
+        total:
+          type: integer
+          description: Total number of records
+          example: 1
+        page:
+          type: integer
+          description: Current page
+          example: 1
+    EmployeeJob:
+      type: object
+      description: Employee job assignment and classification details
+      properties:
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        jobCode:
+          type: string
+          description: Job code or position code
+          example: JOB-HRANA
+        jobTitle:
+          type: string
+          description: Job title
+          example: HR Analyst
+        departmentId:
+          type: string
+          description: Department identifier
+          example: EMP001
+        positionId:
+          type: string
+          description: Position identifier
+          example: POS-00123
+        flsaStatus:
+          type: string
+          description: FLSA classification
+          example: Exempt
+          enum:
+          - Exempt
+          - Non-Exempt
+        employmentType:
+          type: string
+          description: Employment type
+          example: Full-Time
+          enum:
+          - Full-Time
+          - Part-Time
+          - Contractor
+          - Temporary
+        effectiveDate:
+          type: string
+          format: date
+          description: Effective date of current assignment
+          example: '2026-01-15'
+    PayRate:
+      type: object
+      description: Employee pay rate information
+      properties:
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        payType:
+          type: string
+          description: Pay type
+          example: Salary
+          enum:
+          - Salary
+          - Hourly
+          - Commission
+        basePay:
+          type: number
+          format: double
+          description: Base pay amount
+          example: 75000.00
+        payCurrency:
+          type: string
+          description: Currency code
+          example: USD
+        payFrequency:
+          type: string
+          description: Pay frequency
+          example: Bi-Weekly
+          enum:
+          - Weekly
+          - Bi-Weekly
+          - Semi-Monthly
+          - Monthly
+        effectiveDate:
+          type: string
+          format: date
+          description: Effective date of pay rate
+          example: '2026-01-15'
+    BenefitsElection:
+      type: object
+      description: Employee benefits enrollment information
+      properties:
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        planId:
+          type: string
+          description: Benefits plan identifier
+          example: PLAN-MED-001
+        planName:
+          type: string
+          description: Benefits plan name
+          example: Medical Plan - PPO
+        benefitType:
+          type: string
+          description: Type of benefit
+          example: Medical
+          enum:
+          - Medical
+          - Dental
+          - Vision
+          - Life
+          - Disability
+          - 401k
+          - HSA
+          - FSA
+        enrollmentStatus:
+          type: string
+          description: Enrollment status
+          example: Active
+          enum:
+          - Active
+          - Waived
+          - Terminated
+        coverageTier:
+          type: string
+          description: Coverage tier
+          example: Employee + Spouse
+        employeeContribution:
+          type: number
+          format: double
+          description: Employee contribution amount per pay period
+          example: 1.0
+        effectiveDate:
+          type: string
+          format: date
+          description: Coverage effective date
+          example: '2026-01-15'
+    DirectDeposit:
+      type: object
+      description: Employee direct deposit banking information
+      properties:
+        accountId:
+          type: string
+          description: Account identifier
+          example: EMP001
+        bankName:
+          type: string
+          description: Bank name
+          example: First National Bank
+        accountType:
+          type: string
+          description: Account type
+          example: Checking
+          enum:
+          - Checking
+          - Savings
+        depositType:
+          type: string
+          description: Deposit distribution type
+          example: Remainder
+          enum:
+          - Amount
+          - Percentage
+          - Remainder
+        depositAmount:
+          type: number
+          format: double
+          description: Deposit amount or percentage
+          example: 1.0
+        priority:
+          type: integer
+          description: Processing priority order
+          example: 1
+    PersonnelChangeRequest:
+      type: object
+      description: Request for a personnel action change
+      required:
+      - employeeId
+      - actionType
+      - effectiveDate
+      properties:
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        actionType:
+          type: string
+          description: Type of personnel action
+          example: Job Change
+          enum:
+          - Job Change
+          - Pay Change
+          - Status Change
+          - Department Transfer
+          - Termination
+          - Leave of Absence
+        effectiveDate:
+          type: string
+          format: date
+          description: Effective date of the change
+          example: '2026-06-01'
+        reason:
+          type: string
+          description: Reason for the change
+          example: Promotion
+        newDepartmentId:
+          type: string
+          description: New department identifier (for transfers)
+          example: EMP001
+        newJobTitle:
+          type: string
+          description: New job title (for job changes)
+          example: example-value
+        newPayRate:
+          type: number
+          format: double
+          description: New pay rate amount (for pay changes)
+          example: 1.0
+    PersonnelChangeResponse:
+      type: object
+      description: Response from a personnel change request submission
+      properties:
+        requestId:
+          type: string
+          description: Change request identifier
+          example: CHG-2026-00123
+        status:
+          type: string
+          description: Processing status
+          example: Pending
+          enum:
+          - Pending
+          - Approved
+          - Rejected
+          - Completed
+        submittedAt:
+          type: string
+          format: date-time
+          description: Submission timestamp
+          example: '2026-01-15T10:30:00Z'
+    Department:
+      type: object
+      description: Organizational department
+      properties:
+        departmentId:
+          type: string
+          description: Department identifier
+          example: DEPT-HR
+        departmentName:
+          type: string
+          description: Department name
+          example: Human Resources
+        parentDepartmentId:
+          type: string
+          description: Parent department identifier
+          example: EMP001
+        managerId:
+          type: string
+          description: Department manager employee ID
+          example: EMP001
+        costCenterId:
+          type: string
+          description: Associated cost center
+          example: CC-100
+    Location:
+      type: object
+      description: Work location
+      properties:
+        locationId:
+          type: string
+          description: Location identifier
+          example: LOC-NYC
+        locationName:
+          type: string
+          description: Location name
+          example: New York Office
+        address:
+          type: string
+          description: Street address
+          example: 123 Main Street
+        city:
+          type: string
+          description: City
+          example: New York
+        stateProvince:
+          type: string
+          description: State or province
+          example: NY
+        country:
+          type: string
+          description: Country code
+          example: US
+        postalCode:
+          type: string
+          description: Postal or ZIP code
+          example: '10001'
+    PayStatement:
+      type: object
+      description: Employee pay statement for a single pay period
+      properties:
+        statementId:
+          type: string
+          description: Pay statement identifier
+          example: EMP001
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        payPeriodStart:
+          type: string
+          format: date
+          description: Pay period start date
+          example: '2026-01-15'
+        payPeriodEnd:
+          type: string
+          format: date
+          description: Pay period end date
+          example: '2026-01-15'
+        payDate:
+          type: string
+          format: date
+          description: Check or deposit date
+          example: '2026-01-15'
+        grossPay:
+          type: number
+          format: double
+          description: Gross pay amount
+          example: 1.0
+        netPay:
+          type: number
+          format: double
+          description: Net pay amount
+          example: 1.0
+        federalTaxWithheld:
+          type: number
+          format: double
+          description: Federal income tax withheld
+          example: 1.0
+        stateTaxWithheld:
+          type: number
+          format: double
+          description: State income tax withheld
+          example: 1.0
+        socialSecurityTax:
+          type: number
+          format: double
+          description: Social Security tax withheld
+          example: 1.0
+        medicareTax:
+          type: number
+          format: double
+          description: Medicare tax withheld
+          example: 1.0
+        currency:
+          type: string
+          description: Currency code
+          example: USD

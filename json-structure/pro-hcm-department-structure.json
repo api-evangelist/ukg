@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-hcm-department-structure.json",
+  "name": "Department",
+  "description": "Organizational department",
+  "type": "object",
+  "properties": {
+    "departmentId": {
+      "type": "string",
+      "description": "Department identifier",
+      "example": "DEPT-HR"
+    },
+    "departmentName": {
+      "type": "string",
+      "description": "Department name",
+      "example": "Human Resources"
+    },
+    "parentDepartmentId": {
+      "type": "string",
+      "description": "Parent department identifier",
+      "example": "EMP001"
+    },
+    "managerId": {
+      "type": "string",
+      "description": "Department manager employee ID",
+      "example": "EMP001"
+    },
+    "costCenterId": {
+      "type": "string",
+      "description": "Associated cost center",
+      "example": "CC-100"
+    }
+  }
+}

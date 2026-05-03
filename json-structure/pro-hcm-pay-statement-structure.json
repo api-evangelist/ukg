@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-hcm-pay-statement-structure.json",
+  "name": "PayStatement",
+  "description": "Employee pay statement for a single pay period",
+  "type": "object",
+  "properties": {
+    "statementId": {
+      "type": "string",
+      "description": "Pay statement identifier",
+      "example": "EMP001"
+    },
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "payPeriodStart": {
+      "type": "date",
+      "description": "Pay period start date",
+      "example": "2026-01-15"
+    },
+    "payPeriodEnd": {
+      "type": "date",
+      "description": "Pay period end date",
+      "example": "2026-01-15"
+    },
+    "payDate": {
+      "type": "date",
+      "description": "Check or deposit date",
+      "example": "2026-01-15"
+    },
+    "grossPay": {
+      "type": "double",
+      "description": "Gross pay amount",
+      "example": 1.0
+    },
+    "netPay": {
+      "type": "double",
+      "description": "Net pay amount",
+      "example": 1.0
+    },
+    "federalTaxWithheld": {
+      "type": "double",
+      "description": "Federal income tax withheld",
+      "example": 1.0
+    },
+    "stateTaxWithheld": {
+      "type": "double",
+      "description": "State income tax withheld",
+      "example": 1.0
+    },
+    "socialSecurityTax": {
+      "type": "double",
+      "description": "Social Security tax withheld",
+      "example": 1.0
+    },
+    "medicareTax": {
+      "type": "double",
+      "description": "Medicare tax withheld",
+      "example": 1.0
+    },
+    "currency": {
+      "type": "string",
+      "description": "Currency code",
+      "example": "USD"
+    }
+  }
+}

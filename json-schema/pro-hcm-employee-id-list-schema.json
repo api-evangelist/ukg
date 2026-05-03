@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-schema/pro-hcm-employee-id-list-schema.json",
+  "title": "EmployeeIdList",
+  "description": "Paginated list of employee identifiers",
+  "type": "object",
+  "properties": {
+    "employeeIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of employee identifiers",
+      "example": "EMP001"
+    },
+    "total": {
+      "type": "integer",
+      "description": "Total number of employees",
+      "example": 1
+    },
+    "page": {
+      "type": "integer",
+      "description": "Current page number",
+      "example": 1
+    }
+  }
+}

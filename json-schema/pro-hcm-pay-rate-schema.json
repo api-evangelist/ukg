@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-schema/pro-hcm-pay-rate-schema.json",
+  "title": "PayRate",
+  "description": "Employee pay rate information",
+  "type": "object",
+  "properties": {
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "payType": {
+      "type": "string",
+      "description": "Pay type",
+      "example": "Salary",
+      "enum": [
+        "Salary",
+        "Hourly",
+        "Commission"
+      ]
+    },
+    "basePay": {
+      "type": "number",
+      "format": "double",
+      "description": "Base pay amount",
+      "example": 75000.0
+    },
+    "payCurrency": {
+      "type": "string",
+      "description": "Currency code",
+      "example": "USD"
+    },
+    "payFrequency": {
+      "type": "string",
+      "description": "Pay frequency",
+      "example": "Bi-Weekly",
+      "enum": [
+        "Weekly",
+        "Bi-Weekly",
+        "Semi-Monthly",
+        "Monthly"
+      ]
+    },
+    "effectiveDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Effective date of pay rate",
+      "example": "2026-01-15"
+    }
+  }
+}

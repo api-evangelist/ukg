@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-hcm-employee-list-structure.json",
+  "name": "EmployeeList",
+  "description": "Paginated list of employee records",
+  "type": "object",
+  "properties": {
+    "employees": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Employee"
+      },
+      "example": "example-value"
+    },
+    "total": {
+      "type": "int32",
+      "description": "Total number of records",
+      "example": 1
+    },
+    "page": {
+      "type": "int32",
+      "description": "Current page",
+      "example": 1
+    }
+  }
+}

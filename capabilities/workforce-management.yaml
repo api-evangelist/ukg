@@ -1,0 +1,150 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "UKG Workforce Management"
+  description: "Workforce management workflow combining timekeeping, scheduling, and accrual capabilities for hourly and salaried employees."
+  tags:
+    - UKG
+    - Workforce Management
+    - Timekeeping
+    - Scheduling
+    - Accruals
+  created: "2026-05-03"
+  modified: "2026-05-03"
+  personas:
+    - Workforce Manager
+    - Payroll Administrator
+    - Scheduler
+    - Employee
+
+imports:
+  - url: shared/pro-wfm.yaml
+    namespace: pro-wfm
+  - url: shared/pro-hcm.yaml
+    namespace: pro-hcm
+
+capability:
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: workforce-management-api
+      resources:
+        - path: /v1/employees
+          name: employees
+          description: "Employee records"
+          operations:
+            - method: GET
+              name: list-employees
+              description: "List WFM employees"
+              call: "pro-wfm.list-wfm-employees"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/employees/{employeeId}/timecards
+          name: timecards
+          description: "Employee timecards"
+          operations:
+            - method: GET
+              name: get-timecards
+              description: "Get employee timecards"
+              call: "pro-wfm.get-employee-timecards"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/employees/{employeeId}/accruals
+          name: accruals
+          description: "Employee accrual balances"
+          operations:
+            - method: GET
+              name: get-accruals
+              description: "Get employee accruals"
+              call: "pro-wfm.get-employee-accruals"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+    - type: mcp
+      port: 9080
+      namespace: workforce-management-mcp
+      transport: http
+      tools:
+        - name: list-wfm-employees
+          description: "List all WFM employee records"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "pro-wfm.list-wfm-employees"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-employee-timecards
+          description: "Get timecard records for an employee within a date range"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "pro-wfm.get-employee-timecards"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-employee-punches
+          description: "Get clock punch records for an employee"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "pro-wfm.get-employee-punches"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-punch
+          description: "Submit a clock punch for an employee"
+          hints:
+            readOnly: false
+            openWorld: false
+          call: "pro-wfm.create-punch"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-employee-accruals
+          description: "Get vacation, sick, and PTO accrual balances for an employee"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "pro-wfm.get-employee-accruals"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-schedules
+          description: "List workforce schedules for a location and date range"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "pro-wfm.list-schedules"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-employee-shifts
+          description: "Get scheduled shifts for a specific employee"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "pro-wfm.get-employee-shifts"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-hcm-employee
+          description: "Get HCM employee record with full demographic and job data"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "pro-hcm.get-employee"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-pay-statements
+          description: "Get employee pay statement history"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "pro-hcm.list-pay-statements"
+          outputParameters:
+            - type: object
+              mapping: "$."

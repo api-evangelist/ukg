@@ -1,0 +1,8 @@
+{
+  "punchId": "example-value",
+  "employeeId": "example-value",
+  "punchTime": "2026-01-15T10:30:00Z",
+  "punchType": "In",
+  "locationId": "example-value",
+  "jobCode": "example-value"
+}

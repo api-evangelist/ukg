@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-wfm-punch-request-structure.json",
+  "name": "PunchRequest",
+  "description": "Request to create a clock punch",
+  "type": "object",
+  "required": [
+    "punchTime",
+    "punchType"
+  ],
+  "properties": {
+    "punchTime": {
+      "type": "datetime",
+      "description": "Punch timestamp",
+      "example": "2026-01-15T09:00:00Z"
+    },
+    "punchType": {
+      "type": "string",
+      "description": "Type of punch",
+      "example": "In",
+      "enum": [
+        "In",
+        "Out",
+        "Transfer"
+      ]
+    },
+    "locationId": {
+      "type": "string",
+      "description": "Location identifier",
+      "example": "EMP001"
+    },
+    "jobCode": {
+      "type": "string",
+      "description": "Job code for this punch",
+      "example": "example-value"
+    }
+  }
+}

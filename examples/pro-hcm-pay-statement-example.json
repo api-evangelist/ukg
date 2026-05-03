@@ -1,0 +1,14 @@
+{
+  "statementId": "example-value",
+  "employeeId": "example-value",
+  "payPeriodStart": "2026-01-15",
+  "payPeriodEnd": "2026-01-15",
+  "payDate": "2026-01-15",
+  "grossPay": 1.0,
+  "netPay": 1.0,
+  "federalTaxWithheld": 1.0,
+  "stateTaxWithheld": 1.0,
+  "socialSecurityTax": 1.0,
+  "medicareTax": 1.0,
+  "currency": "example-value"
+}

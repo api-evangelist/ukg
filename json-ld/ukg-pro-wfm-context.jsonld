@@ -1,0 +1,127 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ukg": "https://ukg.com/vocab/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "WfmEmployee": "ukg:WfmEmployee",
+    "employeeId": {
+      "@id": "ukg:employeeId",
+      "@type": "xsd:string"
+    },
+    "firstName": {
+      "@id": "ukg:firstName",
+      "@type": "xsd:string"
+    },
+    "lastName": {
+      "@id": "ukg:lastName",
+      "@type": "xsd:string"
+    },
+    "badge": {
+      "@id": "ukg:badge",
+      "@type": "xsd:string"
+    },
+    "homeLocationId": {
+      "@id": "ukg:homeLocationId",
+      "@type": "xsd:string"
+    },
+    "jobCode": {
+      "@id": "ukg:jobCode",
+      "@type": "xsd:string"
+    },
+    "workRule": {
+      "@id": "ukg:workRule",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "ukg:status",
+      "@type": "xsd:string"
+    },
+    "Timecard": "ukg:Timecard",
+    "timecardId": {
+      "@id": "ukg:timecardId",
+      "@type": "xsd:string"
+    },
+    "periodStart": {
+      "@id": "ukg:periodStart",
+      "@type": "xsd:date"
+    },
+    "periodEnd": {
+      "@id": "ukg:periodEnd",
+      "@type": "xsd:date"
+    },
+    "totalHours": {
+      "@id": "ukg:totalHours",
+      "@type": "xsd:double"
+    },
+    "regularHours": {
+      "@id": "ukg:regularHours",
+      "@type": "xsd:double"
+    },
+    "overtimeHours": {
+      "@id": "ukg:overtimeHours",
+      "@type": "xsd:double"
+    },
+    "Punch": "ukg:Punch",
+    "punchId": {
+      "@id": "ukg:punchId",
+      "@type": "xsd:string"
+    },
+    "punchTime": {
+      "@id": "ukg:punchTime",
+      "@type": "xsd:dateTime"
+    },
+    "punchType": {
+      "@id": "ukg:punchType",
+      "@type": "xsd:string"
+    },
+    "locationId": {
+      "@id": "ukg:locationId",
+      "@type": "xsd:string"
+    },
+    "PunchRequest": "ukg:PunchRequest",
+    "AccrualBalance": "ukg:AccrualBalance",
+    "accrualCodeId": {
+      "@id": "ukg:accrualCodeId",
+      "@type": "xsd:string"
+    },
+    "accrualName": {
+      "@id": "ukg:accrualName",
+      "@type": "xsd:string"
+    },
+    "balance": {
+      "@id": "ukg:balance",
+      "@type": "xsd:double"
+    },
+    "pendingBalance": {
+      "@id": "ukg:pendingBalance",
+      "@type": "xsd:double"
+    },
+    "takingBalance": {
+      "@id": "ukg:takingBalance",
+      "@type": "xsd:double"
+    },
+    "asOfDate": {
+      "@id": "ukg:asOfDate",
+      "@type": "xsd:date"
+    },
+    "Shift": "ukg:Shift",
+    "shiftId": {
+      "@id": "ukg:shiftId",
+      "@type": "xsd:string"
+    },
+    "shiftDate": {
+      "@id": "ukg:shiftDate",
+      "@type": "xsd:date"
+    },
+    "startTime": {
+      "@id": "ukg:startTime",
+      "@type": "xsd:string"
+    },
+    "endTime": {
+      "@id": "ukg:endTime",
+      "@type": "xsd:string"
+    }
+  }
+}

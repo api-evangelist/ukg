@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-schema/pro-wfm-timecard-schema.json",
+  "title": "Timecard",
+  "description": "Employee timecard for a pay period",
+  "type": "object",
+  "properties": {
+    "timecardId": {
+      "type": "string",
+      "description": "Timecard identifier",
+      "example": "EMP001"
+    },
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "periodStart": {
+      "type": "string",
+      "format": "date",
+      "description": "Pay period start date",
+      "example": "2026-01-15"
+    },
+    "periodEnd": {
+      "type": "string",
+      "format": "date",
+      "description": "Pay period end date",
+      "example": "2026-01-15"
+    },
+    "totalHours": {
+      "type": "number",
+      "format": "double",
+      "description": "Total hours worked",
+      "example": 80.0
+    },
+    "regularHours": {
+      "type": "number",
+      "format": "double",
+      "description": "Regular hours",
+      "example": 80.0
+    },
+    "overtimeHours": {
+      "type": "number",
+      "format": "double",
+      "description": "Overtime hours",
+      "example": 0.0
+    },
+    "status": {
+      "type": "string",
+      "description": "Timecard approval status",
+      "example": "Approved",
+      "enum": [
+        "Open",
+        "Submitted",
+        "Approved",
+        "Rejected"
+      ]
+    }
+  }
+}

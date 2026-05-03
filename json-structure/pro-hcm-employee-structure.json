@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-hcm-employee-structure.json",
+  "name": "Employee",
+  "description": "Employee record with demographic and employment information",
+  "type": "object",
+  "properties": {
+    "employeeId": {
+      "type": "string",
+      "description": "Unique employee identifier",
+      "example": "EMP001"
+    },
+    "firstName": {
+      "type": "string",
+      "description": "Employee first name",
+      "example": "Jane"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Employee last name",
+      "example": "Smith"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Work email address",
+      "example": "jsmith@company.com"
+    },
+    "employmentStatus": {
+      "type": "string",
+      "description": "Current employment status",
+      "example": "Active",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Terminated",
+        "Leave"
+      ]
+    },
+    "hireDate": {
+      "type": "date",
+      "description": "Original hire date",
+      "example": "2022-06-01"
+    },
+    "departmentId": {
+      "type": "string",
+      "description": "Department identifier",
+      "example": "DEPT-HR"
+    },
+    "locationId": {
+      "type": "string",
+      "description": "Work location identifier",
+      "example": "LOC-NYC"
+    },
+    "jobTitle": {
+      "type": "string",
+      "description": "Current job title",
+      "example": "Senior HR Analyst"
+    },
+    "managerId": {
+      "type": "string",
+      "description": "Manager employee identifier",
+      "example": "EMP042"
+    }
+  }
+}

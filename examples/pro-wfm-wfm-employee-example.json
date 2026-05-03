@@ -1,0 +1,10 @@
+{
+  "employeeId": "example-value",
+  "firstName": "example-value",
+  "lastName": "example-value",
+  "badge": "example-value",
+  "homeLocationId": "example-value",
+  "jobCode": "example-value",
+  "workRule": "example-value",
+  "status": "example-value"
+}

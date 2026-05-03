@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-wfm-shift-structure.json",
+  "name": "Shift",
+  "description": "Scheduled work shift",
+  "type": "object",
+  "properties": {
+    "shiftId": {
+      "type": "string",
+      "description": "Shift identifier",
+      "example": "EMP001"
+    },
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "locationId": {
+      "type": "string",
+      "description": "Work location",
+      "example": "LOC-NYC"
+    },
+    "shiftDate": {
+      "type": "date",
+      "description": "Date of the shift",
+      "example": "2026-01-15"
+    },
+    "startTime": {
+      "type": "string",
+      "description": "Shift start time (HH:MM)",
+      "example": "09:00"
+    },
+    "endTime": {
+      "type": "string",
+      "description": "Shift end time (HH:MM)",
+      "example": "17:00"
+    },
+    "totalHours": {
+      "type": "double",
+      "description": "Total scheduled hours",
+      "example": 8.0
+    },
+    "jobCode": {
+      "type": "string",
+      "description": "Job code for the shift",
+      "example": "example-value"
+    },
+    "status": {
+      "type": "string",
+      "description": "Shift status",
+      "example": "Scheduled",
+      "enum": [
+        "Scheduled",
+        "Open",
+        "Filled",
+        "Cancelled"
+      ]
+    }
+  }
+}

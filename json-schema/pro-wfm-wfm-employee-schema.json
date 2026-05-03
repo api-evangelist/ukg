@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-schema/pro-wfm-wfm-employee-schema.json",
+  "title": "WfmEmployee",
+  "description": "Employee record in WFM system",
+  "type": "object",
+  "properties": {
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "firstName": {
+      "type": "string",
+      "description": "First name",
+      "example": "Jane"
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Last name",
+      "example": "Smith"
+    },
+    "badge": {
+      "type": "string",
+      "description": "Badge or punch number",
+      "example": "12345"
+    },
+    "homeLocationId": {
+      "type": "string",
+      "description": "Home location identifier",
+      "example": "LOC-NYC"
+    },
+    "jobCode": {
+      "type": "string",
+      "description": "Primary job code",
+      "example": "CASHIER"
+    },
+    "workRule": {
+      "type": "string",
+      "description": "Pay rule for overtime and break calculations",
+      "example": "Standard-40hr"
+    },
+    "status": {
+      "type": "string",
+      "description": "Employment status",
+      "example": "Active"
+    }
+  }
+}

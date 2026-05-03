@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ukg/refs/heads/main/json-structure/pro-hcm-employee-job-structure.json",
+  "name": "EmployeeJob",
+  "description": "Employee job assignment and classification details",
+  "type": "object",
+  "properties": {
+    "employeeId": {
+      "type": "string",
+      "description": "Employee identifier",
+      "example": "EMP001"
+    },
+    "jobCode": {
+      "type": "string",
+      "description": "Job code or position code",
+      "example": "JOB-HRANA"
+    },
+    "jobTitle": {
+      "type": "string",
+      "description": "Job title",
+      "example": "HR Analyst"
+    },
+    "departmentId": {
+      "type": "string",
+      "description": "Department identifier",
+      "example": "EMP001"
+    },
+    "positionId": {
+      "type": "string",
+      "description": "Position identifier",
+      "example": "POS-00123"
+    },
+    "flsaStatus": {
+      "type": "string",
+      "description": "FLSA classification",
+      "example": "Exempt",
+      "enum": [
+        "Exempt",
+        "Non-Exempt"
+      ]
+    },
+    "employmentType": {
+      "type": "string",
+      "description": "Employment type",
+      "example": "Full-Time",
+      "enum": [
+        "Full-Time",
+        "Part-Time",
+        "Contractor",
+        "Temporary"
+      ]
+    },
+    "effectiveDate": {
+      "type": "date",
+      "description": "Effective date of current assignment",
+      "example": "2026-01-15"
+    }
+  }
+}

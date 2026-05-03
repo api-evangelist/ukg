@@ -1,0 +1,8 @@
+{
+  "accountId": "example-value",
+  "bankName": "example-value",
+  "accountType": "Checking",
+  "depositType": "Amount",
+  "depositAmount": 1.0,
+  "priority": 1
+}
