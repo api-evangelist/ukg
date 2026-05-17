@@ -218,7 +218,7 @@ common:
     url: https://developer.ukg.com/general/docs/getting-started
   - type: Authentication
     url: https://developer.ukg.com/hcm/docs/authentication
-  - type: Signup
+  - type: SignUp
     url: https://www.ukg.com/contact-us
   - type: SpectralRules
     url: rules/ukg-spectral-rules.yml
