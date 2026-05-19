@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: UKG Pro HCM API — Personnel Actions
+  description: 'UKG Pro HCM API — Personnel Actions. 1 operations. Lead operation: UKG Pro HCM Create Personnel Change Request.
+    Self-contained Naftiko capability covering one Ukg business surface.'
+  tags:
+  - Ukg
+  - Personnel Actions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    UKG_API_KEY: UKG_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: pro-hcm-personnel-actions
+    baseUri: https://service.ultipro.com
+    description: UKG Pro HCM API — Personnel Actions business capability. Self-contained, no shared references.
+    resources:
+    - name: personnel-v2-change-requests
+      path: /personnel/v2/change-requests
+      operations:
+      - name: createpersonnelchangerequest
+        method: POST
+        description: UKG Pro HCM Create Personnel Change Request
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: basic
+      username: '{{env.UKG_USER}}'
+      password: '{{env.UKG_PASS}}'
+  exposes:
+  - type: rest
+    namespace: pro-hcm-personnel-actions-rest
+    port: 8080
+    description: REST adapter for UKG Pro HCM API — Personnel Actions. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/personnel/v2/change-requests
+      name: personnel-v2-change-requests
+      description: REST surface for personnel-v2-change-requests.
+      operations:
+      - method: POST
+        name: createpersonnelchangerequest
+        description: UKG Pro HCM Create Personnel Change Request
+        call: pro-hcm-personnel-actions.createpersonnelchangerequest
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: pro-hcm-personnel-actions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for UKG Pro HCM API — Personnel Actions. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: ukg-pro-hcm-create-personnel
+      description: UKG Pro HCM Create Personnel Change Request
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: pro-hcm-personnel-actions.createpersonnelchangerequest
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

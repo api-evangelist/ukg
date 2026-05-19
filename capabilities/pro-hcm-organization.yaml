@@ -1,0 +1,121 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: UKG Pro HCM API — Organization
+  description: 'UKG Pro HCM API — Organization. 2 operations. Lead operation: UKG Pro HCM List Departments. Self-contained
+    Naftiko capability covering one Ukg business surface.'
+  tags:
+  - Ukg
+  - Organization
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    UKG_API_KEY: UKG_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: pro-hcm-organization
+    baseUri: https://service.ultipro.com
+    description: UKG Pro HCM API — Organization business capability. Self-contained, no shared references.
+    resources:
+    - name: org-v2-departments
+      path: /org/v2/departments
+      operations:
+      - name: listdepartments
+        method: GET
+        description: UKG Pro HCM List Departments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: per_page
+          in: query
+          type: integer
+          description: Number of results per page
+    - name: org-v2-locations
+      path: /org/v2/locations
+      operations:
+      - name: listlocations
+        method: GET
+        description: UKG Pro HCM List Locations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: per_page
+          in: query
+          type: integer
+          description: Number of results per page
+    authentication:
+      type: basic
+      username: '{{env.UKG_USER}}'
+      password: '{{env.UKG_PASS}}'
+  exposes:
+  - type: rest
+    namespace: pro-hcm-organization-rest
+    port: 8080
+    description: REST adapter for UKG Pro HCM API — Organization. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/org/v2/departments
+      name: org-v2-departments
+      description: REST surface for org-v2-departments.
+      operations:
+      - method: GET
+        name: listdepartments
+        description: UKG Pro HCM List Departments
+        call: pro-hcm-organization.listdepartments
+        with:
+          per_page: rest.per_page
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/org/v2/locations
+      name: org-v2-locations
+      description: REST surface for org-v2-locations.
+      operations:
+      - method: GET
+        name: listlocations
+        description: UKG Pro HCM List Locations
+        call: pro-hcm-organization.listlocations
+        with:
+          per_page: rest.per_page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: pro-hcm-organization-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for UKG Pro HCM API — Organization. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: ukg-pro-hcm-list-departments
+      description: UKG Pro HCM List Departments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: pro-hcm-organization.listdepartments
+      with:
+        per_page: tools.per_page
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ukg-pro-hcm-list-locations
+      description: UKG Pro HCM List Locations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: pro-hcm-organization.listlocations
+      with:
+        per_page: tools.per_page
+      outputParameters:
+      - type: object
+        mapping: $.

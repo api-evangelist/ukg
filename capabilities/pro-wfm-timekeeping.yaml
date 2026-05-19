@@ -1,0 +1,190 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: UKG Pro Workforce Management API — Timekeeping
+  description: 'UKG Pro Workforce Management API — Timekeeping. 3 operations. Lead operation: UKG Pro WFM Get Employee Punches.
+    Self-contained Naftiko capability covering one Ukg business surface.'
+  tags:
+  - Ukg
+  - Timekeeping
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    UKG_API_KEY: UKG_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: pro-wfm-timekeeping
+    baseUri: https://api.ultipro.com/workforce/v1
+    description: UKG Pro Workforce Management API — Timekeeping business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-employees-employeeId-punches
+      path: /v1/employees/{employeeId}/punches
+      operations:
+      - name: getemployeepunches
+        method: GET
+        description: UKG Pro WFM Get Employee Punches
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: employeeId
+          in: path
+          type: string
+          description: Employee identifier
+          required: true
+        - name: startDate
+          in: query
+          type: string
+          description: Start date for punch retrieval
+        - name: endDate
+          in: query
+          type: string
+          description: End date for punch retrieval
+      - name: createpunch
+        method: POST
+        description: UKG Pro WFM Create Punch
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: employeeId
+          in: path
+          type: string
+          description: Employee identifier
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v1-employees-employeeId-timecards
+      path: /v1/employees/{employeeId}/timecards
+      operations:
+      - name: getemployeetimecards
+        method: GET
+        description: UKG Pro WFM Get Employee Timecards
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: employeeId
+          in: path
+          type: string
+          description: Employee identifier
+          required: true
+        - name: startDate
+          in: query
+          type: string
+          description: Start date for timecard retrieval
+          required: true
+        - name: endDate
+          in: query
+          type: string
+          description: End date for timecard retrieval
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.UKG_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: pro-wfm-timekeeping-rest
+    port: 8080
+    description: REST adapter for UKG Pro Workforce Management API — Timekeeping. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/employees/{employeeid}/punches
+      name: v1-employees-employeeid-punches
+      description: REST surface for v1-employees-employeeId-punches.
+      operations:
+      - method: GET
+        name: getemployeepunches
+        description: UKG Pro WFM Get Employee Punches
+        call: pro-wfm-timekeeping.getemployeepunches
+        with:
+          employeeId: rest.employeeId
+          startDate: rest.startDate
+          endDate: rest.endDate
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createpunch
+        description: UKG Pro WFM Create Punch
+        call: pro-wfm-timekeeping.createpunch
+        with:
+          employeeId: rest.employeeId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v1/employees/{employeeid}/timecards
+      name: v1-employees-employeeid-timecards
+      description: REST surface for v1-employees-employeeId-timecards.
+      operations:
+      - method: GET
+        name: getemployeetimecards
+        description: UKG Pro WFM Get Employee Timecards
+        call: pro-wfm-timekeeping.getemployeetimecards
+        with:
+          employeeId: rest.employeeId
+          startDate: rest.startDate
+          endDate: rest.endDate
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: pro-wfm-timekeeping-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for UKG Pro Workforce Management API — Timekeeping. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: ukg-pro-wfm-get-employee
+      description: UKG Pro WFM Get Employee Punches
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: pro-wfm-timekeeping.getemployeepunches
+      with:
+        employeeId: tools.employeeId
+        startDate: tools.startDate
+        endDate: tools.endDate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ukg-pro-wfm-create-punch
+      description: UKG Pro WFM Create Punch
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: pro-wfm-timekeeping.createpunch
+      with:
+        employeeId: tools.employeeId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: ukg-pro-wfm-get-employee-2
+      description: UKG Pro WFM Get Employee Timecards
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: pro-wfm-timekeeping.getemployeetimecards
+      with:
+        employeeId: tools.employeeId
+        startDate: tools.startDate
+        endDate: tools.endDate
+      outputParameters:
+      - type: object
+        mapping: $.

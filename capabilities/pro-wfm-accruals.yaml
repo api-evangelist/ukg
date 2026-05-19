@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: UKG Pro Workforce Management API — Accruals
+  description: 'UKG Pro Workforce Management API — Accruals. 1 operations. Lead operation: UKG Pro WFM Get Employee Accruals.
+    Self-contained Naftiko capability covering one Ukg business surface.'
+  tags:
+  - Ukg
+  - Accruals
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    UKG_API_KEY: UKG_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: pro-wfm-accruals
+    baseUri: https://api.ultipro.com/workforce/v1
+    description: UKG Pro Workforce Management API — Accruals business capability. Self-contained, no shared references.
+    resources:
+    - name: v1-employees-employeeId-accruals
+      path: /v1/employees/{employeeId}/accruals
+      operations:
+      - name: getemployeeaccruals
+        method: GET
+        description: UKG Pro WFM Get Employee Accruals
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: employeeId
+          in: path
+          type: string
+          description: Employee identifier
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.UKG_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: pro-wfm-accruals-rest
+    port: 8080
+    description: REST adapter for UKG Pro Workforce Management API — Accruals. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/v1/employees/{employeeid}/accruals
+      name: v1-employees-employeeid-accruals
+      description: REST surface for v1-employees-employeeId-accruals.
+      operations:
+      - method: GET
+        name: getemployeeaccruals
+        description: UKG Pro WFM Get Employee Accruals
+        call: pro-wfm-accruals.getemployeeaccruals
+        with:
+          employeeId: rest.employeeId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: pro-wfm-accruals-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for UKG Pro Workforce Management API — Accruals. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: ukg-pro-wfm-get-employee
+      description: UKG Pro WFM Get Employee Accruals
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: pro-wfm-accruals.getemployeeaccruals
+      with:
+        employeeId: tools.employeeId
+      outputParameters:
+      - type: object
+        mapping: $.
