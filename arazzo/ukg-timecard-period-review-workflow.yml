@@ -1,0 +1,114 @@
+arazzo: 1.0.1
+info:
+  title: UKG Pro WFM Timecard Period Review
+  summary: Resolve an employee, pull their timecards, and branch on approval status.
+  description: >-
+    Reviews an employee's timecards for a pay period in the UKG Pro Workforce
+    Management API. The workflow resolves the employee from the roster, retrieves
+    the timecards for the date range, and branches on the timecard approval
+    status. When a timecard is still open or submitted the flow pulls the
+    underlying punches so a reviewer can resolve it; when it is already approved
+    the flow ends. Every step spells out its request inline so the flow can be
+    read and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: ukgProWfmApi
+  url: ../openapi/ukg-pro-wfm-openapi.yml
+  type: openapi
+workflows:
+- workflowId: timecard-period-review
+  summary: Retrieve an employee's timecards and branch on their approval status.
+  description: >-
+    Resolves the employee, retrieves timecards for the period, and routes on the
+    returned status — pulling supporting punches when the timecard is not yet
+    approved.
+  inputs:
+    type: object
+    required:
+    - employeeId
+    - startDate
+    - endDate
+    properties:
+      employeeId:
+        type: string
+        description: The employee whose timecards are under review (e.g. EMP001).
+      startDate:
+        type: string
+        description: Start date for timecard retrieval (YYYY-MM-DD).
+      endDate:
+        type: string
+        description: End date for timecard retrieval (YYYY-MM-DD).
+  steps:
+  - stepId: resolveEmployee
+    description: >-
+      Confirm the employee is present on the WFM roster before reviewing their
+      timecards.
+    operationId: listWfmEmployees
+    parameters:
+    - name: limit
+      in: query
+      value: 1
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstEmployeeId: $response.body#/0/employeeId
+  - stepId: getTimecards
+    description: >-
+      Retrieve the timecards for the employee across the requested date range and
+      branch on the approval status of the first timecard.
+    operationId: getEmployeeTimecards
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    - name: startDate
+      in: query
+      value: $inputs.startDate
+    - name: endDate
+      in: query
+      value: $inputs.endDate
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      timecardId: $response.body#/0/timecardId
+      status: $response.body#/0/status
+      totalHours: $response.body#/0/totalHours
+      overtimeHours: $response.body#/0/overtimeHours
+    onSuccess:
+    - name: needsReview
+      type: goto
+      stepId: pullPunches
+      criteria:
+      - context: $response.body
+        condition: $[0].status != 'Approved'
+        type: jsonpath
+    - name: alreadyApproved
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $[0].status == 'Approved'
+        type: jsonpath
+  - stepId: pullPunches
+    description: >-
+      Retrieve the underlying clock punches for the period so a reviewer can
+      reconcile an open or submitted timecard before approving it.
+    operationId: getEmployeePunches
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    - name: startDate
+      in: query
+      value: $inputs.startDate
+    - name: endDate
+      in: query
+      value: $inputs.endDate
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstPunchId: $response.body#/0/punchId
+      firstPunchTime: $response.body#/0/punchTime
+  outputs:
+    timecardId: $steps.getTimecards.outputs.timecardId
+    status: $steps.getTimecards.outputs.status
+    totalHours: $steps.getTimecards.outputs.totalHours

@@ -1,0 +1,95 @@
+arazzo: 1.0.1
+info:
+  title: UKG Pro WFM Daily Attendance Reconcile
+  summary: Compare a day's scheduled shifts to actual punches for an employee.
+  description: >-
+    Reconciles an employee's scheduled shifts against their actual clock punches
+    for a single day in the UKG Pro Workforce Management API. The workflow pulls
+    the scheduled shifts for the day, retrieves the actual punches for the same
+    day, and branches on whether any punches were recorded so an attendance
+    process can flag a no-show against a scheduled shift. Every step spells out
+    its request inline so the flow can be read and executed without opening the
+    underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: ukgProWfmApi
+  url: ../openapi/ukg-pro-wfm-openapi.yml
+  type: openapi
+workflows:
+- workflowId: daily-attendance-reconcile
+  summary: Pull a day's shifts and punches and branch on whether punches exist.
+  description: >-
+    Retrieves the employee's scheduled shifts for the day, retrieves their
+    actual punches for the same day, and branches on whether any punches were
+    recorded to flag a potential no-show.
+  inputs:
+    type: object
+    required:
+    - employeeId
+    - date
+    properties:
+      employeeId:
+        type: string
+        description: The employee to reconcile attendance for (e.g. EMP001).
+      date:
+        type: string
+        description: The calendar day to reconcile (YYYY-MM-DD).
+  steps:
+  - stepId: getScheduledShifts
+    description: >-
+      Retrieve the employee's scheduled shifts for the day to establish what was
+      expected.
+    operationId: getEmployeeShifts
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    - name: startDate
+      in: query
+      value: $inputs.date
+    - name: endDate
+      in: query
+      value: $inputs.date
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      shiftId: $response.body#/0/shiftId
+      shiftStatus: $response.body#/0/status
+      shiftHours: $response.body#/0/totalHours
+  - stepId: getActualPunches
+    description: >-
+      Retrieve the actual clock punches for the same day and branch on whether
+      any punches were recorded against the scheduled shift.
+    operationId: getEmployeePunches
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    - name: startDate
+      in: query
+      value: $inputs.date
+    - name: endDate
+      in: query
+      value: $inputs.date
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstPunchId: $response.body#/0/punchId
+      firstPunchTime: $response.body#/0/punchTime
+    onSuccess:
+    - name: attended
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.length > 0
+        type: jsonpath
+    - name: noShow
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.length == 0
+        type: jsonpath
+  outputs:
+    shiftId: $steps.getScheduledShifts.outputs.shiftId
+    shiftStatus: $steps.getScheduledShifts.outputs.shiftStatus
+    firstPunchTime: $steps.getActualPunches.outputs.firstPunchTime

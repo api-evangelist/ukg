@@ -1,0 +1,88 @@
+arazzo: 1.0.1
+info:
+  title: UKG Cross-System Employee Reconcile
+  summary: Match an HCM employee record against the WFM roster for the same person.
+  description: >-
+    Reconciles a single employee across the UKG Pro HCM system of record and the
+    UKG Pro Workforce Management system. The workflow reads the authoritative HCM
+    employee record, then pulls the WFM roster filtered to the employee's home
+    location and branches on whether the WFM roster returned anyone, so an
+    integration can flag employees that exist in HCM but are missing from
+    timekeeping. Because two source descriptions are in play the steps reference
+    operations through their source so the operation is unambiguous. Every step
+    spells out its request inline so the flow can be read and executed without
+    opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: ukgProHcmApi
+  url: ../openapi/ukg-pro-hcm-openapi.yml
+  type: openapi
+- name: ukgProWfmApi
+  url: ../openapi/ukg-pro-wfm-openapi.yml
+  type: openapi
+workflows:
+- workflowId: cross-system-employee-reconcile
+  summary: Read the HCM record then confirm the employee is present in WFM.
+  description: >-
+    Reads the authoritative HCM employee record, queries the WFM roster scoped to
+    the employee's home location, and branches on whether WFM returned any
+    matching records.
+  inputs:
+    type: object
+    required:
+    - employeeId
+    properties:
+      employeeId:
+        type: string
+        description: The employee to reconcile across systems (e.g. EMP001).
+  steps:
+  - stepId: getHcmEmployee
+    description: >-
+      Read the authoritative HCM employee record including the home location used
+      to scope the WFM lookup.
+    operationPath: '{$sourceDescriptions.ukgProHcmApi.url}#/paths/~1personnel~1v2~1employees~1{employeeId}/get'
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstName: $response.body#/firstName
+      lastName: $response.body#/lastName
+      locationId: $response.body#/locationId
+      employmentStatus: $response.body#/employmentStatus
+  - stepId: queryWfmRoster
+    description: >-
+      Query the WFM roster scoped to the employee's HCM home location and branch
+      on whether any WFM records came back.
+    operationPath: '{$sourceDescriptions.ukgProWfmApi.url}#/paths/~1v1~1employees/get'
+    parameters:
+    - name: locationId
+      in: query
+      value: $steps.getHcmEmployee.outputs.locationId
+    - name: limit
+      in: query
+      value: 50
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstWfmEmployeeId: $response.body#/0/employeeId
+      firstWfmBadge: $response.body#/0/badge
+    onSuccess:
+    - name: presentInWfm
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.length > 0
+        type: jsonpath
+    - name: missingFromWfm
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.length == 0
+        type: jsonpath
+  outputs:
+    hcmLocationId: $steps.getHcmEmployee.outputs.locationId
+    employmentStatus: $steps.getHcmEmployee.outputs.employmentStatus
+    firstWfmEmployeeId: $steps.queryWfmRoster.outputs.firstWfmEmployeeId

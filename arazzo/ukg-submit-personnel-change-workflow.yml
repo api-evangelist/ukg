@@ -1,0 +1,133 @@
+arazzo: 1.0.1
+info:
+  title: UKG Pro HCM Submit Personnel Change
+  summary: Validate an employee, submit a personnel action, and branch on its status.
+  description: >-
+    Drives a personnel action through the UKG Pro HCM API. The workflow first
+    confirms the target employee exists and reads their current job assignment
+    for context, then submits a personnel change request such as a job change or
+    pay change. The submission response carries a processing status, so the flow
+    branches on whether the change is already approved or still pending review.
+    Every step spells out its request inline so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: ukgProHcmApi
+  url: ../openapi/ukg-pro-hcm-openapi.yml
+  type: openapi
+workflows:
+- workflowId: submit-personnel-change
+  summary: Submit a personnel action change request and branch on its returned status.
+  description: >-
+    Validates the employee, captures the current job for an audit trail, submits
+    the personnel change request, and routes on the returned processing status.
+  inputs:
+    type: object
+    required:
+    - employeeId
+    - actionType
+    - effectiveDate
+    properties:
+      employeeId:
+        type: string
+        description: The employee the personnel action applies to (e.g. EMP001).
+      actionType:
+        type: string
+        description: >-
+          The personnel action type, one of Job Change, Pay Change, Status
+          Change, Department Transfer, Termination, or Leave of Absence.
+      effectiveDate:
+        type: string
+        description: The effective date of the change (YYYY-MM-DD).
+      reason:
+        type: string
+        description: The reason for the change (e.g. Promotion).
+      newDepartmentId:
+        type: string
+        description: The new department identifier, for transfers.
+      newJobTitle:
+        type: string
+        description: The new job title, for job changes.
+      newPayRate:
+        type: number
+        description: The new pay rate amount, for pay changes.
+  steps:
+  - stepId: validateEmployee
+    description: >-
+      Confirm the employee exists and is in a state that can accept a personnel
+      action by reading the detailed record.
+    operationId: getEmployee
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      employmentStatus: $response.body#/employmentStatus
+      departmentId: $response.body#/departmentId
+  - stepId: captureCurrentJob
+    description: >-
+      Capture the current job assignment so the change request has a documented
+      before-state.
+    operationId: getEmployeeJobs
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      currentJobTitle: $response.body#/jobTitle
+      currentJobCode: $response.body#/jobCode
+  - stepId: submitChange
+    description: >-
+      Submit the personnel change request. The API returns a request identifier
+      and a processing status.
+    operationId: createPersonnelChangeRequest
+    requestBody:
+      contentType: application/json
+      payload:
+        employeeId: $inputs.employeeId
+        actionType: $inputs.actionType
+        effectiveDate: $inputs.effectiveDate
+        reason: $inputs.reason
+        newDepartmentId: $inputs.newDepartmentId
+        newJobTitle: $inputs.newJobTitle
+        newPayRate: $inputs.newPayRate
+    successCriteria:
+    - condition: $statusCode == 201
+    outputs:
+      requestId: $response.body#/requestId
+      status: $response.body#/status
+      submittedAt: $response.body#/submittedAt
+    onSuccess:
+    - name: alreadyApproved
+      type: goto
+      stepId: confirmApproved
+      criteria:
+      - context: $response.body
+        condition: $.status == 'Approved'
+        type: jsonpath
+    - name: stillPending
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.status == 'Pending'
+        type: jsonpath
+  - stepId: confirmApproved
+    description: >-
+      Re-read the employee record after an immediately-approved change to
+      confirm the resulting employment status.
+    operationId: getEmployee
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      employmentStatus: $response.body#/employmentStatus
+  outputs:
+    requestId: $steps.submitChange.outputs.requestId
+    status: $steps.submitChange.outputs.status

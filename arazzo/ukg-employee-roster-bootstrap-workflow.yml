@@ -1,0 +1,89 @@
+arazzo: 1.0.1
+info:
+  title: UKG Pro HCM Employee Roster Bootstrap
+  summary: Page the employee ID list, then hydrate one employee into a full record.
+  description: >-
+    Bootstraps an employee roster from the UKG Pro HCM API. The workflow pages
+    the lightweight employee identifier list to discover who is accessible to the
+    service account, then hydrates a chosen identifier into a full employee
+    record and its current job assignment. This is the canonical first pass an
+    integration runs before deeper syncs. Every step spells out its request
+    inline so the flow can be read and executed without opening the underlying
+    OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: ukgProHcmApi
+  url: ../openapi/ukg-pro-hcm-openapi.yml
+  type: openapi
+workflows:
+- workflowId: employee-roster-bootstrap
+  summary: Discover employee IDs then hydrate one into a full record and job.
+  description: >-
+    Pages the employee identifier list to discover accessible employees, then
+    hydrates the supplied identifier into a full record and current job
+    assignment.
+  inputs:
+    type: object
+    required:
+    - employeeId
+    properties:
+      employeeId:
+        type: string
+        description: The employee identifier to hydrate from the roster (e.g. EMP001).
+      perPage:
+        type: integer
+        description: Number of employee IDs to return per page.
+      page:
+        type: integer
+        description: Page number of the employee ID list to retrieve.
+  steps:
+  - stepId: listIds
+    description: >-
+      Page the lightweight employee identifier list to discover accessible
+      employees.
+    operationId: listEmployeeIds
+    parameters:
+    - name: per_page
+      in: query
+      value: $inputs.perPage
+    - name: page
+      in: query
+      value: $inputs.page
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      total: $response.body#/total
+      page: $response.body#/page
+      firstId: $response.body#/employeeIds/0
+  - stepId: hydrateEmployee
+    description: >-
+      Hydrate the supplied identifier into a full employee record.
+    operationId: getEmployee
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstName: $response.body#/firstName
+      lastName: $response.body#/lastName
+      employmentStatus: $response.body#/employmentStatus
+      departmentId: $response.body#/departmentId
+  - stepId: hydrateJob
+    description: >-
+      Pull the current job assignment to round out the hydrated record.
+    operationId: getEmployeeJobs
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobTitle: $response.body#/jobTitle
+      employmentType: $response.body#/employmentType
+  outputs:
+    total: $steps.listIds.outputs.total
+    employmentStatus: $steps.hydrateEmployee.outputs.employmentStatus
+    jobTitle: $steps.hydrateJob.outputs.jobTitle

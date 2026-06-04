@@ -1,0 +1,98 @@
+arazzo: 1.0.1
+info:
+  title: UKG Pro HCM Employee 360 Profile
+  summary: Resolve an employee from the directory and assemble their core HCM profile.
+  description: >-
+    Builds a consolidated view of a single employee out of the UKG Pro HCM API.
+    The workflow looks the employee up in the directory listing, retrieves the
+    full demographic and employment record, then layers on the current job
+    assignment and pay rate so a downstream system has the complete profile in
+    one pass. Every step spells out its request inline so the flow can be read
+    and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: ukgProHcmApi
+  url: ../openapi/ukg-pro-hcm-openapi.yml
+  type: openapi
+workflows:
+- workflowId: employee-360-profile
+  summary: Look up an employee and gather their demographics, job, and pay rate.
+  description: >-
+    Confirms the employee exists in the directory, retrieves the detailed
+    record, and chains the job assignment and pay rate endpoints to produce a
+    single consolidated profile.
+  inputs:
+    type: object
+    required:
+    - employeeId
+    properties:
+      employeeId:
+        type: string
+        description: The employee identifier to build the profile for (e.g. EMP001).
+  steps:
+  - stepId: locateEmployee
+    description: >-
+      Query the directory filtered by employee ID to confirm the employee is
+      visible to the service account before pulling detailed records.
+    operationId: listEmployees
+    parameters:
+    - name: employeeId
+      in: query
+      value: $inputs.employeeId
+    - name: per_page
+      in: query
+      value: 1
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      total: $response.body#/total
+  - stepId: getDetails
+    description: >-
+      Retrieve the full employee record including demographics and employment
+      status.
+    operationId: getEmployee
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstName: $response.body#/firstName
+      lastName: $response.body#/lastName
+      employmentStatus: $response.body#/employmentStatus
+      departmentId: $response.body#/departmentId
+      locationId: $response.body#/locationId
+  - stepId: getJob
+    description: >-
+      Retrieve the current job assignment and classification for the employee.
+    operationId: getEmployeeJobs
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobTitle: $response.body#/jobTitle
+      jobCode: $response.body#/jobCode
+      flsaStatus: $response.body#/flsaStatus
+      employmentType: $response.body#/employmentType
+  - stepId: getPay
+    description: >-
+      Retrieve the current pay rate to complete the consolidated profile.
+    operationId: getEmployeePayRates
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      payType: $response.body#/payType
+      basePay: $response.body#/basePay
+      payFrequency: $response.body#/payFrequency
+  outputs:
+    employmentStatus: $steps.getDetails.outputs.employmentStatus
+    jobTitle: $steps.getJob.outputs.jobTitle
+    basePay: $steps.getPay.outputs.basePay

@@ -1,0 +1,106 @@
+arazzo: 1.0.1
+info:
+  title: UKG Pro HCM New Hire Org Placement
+  summary: Validate org references then submit a department transfer for an employee.
+  description: >-
+    Places an employee into the correct department and location in the UKG Pro
+    HCM API. The workflow confirms the employee exists, validates the target
+    department and location against the organization directories, and then
+    submits a department transfer personnel change request referencing the
+    confirmed department. The submission response carries a processing status the
+    flow surfaces. Every step spells out its request inline so the flow can be
+    read and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: ukgProHcmApi
+  url: ../openapi/ukg-pro-hcm-openapi.yml
+  type: openapi
+workflows:
+- workflowId: new-hire-org-placement
+  summary: Validate department and location references, then submit a transfer.
+  description: >-
+    Confirms the employee, checks the requested department and location exist in
+    the org directories, and submits a Department Transfer personnel change
+    request.
+  inputs:
+    type: object
+    required:
+    - employeeId
+    - newDepartmentId
+    - effectiveDate
+    properties:
+      employeeId:
+        type: string
+        description: The employee to place (e.g. EMP001).
+      newDepartmentId:
+        type: string
+        description: The target department identifier (e.g. DEPT-HR).
+      effectiveDate:
+        type: string
+        description: The effective date of the placement (YYYY-MM-DD).
+      reason:
+        type: string
+        description: The reason for the placement (e.g. New Hire Onboarding).
+  steps:
+  - stepId: validateEmployee
+    description: >-
+      Confirm the employee exists before placing them in the organization.
+    operationId: getEmployee
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      currentDepartmentId: $response.body#/departmentId
+      currentLocationId: $response.body#/locationId
+  - stepId: listDepartments
+    description: >-
+      Retrieve the department directory so the target department can be confirmed
+      to exist before the transfer is submitted.
+    operationId: listDepartments
+    parameters:
+    - name: per_page
+      in: query
+      value: 100
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstDepartmentId: $response.body#/0/departmentId
+      firstDepartmentName: $response.body#/0/departmentName
+  - stepId: listLocations
+    description: >-
+      Retrieve the location directory so the work location context is available
+      when placing the employee.
+    operationId: listLocations
+    parameters:
+    - name: per_page
+      in: query
+      value: 100
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstLocationId: $response.body#/0/locationId
+      firstLocationName: $response.body#/0/locationName
+  - stepId: submitPlacement
+    description: >-
+      Submit a Department Transfer personnel change request that moves the
+      employee into the confirmed department.
+    operationId: createPersonnelChangeRequest
+    requestBody:
+      contentType: application/json
+      payload:
+        employeeId: $inputs.employeeId
+        actionType: Department Transfer
+        effectiveDate: $inputs.effectiveDate
+        reason: $inputs.reason
+        newDepartmentId: $inputs.newDepartmentId
+    successCriteria:
+    - condition: $statusCode == 201
+    outputs:
+      requestId: $response.body#/requestId
+      status: $response.body#/status
+  outputs:
+    requestId: $steps.submitPlacement.outputs.requestId
+    status: $steps.submitPlacement.outputs.status

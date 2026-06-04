@@ -1,0 +1,94 @@
+arazzo: 1.0.1
+info:
+  title: UKG Pro HCM Benefits Enrollment Audit
+  summary: Locate an employee and audit their active benefits elections.
+  description: >-
+    Audits a single employee's benefits enrollment in the UKG Pro HCM API. The
+    workflow resolves the employee from the directory, reads the detailed record
+    to confirm employment status, and then retrieves the active benefits
+    elections so an administrator can verify coverage. The flow branches on
+    whether the employee is active before treating the elections as in-force.
+    Every step spells out its request inline so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: ukgProHcmApi
+  url: ../openapi/ukg-pro-hcm-openapi.yml
+  type: openapi
+workflows:
+- workflowId: benefits-enrollment-audit
+  summary: Resolve an employee and pull their active benefits elections.
+  description: >-
+    Looks the employee up in the directory, confirms employment status, then
+    retrieves benefits elections, branching on whether the employee is active.
+  inputs:
+    type: object
+    required:
+    - employeeId
+    properties:
+      employeeId:
+        type: string
+        description: The employee to audit benefits for (e.g. EMP001).
+  steps:
+  - stepId: locateEmployee
+    description: >-
+      Query the directory filtered by employee ID to confirm the record is
+      visible before auditing benefits.
+    operationId: listEmployees
+    parameters:
+    - name: employeeId
+      in: query
+      value: $inputs.employeeId
+    - name: per_page
+      in: query
+      value: 1
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      total: $response.body#/total
+  - stepId: getDetails
+    description: >-
+      Read the detailed record to determine whether the employee is active and
+      therefore expected to carry in-force elections.
+    operationId: getEmployee
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      employmentStatus: $response.body#/employmentStatus
+    onSuccess:
+    - name: activeEmployee
+      type: goto
+      stepId: getElections
+      criteria:
+      - context: $response.body
+        condition: $.employmentStatus == 'Active'
+        type: jsonpath
+    - name: inactiveEmployee
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.employmentStatus != 'Active'
+        type: jsonpath
+  - stepId: getElections
+    description: >-
+      Retrieve the active benefits elections for the employee.
+    operationId: getEmployeeBenefitsElections
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      planName: $response.body#/planName
+      benefitType: $response.body#/benefitType
+      enrollmentStatus: $response.body#/enrollmentStatus
+      coverageTier: $response.body#/coverageTier
+  outputs:
+    employmentStatus: $steps.getDetails.outputs.employmentStatus
+    planName: $steps.getElections.outputs.planName
+    enrollmentStatus: $steps.getElections.outputs.enrollmentStatus

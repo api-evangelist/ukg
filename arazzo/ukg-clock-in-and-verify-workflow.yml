@@ -1,0 +1,105 @@
+arazzo: 1.0.1
+info:
+  title: UKG Pro WFM Clock In and Verify
+  summary: Resolve a WFM employee, submit a clock punch, and verify it landed.
+  description: >-
+    Records a clock punch for an employee in the UKG Pro Workforce Management
+    API and confirms it was captured. The workflow resolves the employee from
+    the WFM roster, submits the punch with its timestamp and type, and then reads
+    back the punch records for the day to verify the new punch is present. Every
+    step spells out its request inline so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: ukgProWfmApi
+  url: ../openapi/ukg-pro-wfm-openapi.yml
+  type: openapi
+workflows:
+- workflowId: clock-in-and-verify
+  summary: Submit a clock punch for an employee and read back the punch list.
+  description: >-
+    Confirms the employee is on the WFM roster, submits the punch, then retrieves
+    the punch records for the day to verify the punch was recorded.
+  inputs:
+    type: object
+    required:
+    - employeeId
+    - punchTime
+    - punchType
+    properties:
+      employeeId:
+        type: string
+        description: The employee submitting the punch (e.g. EMP001).
+      punchTime:
+        type: string
+        description: The punch timestamp in ISO 8601 (e.g. 2026-01-15T09:00:00Z).
+      punchType:
+        type: string
+        description: The punch type, one of In, Out, or Transfer.
+      locationId:
+        type: string
+        description: The location identifier where the punch occurred.
+      jobCode:
+        type: string
+        description: The job code to associate with the punch.
+      punchDate:
+        type: string
+        description: The calendar date of the punch for verification (YYYY-MM-DD).
+  steps:
+  - stepId: resolveEmployee
+    description: >-
+      Confirm the employee is present on the WFM roster before submitting a
+      punch on their behalf.
+    operationId: listWfmEmployees
+    parameters:
+    - name: limit
+      in: query
+      value: 1
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstEmployeeId: $response.body#/0/employeeId
+  - stepId: submitPunch
+    description: >-
+      Submit the clock punch for the employee with the supplied timestamp and
+      type.
+    operationId: createPunch
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    requestBody:
+      contentType: application/json
+      payload:
+        punchTime: $inputs.punchTime
+        punchType: $inputs.punchType
+        locationId: $inputs.locationId
+        jobCode: $inputs.jobCode
+    successCriteria:
+    - condition: $statusCode == 201
+    outputs:
+      punchId: $response.body#/punchId
+      recordedPunchType: $response.body#/punchType
+  - stepId: verifyPunch
+    description: >-
+      Read back the punch records for the day to confirm the submitted punch was
+      captured.
+    operationId: getEmployeePunches
+    parameters:
+    - name: employeeId
+      in: path
+      value: $inputs.employeeId
+    - name: startDate
+      in: query
+      value: $inputs.punchDate
+    - name: endDate
+      in: query
+      value: $inputs.punchDate
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      firstPunchId: $response.body#/0/punchId
+      firstPunchType: $response.body#/0/punchType
+  outputs:
+    punchId: $steps.submitPunch.outputs.punchId
+    recordedPunchType: $steps.submitPunch.outputs.recordedPunchType
