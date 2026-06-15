@@ -1,0 +1,245 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UKG Pro Workforce Management API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro WFM List Employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultipro.com/workforce/v1/v1/employees",
+            "params": [
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query",
+                "description": "Maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "0",
+                "type": "query",
+                "description": "Number of records to skip"
+              },
+              {
+                "name": "locationId",
+                "value": "LOC-NYC",
+                "type": "query",
+                "description": "Filter by work location"
+              }
+            ]
+          },
+          "docs": "Retrieve employee records from the WFM system including workforce attributes."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Timekeeping",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro WFM Get Employee Timecards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultipro.com/workforce/v1/v1/employees/:employeeId/timecards",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              },
+              {
+                "name": "startDate",
+                "value": "2026-01-01",
+                "type": "query",
+                "description": "Start date for timecard retrieval"
+              },
+              {
+                "name": "endDate",
+                "value": "2026-01-14",
+                "type": "query",
+                "description": "End date for timecard retrieval"
+              }
+            ]
+          },
+          "docs": "Retrieve timecard records for an employee within a date range."
+        },
+        {
+          "info": {
+            "name": "UKG Pro WFM Get Employee Punches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultipro.com/workforce/v1/v1/employees/:employeeId/punches",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              },
+              {
+                "name": "startDate",
+                "value": "2026-01-01",
+                "type": "query",
+                "description": "Start date for punch retrieval"
+              },
+              {
+                "name": "endDate",
+                "value": "2026-01-14",
+                "type": "query",
+                "description": "End date for punch retrieval"
+              }
+            ]
+          },
+          "docs": "Retrieve clock punch records for an employee."
+        },
+        {
+          "info": {
+            "name": "UKG Pro WFM Create Punch",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.ultipro.com/workforce/v1/v1/employees/:employeeId/punches",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit a clock punch for an employee (in, out, or transfer)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Accruals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro WFM Get Employee Accruals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultipro.com/workforce/v1/v1/employees/:employeeId/accruals",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve accrual balances for an employee including vacation, sick, and PTO."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Scheduling",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro WFM List Schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultipro.com/workforce/v1/v1/schedules",
+            "params": [
+              {
+                "name": "locationId",
+                "value": "LOC-NYC",
+                "type": "query",
+                "description": "Location to retrieve schedules for"
+              },
+              {
+                "name": "startDate",
+                "value": "2026-01-01",
+                "type": "query",
+                "description": "Start date for schedule retrieval"
+              },
+              {
+                "name": "endDate",
+                "value": "2026-01-07",
+                "type": "query",
+                "description": "End date for schedule retrieval"
+              }
+            ]
+          },
+          "docs": "Retrieve employee schedules for a location and date range."
+        },
+        {
+          "info": {
+            "name": "UKG Pro WFM Get Employee Shifts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.ultipro.com/workforce/v1/v1/employees/:employeeId/shifts",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              },
+              {
+                "name": "startDate",
+                "value": "2026-01-01",
+                "type": "query",
+                "description": "Start date"
+              },
+              {
+                "name": "endDate",
+                "value": "2026-01-14",
+                "type": "query",
+                "description": "End date"
+              }
+            ]
+          },
+          "docs": "Retrieve scheduled shifts for a specific employee."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

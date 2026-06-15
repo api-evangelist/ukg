@@ -1,0 +1,2032 @@
+{
+  "info": {
+    "_postman_id": "a1b0b2d8-9043-4f6a-a138-0a249c3bbf7f",
+    "name": "UKG Pro HCM API",
+    "description": "The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.\n\nContact Support:\n Name: UKG Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:19:25.000Z",
+    "updatedAt": "2026-06-05T15:19:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a1b0b2d8-9043-4f6a-a138-0a249c3bbf7f"
+  },
+  "item": [
+    {
+      "name": "personnel",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "employee-ids",
+              "item": [
+                {
+                  "name": "UKG Pro HCM List Employee IDs",
+                  "id": "91e737cb-bf2e-4efa-a2a7-39a121db0652",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/personnel/v2/employee-ids?per_page=<integer>&page=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "personnel",
+                        "v2",
+                        "employee-ids"
+                      ],
+                      "query": [
+                        {
+                          "description": "Number of results per page",
+                          "key": "per_page",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Page number",
+                          "key": "page",
+                          "value": "<integer>"
+                        }
+                      ]
+                    },
+                    "description": "Retrieve a list of all employee identifiers accessible to the authenticated service account."
+                  },
+                  "response": [
+                    {
+                      "id": "0e8add74-099d-4f43-942b-d2e686540a5b",
+                      "name": "Successful response with list of employee IDs",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/employee-ids?per_page=<integer>&page=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "employee-ids"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Page number",
+                              "key": "page",
+                              "value": "<integer>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"employeeIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"total\": \"<integer>\",\n  \"page\": \"<integer>\"\n}",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-0e8add74-099d-4f43-942b-d2e686540a5b"
+                    },
+                    {
+                      "id": "4b9b5ddb-7a3c-4074-81a4-79d1c7edf2e1",
+                      "name": "Unauthorized - invalid credentials",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/employee-ids?per_page=<integer>&page=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "employee-ids"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Page number",
+                              "key": "page",
+                              "value": "<integer>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-4b9b5ddb-7a3c-4074-81a4-79d1c7edf2e1"
+                    },
+                    {
+                      "id": "b429600b-805b-403c-b5f1-c113085cef97",
+                      "name": "Forbidden - insufficient permissions",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/employee-ids?per_page=<integer>&page=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "employee-ids"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Page number",
+                              "key": "page",
+                              "value": "<integer>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-b429600b-805b-403c-b5f1-c113085cef97"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:19:26.000Z",
+                  "updatedAt": "2026-06-05T15:19:26.000Z",
+                  "uid": "35240-91e737cb-bf2e-4efa-a2a7-39a121db0652"
+                }
+              ],
+              "id": "7b3c7a5b-7ea1-479d-bb1e-2603b740799b",
+              "createdAt": "2026-06-05T15:19:26.000Z",
+              "updatedAt": "2026-06-05T15:19:26.000Z",
+              "uid": "35240-7b3c7a5b-7ea1-479d-bb1e-2603b740799b"
+            },
+            {
+              "name": "employees",
+              "item": [
+                {
+                  "name": "{employeeId}",
+                  "item": [
+                    {
+                      "name": "jobs",
+                      "item": [
+                        {
+                          "name": "UKG Pro HCM Get Employee Jobs",
+                          "id": "566805ad-97c9-4dfd-a1b1-aa373a14378f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/jobs",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "personnel",
+                                "v2",
+                                "employees",
+                                ":employeeId",
+                                "jobs"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "a3b24087-4f53-4e26-9545-58d12fd62810",
+                                  "key": "employeeId",
+                                  "value": "<string>",
+                                  "description": "(Required) Employee identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve job history and current job assignment for an employee."
+                          },
+                          "response": [
+                            {
+                              "id": "35c631e8-915f-4953-9e3a-c70b2996c8ed",
+                              "name": "Employee job assignment details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/jobs",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "jobs"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"employeeId\": \"<string>\",\n  \"jobCode\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"departmentId\": \"<string>\",\n  \"positionId\": \"<string>\",\n  \"flsaStatus\": \"Non-Exempt\",\n  \"employmentType\": \"Full-Time\",\n  \"effectiveDate\": \"<date>\"\n}",
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-35c631e8-915f-4953-9e3a-c70b2996c8ed"
+                            },
+                            {
+                              "id": "cdbcb833-9e57-4a59-8afe-2f798bd8277f",
+                              "name": "Unauthorized",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/jobs",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "jobs"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-cdbcb833-9e57-4a59-8afe-2f798bd8277f"
+                            },
+                            {
+                              "id": "1d53d8d3-0ba4-49fe-94c3-4d2c2add7eee",
+                              "name": "Employee not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/jobs",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "jobs"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-1d53d8d3-0ba4-49fe-94c3-4d2c2add7eee"
+                            }
+                          ],
+                          "createdAt": "2026-06-05T15:19:26.000Z",
+                          "updatedAt": "2026-06-05T15:19:26.000Z",
+                          "uid": "35240-566805ad-97c9-4dfd-a1b1-aa373a14378f"
+                        }
+                      ],
+                      "id": "ce0b72b8-2bf3-4067-a31b-acd2e2c988a9",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-ce0b72b8-2bf3-4067-a31b-acd2e2c988a9"
+                    },
+                    {
+                      "name": "pay-rates",
+                      "item": [
+                        {
+                          "name": "UKG Pro HCM Get Employee Pay Rates",
+                          "id": "1ad94dca-affe-4877-9577-beca973da1e7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/pay-rates",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "personnel",
+                                "v2",
+                                "employees",
+                                ":employeeId",
+                                "pay-rates"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c4f6272d-faaf-4a67-a851-fa84182c9407",
+                                  "key": "employeeId",
+                                  "value": "<string>",
+                                  "description": "(Required) Employee identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve current and historical pay rates for an employee."
+                          },
+                          "response": [
+                            {
+                              "id": "956c971b-e891-4bf7-819e-ad71993e062b",
+                              "name": "Pay rate information",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/pay-rates",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "pay-rates"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"employeeId\": \"<string>\",\n  \"payType\": \"Salary\",\n  \"basePay\": \"<double>\",\n  \"payCurrency\": \"<string>\",\n  \"payFrequency\": \"Weekly\",\n  \"effectiveDate\": \"<date>\"\n}",
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-956c971b-e891-4bf7-819e-ad71993e062b"
+                            },
+                            {
+                              "id": "a77e805c-dc95-4c3d-9f5f-3c5601eacf39",
+                              "name": "Unauthorized",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/pay-rates",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "pay-rates"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-a77e805c-dc95-4c3d-9f5f-3c5601eacf39"
+                            },
+                            {
+                              "id": "7ea7f0fa-4864-4213-b0fd-73563c41fc27",
+                              "name": "Employee not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/pay-rates",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "pay-rates"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-7ea7f0fa-4864-4213-b0fd-73563c41fc27"
+                            }
+                          ],
+                          "createdAt": "2026-06-05T15:19:26.000Z",
+                          "updatedAt": "2026-06-05T15:19:26.000Z",
+                          "uid": "35240-1ad94dca-affe-4877-9577-beca973da1e7"
+                        }
+                      ],
+                      "id": "2e8c547a-7ff2-4a42-bec4-55116887a3ba",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-2e8c547a-7ff2-4a42-bec4-55116887a3ba"
+                    },
+                    {
+                      "name": "benefits-elections",
+                      "item": [
+                        {
+                          "name": "UKG Pro HCM Get Employee Benefits Elections",
+                          "id": "dc93b6f3-b96f-40ac-bdbd-fc4230bfbbfd",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/benefits-elections",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "personnel",
+                                "v2",
+                                "employees",
+                                ":employeeId",
+                                "benefits-elections"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "55e5e75e-9473-4c66-a277-0f9780a85727",
+                                  "key": "employeeId",
+                                  "value": "<string>",
+                                  "description": "(Required) Employee identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve active benefits elections for a specific employee."
+                          },
+                          "response": [
+                            {
+                              "id": "6799540b-e9f0-45ce-b866-3051a2186e8c",
+                              "name": "Benefits enrollment data",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/benefits-elections",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "benefits-elections"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"employeeId\": \"<string>\",\n  \"planId\": \"<string>\",\n  \"planName\": \"<string>\",\n  \"benefitType\": \"Dental\",\n  \"enrollmentStatus\": \"Terminated\",\n  \"coverageTier\": \"<string>\",\n  \"employeeContribution\": \"<double>\",\n  \"effectiveDate\": \"<date>\"\n}",
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-6799540b-e9f0-45ce-b866-3051a2186e8c"
+                            },
+                            {
+                              "id": "90d9022a-1689-4e3b-839e-8d07776ca3ea",
+                              "name": "Unauthorized",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/benefits-elections",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "benefits-elections"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-90d9022a-1689-4e3b-839e-8d07776ca3ea"
+                            }
+                          ],
+                          "createdAt": "2026-06-05T15:19:26.000Z",
+                          "updatedAt": "2026-06-05T15:19:26.000Z",
+                          "uid": "35240-dc93b6f3-b96f-40ac-bdbd-fc4230bfbbfd"
+                        }
+                      ],
+                      "id": "1f66dd28-b235-4ac1-a14e-311b84af15b2",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-1f66dd28-b235-4ac1-a14e-311b84af15b2"
+                    },
+                    {
+                      "name": "direct-deposits",
+                      "item": [
+                        {
+                          "name": "UKG Pro HCM Get Employee Direct Deposits",
+                          "id": "4ce3d134-0318-4735-a3bd-6fe7466c81e9",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/direct-deposits",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "personnel",
+                                "v2",
+                                "employees",
+                                ":employeeId",
+                                "direct-deposits"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "9e8bd724-102c-4424-a1d4-6744623b539e",
+                                  "key": "employeeId",
+                                  "value": "<string>",
+                                  "description": "(Required) Employee identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve direct deposit banking information for an employee."
+                          },
+                          "response": [
+                            {
+                              "id": "1caf952f-be46-496f-87a8-d8dbe5861e1b",
+                              "name": "Direct deposit accounts",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/direct-deposits",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "direct-deposits"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "[\n  {\n    \"accountId\": \"<string>\",\n    \"bankName\": \"<string>\",\n    \"accountType\": \"Savings\",\n    \"depositType\": \"Remainder\",\n    \"depositAmount\": \"<double>\",\n    \"priority\": \"<integer>\"\n  },\n  {\n    \"accountId\": \"<string>\",\n    \"bankName\": \"<string>\",\n    \"accountType\": \"Savings\",\n    \"depositType\": \"Amount\",\n    \"depositAmount\": \"<double>\",\n    \"priority\": \"<integer>\"\n  }\n]",
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-1caf952f-be46-496f-87a8-d8dbe5861e1b"
+                            },
+                            {
+                              "id": "31d43032-4157-4d67-96e3-f453df6e9325",
+                              "name": "Unauthorized",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: basic",
+                                    "key": "Authorization",
+                                    "value": "Basic <credentials>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId/direct-deposits",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "personnel",
+                                    "v2",
+                                    "employees",
+                                    ":employeeId",
+                                    "direct-deposits"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "employeeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-06-05T15:19:26.000Z",
+                              "updatedAt": "2026-06-05T15:19:26.000Z",
+                              "uid": "35240-31d43032-4157-4d67-96e3-f453df6e9325"
+                            }
+                          ],
+                          "createdAt": "2026-06-05T15:19:26.000Z",
+                          "updatedAt": "2026-06-05T15:19:26.000Z",
+                          "uid": "35240-4ce3d134-0318-4735-a3bd-6fe7466c81e9"
+                        }
+                      ],
+                      "id": "71bd5a71-c892-4054-afcd-9d29f65ebf35",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-71bd5a71-c892-4054-afcd-9d29f65ebf35"
+                    },
+                    {
+                      "name": "UKG Pro HCM Get Employee",
+                      "id": "c944e66e-af72-4ec2-9d2d-dbec21ff0714",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "employees",
+                            ":employeeId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "ebc94ca3-8e31-47b2-9990-982a12af9f9b",
+                              "key": "employeeId",
+                              "value": "<string>",
+                              "description": "(Required) Employee identifier"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve detailed information for a specific employee."
+                      },
+                      "response": [
+                        {
+                          "id": "4a88a81a-46f2-4eed-8928-4ddf266e3342",
+                          "name": "Employee details",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "personnel",
+                                "v2",
+                                "employees",
+                                ":employeeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"employeeId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<email>\",\n  \"employmentStatus\": \"Inactive\",\n  \"hireDate\": \"<date>\",\n  \"departmentId\": \"<string>\",\n  \"locationId\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"managerId\": \"<string>\"\n}",
+                          "createdAt": "2026-06-05T15:19:26.000Z",
+                          "updatedAt": "2026-06-05T15:19:26.000Z",
+                          "uid": "35240-4a88a81a-46f2-4eed-8928-4ddf266e3342"
+                        },
+                        {
+                          "id": "eda2dcec-bc67-423e-9a5a-2f2eec9958a6",
+                          "name": "Unauthorized",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "personnel",
+                                "v2",
+                                "employees",
+                                ":employeeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:26.000Z",
+                          "updatedAt": "2026-06-05T15:19:26.000Z",
+                          "uid": "35240-eda2dcec-bc67-423e-9a5a-2f2eec9958a6"
+                        },
+                        {
+                          "id": "d237f9d6-ba31-49c3-a950-6cc24ded1f2c",
+                          "name": "Employee not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: basic",
+                                "key": "Authorization",
+                                "value": "Basic <credentials>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/personnel/v2/employees/:employeeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "personnel",
+                                "v2",
+                                "employees",
+                                ":employeeId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:26.000Z",
+                          "updatedAt": "2026-06-05T15:19:26.000Z",
+                          "uid": "35240-d237f9d6-ba31-49c3-a950-6cc24ded1f2c"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-c944e66e-af72-4ec2-9d2d-dbec21ff0714"
+                    }
+                  ],
+                  "id": "b5024f78-dac9-490d-a4aa-db7d70583102",
+                  "createdAt": "2026-06-05T15:19:26.000Z",
+                  "updatedAt": "2026-06-05T15:19:26.000Z",
+                  "uid": "35240-b5024f78-dac9-490d-a4aa-db7d70583102"
+                },
+                {
+                  "name": "UKG Pro HCM List Employees",
+                  "id": "0f265c7e-0514-47bf-8387-21907e681c96",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/personnel/v2/employees?per_page=<integer>&page=<integer>&employeeId=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "personnel",
+                        "v2",
+                        "employees"
+                      ],
+                      "query": [
+                        {
+                          "description": "Number of results per page",
+                          "key": "per_page",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Page number for pagination",
+                          "key": "page",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Filter by specific employee ID",
+                          "key": "employeeId",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Retrieve employee records with demographic and employment information."
+                  },
+                  "response": [
+                    {
+                      "id": "aff0349f-b0aa-4630-ae53-e108eb68927b",
+                      "name": "List of employee records",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/employees?per_page=<integer>&page=<integer>&employeeId=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "employees"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Page number for pagination",
+                              "key": "page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Filter by specific employee ID",
+                              "key": "employeeId",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"employees\": [\n    {\n      \"employeeId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"email\": \"<email>\",\n      \"employmentStatus\": \"Terminated\",\n      \"hireDate\": \"<date>\",\n      \"departmentId\": \"<string>\",\n      \"locationId\": \"<string>\",\n      \"jobTitle\": \"<string>\",\n      \"managerId\": \"<string>\"\n    },\n    {\n      \"employeeId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"email\": \"<email>\",\n      \"employmentStatus\": \"Inactive\",\n      \"hireDate\": \"<date>\",\n      \"departmentId\": \"<string>\",\n      \"locationId\": \"<string>\",\n      \"jobTitle\": \"<string>\",\n      \"managerId\": \"<string>\"\n    }\n  ],\n  \"total\": \"<integer>\",\n  \"page\": \"<integer>\"\n}",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-aff0349f-b0aa-4630-ae53-e108eb68927b"
+                    },
+                    {
+                      "id": "d8d7ac43-e3aa-4f53-b3d4-5411d3d4cd1e",
+                      "name": "Unauthorized",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/employees?per_page=<integer>&page=<integer>&employeeId=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "employees"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Page number for pagination",
+                              "key": "page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Filter by specific employee ID",
+                              "key": "employeeId",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-d8d7ac43-e3aa-4f53-b3d4-5411d3d4cd1e"
+                    },
+                    {
+                      "id": "4e42380f-33d9-487d-9f6c-449dd8c10368",
+                      "name": "Forbidden",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/employees?per_page=<integer>&page=<integer>&employeeId=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "employees"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Page number for pagination",
+                              "key": "page",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Filter by specific employee ID",
+                              "key": "employeeId",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-4e42380f-33d9-487d-9f6c-449dd8c10368"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:19:26.000Z",
+                  "updatedAt": "2026-06-05T15:19:26.000Z",
+                  "uid": "35240-0f265c7e-0514-47bf-8387-21907e681c96"
+                }
+              ],
+              "id": "11b14707-948b-4ffe-9920-fa023d5b2e93",
+              "createdAt": "2026-06-05T15:19:26.000Z",
+              "updatedAt": "2026-06-05T15:19:26.000Z",
+              "uid": "35240-11b14707-948b-4ffe-9920-fa023d5b2e93"
+            },
+            {
+              "name": "change-requests",
+              "item": [
+                {
+                  "name": "UKG Pro HCM Create Personnel Change Request",
+                  "id": "c66177c6-3ef6-49de-9f27-78d6544103f0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"employeeId\": \"<string>\",\n  \"actionType\": \"Pay Change\",\n  \"effectiveDate\": \"<date>\",\n  \"reason\": \"<string>\",\n  \"newDepartmentId\": \"<string>\",\n  \"newJobTitle\": \"<string>\",\n  \"newPayRate\": \"<double>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/personnel/v2/change-requests",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "personnel",
+                        "v2",
+                        "change-requests"
+                      ]
+                    },
+                    "description": "Submit a personnel action change request such as a job change, status change, or compensation adjustment."
+                  },
+                  "response": [
+                    {
+                      "id": "519641e4-b68a-49fa-9437-09fcea2009af",
+                      "name": "Change request created",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"employeeId\": \"<string>\",\n  \"actionType\": \"Pay Change\",\n  \"effectiveDate\": \"<date>\",\n  \"reason\": \"<string>\",\n  \"newDepartmentId\": \"<string>\",\n  \"newJobTitle\": \"<string>\",\n  \"newPayRate\": \"<double>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/change-requests",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "change-requests"
+                          ]
+                        }
+                      },
+                      "status": "Created",
+                      "code": 201,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"requestId\": \"<string>\",\n  \"status\": \"Pending\",\n  \"submittedAt\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-519641e4-b68a-49fa-9437-09fcea2009af"
+                    },
+                    {
+                      "id": "de440b8c-8b44-40b9-9c91-a4269bd1519e",
+                      "name": "Invalid request",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"employeeId\": \"<string>\",\n  \"actionType\": \"Pay Change\",\n  \"effectiveDate\": \"<date>\",\n  \"reason\": \"<string>\",\n  \"newDepartmentId\": \"<string>\",\n  \"newJobTitle\": \"<string>\",\n  \"newPayRate\": \"<double>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/change-requests",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "change-requests"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-de440b8c-8b44-40b9-9c91-a4269bd1519e"
+                    },
+                    {
+                      "id": "503a4456-57cc-4a85-971f-8f6f8f345cd8",
+                      "name": "Unauthorized",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"employeeId\": \"<string>\",\n  \"actionType\": \"Pay Change\",\n  \"effectiveDate\": \"<date>\",\n  \"reason\": \"<string>\",\n  \"newDepartmentId\": \"<string>\",\n  \"newJobTitle\": \"<string>\",\n  \"newPayRate\": \"<double>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/personnel/v2/change-requests",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "personnel",
+                            "v2",
+                            "change-requests"
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-503a4456-57cc-4a85-971f-8f6f8f345cd8"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:19:26.000Z",
+                  "updatedAt": "2026-06-05T15:19:26.000Z",
+                  "uid": "35240-c66177c6-3ef6-49de-9f27-78d6544103f0"
+                }
+              ],
+              "id": "b7fbd0c1-fc82-412c-9142-bfb07b4243a3",
+              "createdAt": "2026-06-05T15:19:26.000Z",
+              "updatedAt": "2026-06-05T15:19:26.000Z",
+              "uid": "35240-b7fbd0c1-fc82-412c-9142-bfb07b4243a3"
+            }
+          ],
+          "id": "6f5b5465-4286-4ba2-b593-4eeed457fe0e",
+          "createdAt": "2026-06-05T15:19:26.000Z",
+          "updatedAt": "2026-06-05T15:19:26.000Z",
+          "uid": "35240-6f5b5465-4286-4ba2-b593-4eeed457fe0e"
+        }
+      ],
+      "id": "78324cb9-6da5-4240-9c26-42aa4ec13caa",
+      "createdAt": "2026-06-05T15:19:26.000Z",
+      "updatedAt": "2026-06-05T15:19:26.000Z",
+      "uid": "35240-78324cb9-6da5-4240-9c26-42aa4ec13caa"
+    },
+    {
+      "name": "org",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "departments",
+              "item": [
+                {
+                  "name": "UKG Pro HCM List Departments",
+                  "id": "d40e7566-9000-483b-854c-9e6c2c941b74",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/org/v2/departments?per_page=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "org",
+                        "v2",
+                        "departments"
+                      ],
+                      "query": [
+                        {
+                          "description": "Number of results per page",
+                          "key": "per_page",
+                          "value": "<integer>"
+                        }
+                      ]
+                    },
+                    "description": "Retrieve a list of all departments in the organization."
+                  },
+                  "response": [
+                    {
+                      "id": "5d5c6424-de34-47c0-98ef-6c29ca03c447",
+                      "name": "List of departments",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/org/v2/departments?per_page=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "org",
+                            "v2",
+                            "departments"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"departmentId\": \"<string>\",\n    \"departmentName\": \"<string>\",\n    \"parentDepartmentId\": \"<string>\",\n    \"managerId\": \"<string>\",\n    \"costCenterId\": \"<string>\"\n  },\n  {\n    \"departmentId\": \"<string>\",\n    \"departmentName\": \"<string>\",\n    \"parentDepartmentId\": \"<string>\",\n    \"managerId\": \"<string>\",\n    \"costCenterId\": \"<string>\"\n  }\n]",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-5d5c6424-de34-47c0-98ef-6c29ca03c447"
+                    },
+                    {
+                      "id": "4551dd38-ac35-4bea-ac45-dc58e3a31b6b",
+                      "name": "Unauthorized",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/org/v2/departments?per_page=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "org",
+                            "v2",
+                            "departments"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-4551dd38-ac35-4bea-ac45-dc58e3a31b6b"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:19:26.000Z",
+                  "updatedAt": "2026-06-05T15:19:26.000Z",
+                  "uid": "35240-d40e7566-9000-483b-854c-9e6c2c941b74"
+                }
+              ],
+              "id": "a9f4c274-d1e4-448c-b814-f3687130e7da",
+              "createdAt": "2026-06-05T15:19:26.000Z",
+              "updatedAt": "2026-06-05T15:19:26.000Z",
+              "uid": "35240-a9f4c274-d1e4-448c-b814-f3687130e7da"
+            },
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "UKG Pro HCM List Locations",
+                  "id": "31fe4498-d8ff-4ee9-b33f-7551ca906c78",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/org/v2/locations?per_page=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "org",
+                        "v2",
+                        "locations"
+                      ],
+                      "query": [
+                        {
+                          "description": "Number of results per page",
+                          "key": "per_page",
+                          "value": "<integer>"
+                        }
+                      ]
+                    },
+                    "description": "Retrieve a list of all work locations in the organization."
+                  },
+                  "response": [
+                    {
+                      "id": "8f1ccff1-3061-4204-9588-d45390b2010e",
+                      "name": "List of locations",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/org/v2/locations?per_page=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "org",
+                            "v2",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"locationId\": \"<string>\",\n    \"locationName\": \"<string>\",\n    \"address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"stateProvince\": \"<string>\",\n    \"country\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  {\n    \"locationId\": \"<string>\",\n    \"locationName\": \"<string>\",\n    \"address\": \"<string>\",\n    \"city\": \"<string>\",\n    \"stateProvince\": \"<string>\",\n    \"country\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  }\n]",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-8f1ccff1-3061-4204-9588-d45390b2010e"
+                    },
+                    {
+                      "id": "4de86b43-3fff-4482-9168-dde28a67fe2b",
+                      "name": "Unauthorized",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/org/v2/locations?per_page=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "org",
+                            "v2",
+                            "locations"
+                          ],
+                          "query": [
+                            {
+                              "description": "Number of results per page",
+                              "key": "per_page",
+                              "value": "<integer>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-4de86b43-3fff-4482-9168-dde28a67fe2b"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:19:26.000Z",
+                  "updatedAt": "2026-06-05T15:19:26.000Z",
+                  "uid": "35240-31fe4498-d8ff-4ee9-b33f-7551ca906c78"
+                }
+              ],
+              "id": "81315eb5-f3d1-41c9-9133-c5d5a005265a",
+              "createdAt": "2026-06-05T15:19:26.000Z",
+              "updatedAt": "2026-06-05T15:19:26.000Z",
+              "uid": "35240-81315eb5-f3d1-41c9-9133-c5d5a005265a"
+            }
+          ],
+          "id": "db43407b-bbc9-445d-8b87-9fa4c4b7c7f3",
+          "createdAt": "2026-06-05T15:19:26.000Z",
+          "updatedAt": "2026-06-05T15:19:26.000Z",
+          "uid": "35240-db43407b-bbc9-445d-8b87-9fa4c4b7c7f3"
+        }
+      ],
+      "id": "d93dad15-86af-4aae-91c2-bb4ba3cdf104",
+      "createdAt": "2026-06-05T15:19:26.000Z",
+      "updatedAt": "2026-06-05T15:19:26.000Z",
+      "uid": "35240-d93dad15-86af-4aae-91c2-bb4ba3cdf104"
+    },
+    {
+      "name": "payroll",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "pay-statements",
+              "item": [
+                {
+                  "name": "UKG Pro HCM List Pay Statements",
+                  "id": "5acba602-d02d-4d2e-a560-fb2e038a5bd6",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/payroll/v1/pay-statements?employeeId=<string>&startDate=<date>&endDate=<date>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "payroll",
+                        "v1",
+                        "pay-statements"
+                      ],
+                      "query": [
+                        {
+                          "description": "Filter by employee ID",
+                          "key": "employeeId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Start date for pay statement range",
+                          "key": "startDate",
+                          "value": "<date>"
+                        },
+                        {
+                          "description": "End date for pay statement range",
+                          "key": "endDate",
+                          "value": "<date>"
+                        }
+                      ]
+                    },
+                    "description": "Retrieve pay statement history for employees."
+                  },
+                  "response": [
+                    {
+                      "id": "d867fc10-5214-4240-9f79-0d6859712332",
+                      "name": "List of pay statements",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/payroll/v1/pay-statements?employeeId=<string>&startDate=<date>&endDate=<date>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "payroll",
+                            "v1",
+                            "pay-statements"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filter by employee ID",
+                              "key": "employeeId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Start date for pay statement range",
+                              "key": "startDate",
+                              "value": "<date>"
+                            },
+                            {
+                              "description": "End date for pay statement range",
+                              "key": "endDate",
+                              "value": "<date>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"statementId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"payPeriodStart\": \"<date>\",\n    \"payPeriodEnd\": \"<date>\",\n    \"payDate\": \"<date>\",\n    \"grossPay\": \"<double>\",\n    \"netPay\": \"<double>\",\n    \"federalTaxWithheld\": \"<double>\",\n    \"stateTaxWithheld\": \"<double>\",\n    \"socialSecurityTax\": \"<double>\",\n    \"medicareTax\": \"<double>\",\n    \"currency\": \"<string>\"\n  },\n  {\n    \"statementId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"payPeriodStart\": \"<date>\",\n    \"payPeriodEnd\": \"<date>\",\n    \"payDate\": \"<date>\",\n    \"grossPay\": \"<double>\",\n    \"netPay\": \"<double>\",\n    \"federalTaxWithheld\": \"<double>\",\n    \"stateTaxWithheld\": \"<double>\",\n    \"socialSecurityTax\": \"<double>\",\n    \"medicareTax\": \"<double>\",\n    \"currency\": \"<string>\"\n  }\n]",
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-d867fc10-5214-4240-9f79-0d6859712332"
+                    },
+                    {
+                      "id": "98f7ed56-145d-4aea-b759-07e42c304cb5",
+                      "name": "Unauthorized",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: basic",
+                            "key": "Authorization",
+                            "value": "Basic <credentials>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/payroll/v1/pay-statements?employeeId=<string>&startDate=<date>&endDate=<date>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "payroll",
+                            "v1",
+                            "pay-statements"
+                          ],
+                          "query": [
+                            {
+                              "description": "Filter by employee ID",
+                              "key": "employeeId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Start date for pay statement range",
+                              "key": "startDate",
+                              "value": "<date>"
+                            },
+                            {
+                              "description": "End date for pay statement range",
+                              "key": "endDate",
+                              "value": "<date>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:19:26.000Z",
+                      "updatedAt": "2026-06-05T15:19:26.000Z",
+                      "uid": "35240-98f7ed56-145d-4aea-b759-07e42c304cb5"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:19:26.000Z",
+                  "updatedAt": "2026-06-05T15:19:26.000Z",
+                  "uid": "35240-5acba602-d02d-4d2e-a560-fb2e038a5bd6"
+                }
+              ],
+              "id": "c8e74e8d-c75c-4b61-b182-1859212ede3a",
+              "createdAt": "2026-06-05T15:19:26.000Z",
+              "updatedAt": "2026-06-05T15:19:26.000Z",
+              "uid": "35240-c8e74e8d-c75c-4b61-b182-1859212ede3a"
+            }
+          ],
+          "id": "6c5318ce-3a7f-4d91-90ac-dde52e05b1ac",
+          "createdAt": "2026-06-05T15:19:26.000Z",
+          "updatedAt": "2026-06-05T15:19:26.000Z",
+          "uid": "35240-6c5318ce-3a7f-4d91-90ac-dde52e05b1ac"
+        }
+      ],
+      "id": "2658774e-fd27-4b2e-8f15-5c841abefe7f",
+      "createdAt": "2026-06-05T15:19:26.000Z",
+      "updatedAt": "2026-06-05T15:19:26.000Z",
+      "uid": "35240-2658774e-fd27-4b2e-8f15-5c841abefe7f"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://service.ultipro.com"
+    }
+  ]
+}

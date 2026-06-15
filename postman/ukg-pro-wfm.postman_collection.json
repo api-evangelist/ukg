@@ -1,0 +1,1437 @@
+{
+  "info": {
+    "_postman_id": "d1e50bba-e822-48f1-bfaf-8ed3bee5430d",
+    "name": "UKG Pro Workforce Management API",
+    "description": "The UKG Pro Workforce Management (WFM) API provides programmatic access to time and labor management data including punches, shifts, schedules, accruals, and attendance. The API supports workforce scheduling, timekeeping, and compliance workflows for hourly and salaried employees. Authentication uses OAuth 2.0 with tenant-specific API keys.\n\nContact Support:\n Name: UKG Developer Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:19:26.000Z",
+    "updatedAt": "2026-06-05T15:19:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d1e50bba-e822-48f1-bfaf-8ed3bee5430d"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "employees",
+          "item": [
+            {
+              "name": "{employeeId}",
+              "item": [
+                {
+                  "name": "timecards",
+                  "item": [
+                    {
+                      "name": "UKG Pro WFM Get Employee Timecards",
+                      "id": "4c3c21de-5a23-45c4-b9ce-7f5215cc268f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/employees/:employeeId/timecards?startDate=<date>&endDate=<date>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "employees",
+                            ":employeeId",
+                            "timecards"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) Start date for timecard retrieval",
+                              "key": "startDate",
+                              "value": "<date>"
+                            },
+                            {
+                              "description": "(Required) End date for timecard retrieval",
+                              "key": "endDate",
+                              "value": "<date>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "8a1a76ff-5cab-479e-86f8-232fbe1106d7",
+                              "key": "employeeId",
+                              "value": "<string>",
+                              "description": "(Required) Employee identifier"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve timecard records for an employee within a date range."
+                      },
+                      "response": [
+                        {
+                          "id": "dd5fa949-5f79-4675-80ea-a632790e8b93",
+                          "name": "Employee timecards",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/timecards?startDate=<date>&endDate=<date>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "timecards"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) Start date for timecard retrieval",
+                                  "key": "startDate",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "(Required) End date for timecard retrieval",
+                                  "key": "endDate",
+                                  "value": "<date>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "[\n  {\n    \"timecardId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"periodStart\": \"<date>\",\n    \"periodEnd\": \"<date>\",\n    \"totalHours\": \"<double>\",\n    \"regularHours\": \"<double>\",\n    \"overtimeHours\": \"<double>\",\n    \"status\": \"Approved\"\n  },\n  {\n    \"timecardId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"periodStart\": \"<date>\",\n    \"periodEnd\": \"<date>\",\n    \"totalHours\": \"<double>\",\n    \"regularHours\": \"<double>\",\n    \"overtimeHours\": \"<double>\",\n    \"status\": \"Open\"\n  }\n]",
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-dd5fa949-5f79-4675-80ea-a632790e8b93"
+                        },
+                        {
+                          "id": "8d61d004-c515-4e3f-a7c0-ce5c7a8e5fb8",
+                          "name": "Unauthorized",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/timecards?startDate=<date>&endDate=<date>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "timecards"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) Start date for timecard retrieval",
+                                  "key": "startDate",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "(Required) End date for timecard retrieval",
+                                  "key": "endDate",
+                                  "value": "<date>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-8d61d004-c515-4e3f-a7c0-ce5c7a8e5fb8"
+                        },
+                        {
+                          "id": "08bca0b8-238b-4871-8ac8-79bf4a8abde6",
+                          "name": "Employee not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/timecards?startDate=<date>&endDate=<date>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "timecards"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) Start date for timecard retrieval",
+                                  "key": "startDate",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "(Required) End date for timecard retrieval",
+                                  "key": "endDate",
+                                  "value": "<date>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-08bca0b8-238b-4871-8ac8-79bf4a8abde6"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:19:27.000Z",
+                      "updatedAt": "2026-06-05T15:19:27.000Z",
+                      "uid": "35240-4c3c21de-5a23-45c4-b9ce-7f5215cc268f"
+                    }
+                  ],
+                  "id": "fdd5cbdd-1669-4cc8-9db0-3a0cd474cade",
+                  "createdAt": "2026-06-05T15:19:27.000Z",
+                  "updatedAt": "2026-06-05T15:19:27.000Z",
+                  "uid": "35240-fdd5cbdd-1669-4cc8-9db0-3a0cd474cade"
+                },
+                {
+                  "name": "punches",
+                  "item": [
+                    {
+                      "name": "UKG Pro WFM Get Employee Punches",
+                      "id": "b49f691e-4079-4cc0-a177-48cb16b93cb7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/employees/:employeeId/punches?startDate=<date>&endDate=<date>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "employees",
+                            ":employeeId",
+                            "punches"
+                          ],
+                          "query": [
+                            {
+                              "description": "Start date for punch retrieval",
+                              "key": "startDate",
+                              "value": "<date>"
+                            },
+                            {
+                              "description": "End date for punch retrieval",
+                              "key": "endDate",
+                              "value": "<date>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "8c216bfc-c8c0-484a-aac3-2713cee62482",
+                              "key": "employeeId",
+                              "value": "<string>",
+                              "description": "(Required) Employee identifier"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve clock punch records for an employee."
+                      },
+                      "response": [
+                        {
+                          "id": "edf4f6d8-3268-413d-b697-97e7bcbd6a24",
+                          "name": "Employee punch records",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/punches?startDate=<date>&endDate=<date>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "punches"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Start date for punch retrieval",
+                                  "key": "startDate",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "End date for punch retrieval",
+                                  "key": "endDate",
+                                  "value": "<date>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "[\n  {\n    \"punchId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"punchTime\": \"<dateTime>\",\n    \"punchType\": \"In\",\n    \"locationId\": \"<string>\",\n    \"jobCode\": \"<string>\"\n  },\n  {\n    \"punchId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"punchTime\": \"<dateTime>\",\n    \"punchType\": \"In\",\n    \"locationId\": \"<string>\",\n    \"jobCode\": \"<string>\"\n  }\n]",
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-edf4f6d8-3268-413d-b697-97e7bcbd6a24"
+                        },
+                        {
+                          "id": "57bfed47-cde2-4a3d-b443-6331b083d03c",
+                          "name": "Unauthorized",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/punches?startDate=<date>&endDate=<date>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "punches"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Start date for punch retrieval",
+                                  "key": "startDate",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "End date for punch retrieval",
+                                  "key": "endDate",
+                                  "value": "<date>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-57bfed47-cde2-4a3d-b443-6331b083d03c"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:19:27.000Z",
+                      "updatedAt": "2026-06-05T15:19:27.000Z",
+                      "uid": "35240-b49f691e-4079-4cc0-a177-48cb16b93cb7"
+                    },
+                    {
+                      "name": "UKG Pro WFM Create Punch",
+                      "id": "16f4d759-0e22-4875-9a54-e55426a11e38",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"punchTime\": \"<dateTime>\",\n  \"punchType\": \"In\",\n  \"locationId\": \"<string>\",\n  \"jobCode\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/employees/:employeeId/punches",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "employees",
+                            ":employeeId",
+                            "punches"
+                          ],
+                          "variable": [
+                            {
+                              "id": "ad6ba7ff-1eb3-40ca-82da-9b2ae1a6616f",
+                              "key": "employeeId",
+                              "value": "<string>",
+                              "description": "(Required) Employee identifier"
+                            }
+                          ]
+                        },
+                        "description": "Submit a clock punch for an employee (in, out, or transfer)."
+                      },
+                      "response": [
+                        {
+                          "id": "fce7e816-a8be-4bbf-880a-4e27b60132e6",
+                          "name": "Punch created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"punchTime\": \"<dateTime>\",\n  \"punchType\": \"In\",\n  \"locationId\": \"<string>\",\n  \"jobCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/punches",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "punches"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"punchId\": \"<string>\",\n  \"employeeId\": \"<string>\",\n  \"punchTime\": \"<dateTime>\",\n  \"punchType\": \"Transfer\",\n  \"locationId\": \"<string>\",\n  \"jobCode\": \"<string>\"\n}",
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-fce7e816-a8be-4bbf-880a-4e27b60132e6"
+                        },
+                        {
+                          "id": "fc8db7e3-8201-4448-8b44-eb86f2ae53b3",
+                          "name": "Invalid punch data",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"punchTime\": \"<dateTime>\",\n  \"punchType\": \"In\",\n  \"locationId\": \"<string>\",\n  \"jobCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/punches",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "punches"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-fc8db7e3-8201-4448-8b44-eb86f2ae53b3"
+                        },
+                        {
+                          "id": "c0174092-6c43-4330-b692-555e0245429d",
+                          "name": "Unauthorized",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"punchTime\": \"<dateTime>\",\n  \"punchType\": \"In\",\n  \"locationId\": \"<string>\",\n  \"jobCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/punches",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "punches"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-c0174092-6c43-4330-b692-555e0245429d"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:19:27.000Z",
+                      "updatedAt": "2026-06-05T15:19:27.000Z",
+                      "uid": "35240-16f4d759-0e22-4875-9a54-e55426a11e38"
+                    }
+                  ],
+                  "id": "90bd7927-068f-4dcb-b486-1eb9673aae14",
+                  "createdAt": "2026-06-05T15:19:27.000Z",
+                  "updatedAt": "2026-06-05T15:19:27.000Z",
+                  "uid": "35240-90bd7927-068f-4dcb-b486-1eb9673aae14"
+                },
+                {
+                  "name": "accruals",
+                  "item": [
+                    {
+                      "name": "UKG Pro WFM Get Employee Accruals",
+                      "id": "27eda316-edec-4711-9f43-6254c5a5443a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/employees/:employeeId/accruals",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "employees",
+                            ":employeeId",
+                            "accruals"
+                          ],
+                          "variable": [
+                            {
+                              "id": "b5818cb5-00f8-4a3a-a9aa-6d77240d0848",
+                              "key": "employeeId",
+                              "value": "<string>",
+                              "description": "(Required) Employee identifier"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve accrual balances for an employee including vacation, sick, and PTO."
+                      },
+                      "response": [
+                        {
+                          "id": "60a3eabc-9b6b-4ca0-8338-fd4f48700a6f",
+                          "name": "Accrual balances",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/accruals",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "accruals"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "[\n  {\n    \"accrualCodeId\": \"<string>\",\n    \"accrualName\": \"<string>\",\n    \"balance\": \"<double>\",\n    \"pendingBalance\": \"<double>\",\n    \"takingBalance\": \"<double>\",\n    \"asOfDate\": \"<date>\"\n  },\n  {\n    \"accrualCodeId\": \"<string>\",\n    \"accrualName\": \"<string>\",\n    \"balance\": \"<double>\",\n    \"pendingBalance\": \"<double>\",\n    \"takingBalance\": \"<double>\",\n    \"asOfDate\": \"<date>\"\n  }\n]",
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-60a3eabc-9b6b-4ca0-8338-fd4f48700a6f"
+                        },
+                        {
+                          "id": "23c41fcf-1fcf-4253-8375-793a6a30ad34",
+                          "name": "Unauthorized",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/accruals",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "accruals"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-23c41fcf-1fcf-4253-8375-793a6a30ad34"
+                        },
+                        {
+                          "id": "81bf00b3-35e2-4711-8116-4a7e24f84ecd",
+                          "name": "Employee not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/accruals",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "accruals"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-81bf00b3-35e2-4711-8116-4a7e24f84ecd"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:19:27.000Z",
+                      "updatedAt": "2026-06-05T15:19:27.000Z",
+                      "uid": "35240-27eda316-edec-4711-9f43-6254c5a5443a"
+                    }
+                  ],
+                  "id": "d7bb19f9-a07f-4175-9bda-ca14353857e7",
+                  "createdAt": "2026-06-05T15:19:27.000Z",
+                  "updatedAt": "2026-06-05T15:19:27.000Z",
+                  "uid": "35240-d7bb19f9-a07f-4175-9bda-ca14353857e7"
+                },
+                {
+                  "name": "shifts",
+                  "item": [
+                    {
+                      "name": "UKG Pro WFM Get Employee Shifts",
+                      "id": "7c7481d4-b6b9-4e9c-8fdc-c5fa306c01d4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v1/employees/:employeeId/shifts?startDate=<date>&endDate=<date>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v1",
+                            "employees",
+                            ":employeeId",
+                            "shifts"
+                          ],
+                          "query": [
+                            {
+                              "description": "Start date",
+                              "key": "startDate",
+                              "value": "<date>"
+                            },
+                            {
+                              "description": "End date",
+                              "key": "endDate",
+                              "value": "<date>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "4d609855-9abf-4d5c-85be-ed39274e0b76",
+                              "key": "employeeId",
+                              "value": "<string>",
+                              "description": "(Required) Employee identifier"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve scheduled shifts for a specific employee."
+                      },
+                      "response": [
+                        {
+                          "id": "037cbc5d-d5d8-4d39-ab3a-274f041a77c8",
+                          "name": "Employee scheduled shifts",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/shifts?startDate=<date>&endDate=<date>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "shifts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Start date",
+                                  "key": "startDate",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "End date",
+                                  "key": "endDate",
+                                  "value": "<date>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "[\n  {\n    \"shiftId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"locationId\": \"<string>\",\n    \"shiftDate\": \"<date>\",\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\",\n    \"totalHours\": \"<double>\",\n    \"jobCode\": \"<string>\",\n    \"status\": \"Filled\"\n  },\n  {\n    \"shiftId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"locationId\": \"<string>\",\n    \"shiftDate\": \"<date>\",\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\",\n    \"totalHours\": \"<double>\",\n    \"jobCode\": \"<string>\",\n    \"status\": \"Scheduled\"\n  }\n]",
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-037cbc5d-d5d8-4d39-ab3a-274f041a77c8"
+                        },
+                        {
+                          "id": "2839ff21-e0af-420c-8e1b-e5375aeef350",
+                          "name": "Unauthorized",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v1/employees/:employeeId/shifts?startDate=<date>&endDate=<date>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v1",
+                                "employees",
+                                ":employeeId",
+                                "shifts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Start date",
+                                  "key": "startDate",
+                                  "value": "<date>"
+                                },
+                                {
+                                  "description": "End date",
+                                  "key": "endDate",
+                                  "value": "<date>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "employeeId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:19:27.000Z",
+                          "updatedAt": "2026-06-05T15:19:27.000Z",
+                          "uid": "35240-2839ff21-e0af-420c-8e1b-e5375aeef350"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:19:27.000Z",
+                      "updatedAt": "2026-06-05T15:19:27.000Z",
+                      "uid": "35240-7c7481d4-b6b9-4e9c-8fdc-c5fa306c01d4"
+                    }
+                  ],
+                  "id": "76cf6c85-df8d-4df6-b9e2-afc94ec16f96",
+                  "createdAt": "2026-06-05T15:19:27.000Z",
+                  "updatedAt": "2026-06-05T15:19:27.000Z",
+                  "uid": "35240-76cf6c85-df8d-4df6-b9e2-afc94ec16f96"
+                }
+              ],
+              "id": "f69a54c8-9cd9-44b8-b31f-c6650d8dc478",
+              "createdAt": "2026-06-05T15:19:27.000Z",
+              "updatedAt": "2026-06-05T15:19:27.000Z",
+              "uid": "35240-f69a54c8-9cd9-44b8-b31f-c6650d8dc478"
+            },
+            {
+              "name": "UKG Pro WFM List Employees",
+              "id": "875c0ca9-15d0-443b-b6f0-203a61366493",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/employees?limit=<integer>&offset=<integer>&locationId=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "employees"
+                  ],
+                  "query": [
+                    {
+                      "description": "Maximum number of records to return",
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Number of records to skip",
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter by work location",
+                      "key": "locationId",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Retrieve employee records from the WFM system including workforce attributes."
+              },
+              "response": [
+                {
+                  "id": "45c5e0a1-99be-4b32-8a66-69b537ee465e",
+                  "name": "List of WFM employee records",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/employees?limit=<integer>&offset=<integer>&locationId=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "employees"
+                      ],
+                      "query": [
+                        {
+                          "description": "Maximum number of records to return",
+                          "key": "limit",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Number of records to skip",
+                          "key": "offset",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Filter by work location",
+                          "key": "locationId",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"employeeId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"badge\": \"<string>\",\n    \"homeLocationId\": \"<string>\",\n    \"jobCode\": \"<string>\",\n    \"workRule\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"employeeId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"badge\": \"<string>\",\n    \"homeLocationId\": \"<string>\",\n    \"jobCode\": \"<string>\",\n    \"workRule\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n]",
+                  "createdAt": "2026-06-05T15:19:27.000Z",
+                  "updatedAt": "2026-06-05T15:19:27.000Z",
+                  "uid": "35240-45c5e0a1-99be-4b32-8a66-69b537ee465e"
+                },
+                {
+                  "id": "690a507f-4773-42e4-b491-c1e80fd33e2c",
+                  "name": "Unauthorized",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/employees?limit=<integer>&offset=<integer>&locationId=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "employees"
+                      ],
+                      "query": [
+                        {
+                          "description": "Maximum number of records to return",
+                          "key": "limit",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Number of records to skip",
+                          "key": "offset",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Filter by work location",
+                          "key": "locationId",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:19:27.000Z",
+                  "updatedAt": "2026-06-05T15:19:27.000Z",
+                  "uid": "35240-690a507f-4773-42e4-b491-c1e80fd33e2c"
+                },
+                {
+                  "id": "043854e5-c5e5-4ba0-8809-3805fb24175c",
+                  "name": "Forbidden",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/employees?limit=<integer>&offset=<integer>&locationId=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "employees"
+                      ],
+                      "query": [
+                        {
+                          "description": "Maximum number of records to return",
+                          "key": "limit",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Number of records to skip",
+                          "key": "offset",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Filter by work location",
+                          "key": "locationId",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:19:27.000Z",
+                  "updatedAt": "2026-06-05T15:19:27.000Z",
+                  "uid": "35240-043854e5-c5e5-4ba0-8809-3805fb24175c"
+                }
+              ],
+              "createdAt": "2026-06-05T15:19:27.000Z",
+              "updatedAt": "2026-06-05T15:19:27.000Z",
+              "uid": "35240-875c0ca9-15d0-443b-b6f0-203a61366493"
+            }
+          ],
+          "id": "a676de22-3bae-4673-917f-5e88f7fc9be0",
+          "createdAt": "2026-06-05T15:19:27.000Z",
+          "updatedAt": "2026-06-05T15:19:27.000Z",
+          "uid": "35240-a676de22-3bae-4673-917f-5e88f7fc9be0"
+        },
+        {
+          "name": "schedules",
+          "item": [
+            {
+              "name": "UKG Pro WFM List Schedules",
+              "id": "61a442bb-08a6-4591-bc82-a35b2e8f9672",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v1/schedules?locationId=<string>&startDate=<date>&endDate=<date>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "schedules"
+                  ],
+                  "query": [
+                    {
+                      "description": "Location to retrieve schedules for",
+                      "key": "locationId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Start date for schedule retrieval",
+                      "key": "startDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "description": "(Required) End date for schedule retrieval",
+                      "key": "endDate",
+                      "value": "<date>"
+                    }
+                  ]
+                },
+                "description": "Retrieve employee schedules for a location and date range."
+              },
+              "response": [
+                {
+                  "id": "cfa16540-14d4-4a52-b67d-df87e0f36c25",
+                  "name": "Schedule data",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/schedules?locationId=<string>&startDate=<date>&endDate=<date>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "schedules"
+                      ],
+                      "query": [
+                        {
+                          "description": "Location to retrieve schedules for",
+                          "key": "locationId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) Start date for schedule retrieval",
+                          "key": "startDate",
+                          "value": "<date>"
+                        },
+                        {
+                          "description": "(Required) End date for schedule retrieval",
+                          "key": "endDate",
+                          "value": "<date>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"shiftId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"locationId\": \"<string>\",\n    \"shiftDate\": \"<date>\",\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\",\n    \"totalHours\": \"<double>\",\n    \"jobCode\": \"<string>\",\n    \"status\": \"Filled\"\n  },\n  {\n    \"shiftId\": \"<string>\",\n    \"employeeId\": \"<string>\",\n    \"locationId\": \"<string>\",\n    \"shiftDate\": \"<date>\",\n    \"startTime\": \"<string>\",\n    \"endTime\": \"<string>\",\n    \"totalHours\": \"<double>\",\n    \"jobCode\": \"<string>\",\n    \"status\": \"Scheduled\"\n  }\n]",
+                  "createdAt": "2026-06-05T15:19:27.000Z",
+                  "updatedAt": "2026-06-05T15:19:27.000Z",
+                  "uid": "35240-cfa16540-14d4-4a52-b67d-df87e0f36c25"
+                },
+                {
+                  "id": "de6a0c15-282e-42bd-a2f3-e9e9393261d5",
+                  "name": "Unauthorized",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/schedules?locationId=<string>&startDate=<date>&endDate=<date>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "schedules"
+                      ],
+                      "query": [
+                        {
+                          "description": "Location to retrieve schedules for",
+                          "key": "locationId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) Start date for schedule retrieval",
+                          "key": "startDate",
+                          "value": "<date>"
+                        },
+                        {
+                          "description": "(Required) End date for schedule retrieval",
+                          "key": "endDate",
+                          "value": "<date>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:19:27.000Z",
+                  "updatedAt": "2026-06-05T15:19:27.000Z",
+                  "uid": "35240-de6a0c15-282e-42bd-a2f3-e9e9393261d5"
+                }
+              ],
+              "createdAt": "2026-06-05T15:19:27.000Z",
+              "updatedAt": "2026-06-05T15:19:27.000Z",
+              "uid": "35240-61a442bb-08a6-4591-bc82-a35b2e8f9672"
+            }
+          ],
+          "id": "862a7055-d5b2-46ff-b5b0-e23ce521b770",
+          "createdAt": "2026-06-05T15:19:27.000Z",
+          "updatedAt": "2026-06-05T15:19:27.000Z",
+          "uid": "35240-862a7055-d5b2-46ff-b5b0-e23ce521b770"
+        }
+      ],
+      "id": "ddf7d811-dc1d-4a26-9f59-6d94a1f155d4",
+      "createdAt": "2026-06-05T15:19:27.000Z",
+      "updatedAt": "2026-06-05T15:19:27.000Z",
+      "uid": "35240-ddf7d811-dc1d-4a26-9f59-6d94a1f155d4"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.ultipro.com/workforce/v1"
+    }
+  ]
+}

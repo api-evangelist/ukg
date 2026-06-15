@@ -1,0 +1,292 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UKG Pro HCM API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM List Employee IDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employee-ids",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query",
+                "description": "Number of results per page"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of all employee identifiers accessible to the authenticated service account."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM List Employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "25",
+                "type": "query",
+                "description": "Number of results per page"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number for pagination"
+              },
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "query",
+                "description": "Filter by specific employee ID"
+              }
+            ]
+          },
+          "docs": "Retrieve employee records with demographic and employment information."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve detailed information for a specific employee."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId/jobs",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve job history and current job assignment for an employee."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Payroll",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee Pay Rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId/pay-rates",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve current and historical pay rates for an employee."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee Direct Deposits",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId/direct-deposits",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve direct deposit banking information for an employee."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM List Pay Statements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/payroll/v1/pay-statements",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "query",
+                "description": "Filter by employee ID"
+              },
+              {
+                "name": "startDate",
+                "value": "2026-01-01",
+                "type": "query",
+                "description": "Start date for pay statement range"
+              },
+              {
+                "name": "endDate",
+                "value": "2026-03-31",
+                "type": "query",
+                "description": "End date for pay statement range"
+              }
+            ]
+          },
+          "docs": "Retrieve pay statement history for employees."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Benefits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee Benefits Elections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId/benefits-elections",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve active benefits elections for a specific employee."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Personnel Actions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM Create Personnel Change Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.ultipro.com/personnel/v2/change-requests",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit a personnel action change request such as a job change, status change, or compensation adjustment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM List Departments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/org/v2/departments",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query",
+                "description": "Number of results per page"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of all departments in the organization."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM List Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/org/v2/locations",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query",
+                "description": "Number of results per page"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of all work locations in the organization."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
