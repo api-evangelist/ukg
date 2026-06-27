@@ -92,29 +92,29 @@ apis:
         url: json-structure/pro-hcm-employee-id-list-structure.json
       - type: JSONLDContext
         url: json-ld/ukg-pro-hcm-context.jsonld
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-employee-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-employee-job-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-pay-rate-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-benefits-election-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-department-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-location-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-pay-statement-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-direct-deposit-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-personnel-change-request-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-personnel-change-response-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-employee-list-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-hcm-employee-id-list-example.json
   - aid: ukg:ukg-pro-wfm-api
     name: UKG Pro Workforce Management API
@@ -161,17 +161,17 @@ apis:
         url: json-structure/pro-wfm-shift-structure.json
       - type: JSONLDContext
         url: json-ld/ukg-pro-wfm-context.jsonld
-      - type: Example
+      - type: Examples
         url: examples/pro-wfm-wfm-employee-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-wfm-timecard-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-wfm-punch-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-wfm-punch-request-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-wfm-accrual-balance-example.json
-      - type: Example
+      - type: Examples
         url: examples/pro-wfm-shift-example.json
   - aid: ukg:ukg-hr-service-delivery-api
     name: UKG HR Service Delivery API
@@ -194,45 +194,42 @@ apis:
 common:
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/ukg/overview
-  - type: ArazzoWorkflows
-    url: arazzo/
-    workflows:
-      - url: arazzo/ukg-benefits-enrollment-audit-workflow.yml
-        name: UKG Pro HCM Benefits Enrollment Audit
-        summary: Locate an employee and audit their active benefits elections.
-      - url: arazzo/ukg-clock-in-and-verify-workflow.yml
-        name: UKG Pro WFM Clock In and Verify
-        summary: Resolve a WFM employee, submit a clock punch, and verify it landed.
-      - url: arazzo/ukg-cross-system-employee-reconcile-workflow.yml
-        name: UKG Cross-System Employee Reconcile
-        summary: Match an HCM employee record against the WFM roster for the same person.
-      - url: arazzo/ukg-daily-attendance-reconcile-workflow.yml
-        name: UKG Pro WFM Daily Attendance Reconcile
-        summary: Compare a day's scheduled shifts to actual punches for an employee.
-      - url: arazzo/ukg-employee-360-profile-workflow.yml
-        name: UKG Pro HCM Employee 360 Profile
-        summary: Resolve an employee from the directory and assemble their core HCM profile.
-      - url: arazzo/ukg-employee-roster-bootstrap-workflow.yml
-        name: UKG Pro HCM Employee Roster Bootstrap
-        summary: Page the employee ID list, then hydrate one employee into a full record.
-      - url: arazzo/ukg-new-hire-org-placement-workflow.yml
-        name: UKG Pro HCM New Hire Org Placement
-        summary: Validate org references then submit a department transfer for an employee.
-      - url: arazzo/ukg-payroll-statement-review-workflow.yml
-        name: UKG Pro HCM Payroll Statement Review
-        summary: Assemble an employee's pay rate, statement history, and deposit accounts.
-      - url: arazzo/ukg-pto-balance-and-schedule-workflow.yml
-        name: UKG Pro WFM PTO Balance and Schedule Check
-        summary: Read an employee's accrual balances and branch on available PTO.
-      - url: arazzo/ukg-schedule-coverage-check-workflow.yml
-        name: UKG Pro WFM Schedule Coverage Check
-        summary: Pull a location schedule, drill into one employee, and check their accruals.
-      - url: arazzo/ukg-submit-personnel-change-workflow.yml
-        name: UKG Pro HCM Submit Personnel Change
-        summary: Validate an employee, submit a personnel action, and branch on its status.
-      - url: arazzo/ukg-timecard-period-review-workflow.yml
-        name: UKG Pro WFM Timecard Period Review
-        summary: Resolve an employee, pull their timecards, and branch on approval status.
+  - type: Arazzo
+    url: arazzo/ukg-benefits-enrollment-audit-workflow.yml
+    name: UKG Pro HCM Benefits Enrollment Audit
+  - type: Arazzo
+    url: arazzo/ukg-clock-in-and-verify-workflow.yml
+    name: UKG Pro WFM Clock In and Verify
+  - type: Arazzo
+    url: arazzo/ukg-cross-system-employee-reconcile-workflow.yml
+    name: UKG Cross-System Employee Reconcile
+  - type: Arazzo
+    url: arazzo/ukg-daily-attendance-reconcile-workflow.yml
+    name: UKG Pro WFM Daily Attendance Reconcile
+  - type: Arazzo
+    url: arazzo/ukg-employee-360-profile-workflow.yml
+    name: UKG Pro HCM Employee 360 Profile
+  - type: Arazzo
+    url: arazzo/ukg-employee-roster-bootstrap-workflow.yml
+    name: UKG Pro HCM Employee Roster Bootstrap
+  - type: Arazzo
+    url: arazzo/ukg-new-hire-org-placement-workflow.yml
+    name: UKG Pro HCM New Hire Org Placement
+  - type: Arazzo
+    url: arazzo/ukg-payroll-statement-review-workflow.yml
+    name: UKG Pro HCM Payroll Statement Review
+  - type: Arazzo
+    url: arazzo/ukg-pto-balance-and-schedule-workflow.yml
+    name: UKG Pro WFM PTO Balance and Schedule Check
+  - type: Arazzo
+    url: arazzo/ukg-schedule-coverage-check-workflow.yml
+    name: UKG Pro WFM Schedule Coverage Check
+  - type: Arazzo
+    url: arazzo/ukg-submit-personnel-change-workflow.yml
+    name: UKG Pro HCM Submit Personnel Change
+  - type: Arazzo
+    url: arazzo/ukg-timecard-period-review-workflow.yml
+    name: UKG Pro WFM Timecard Period Review
   - type: GitHubOrganization
     url: https://github.com/ultimatesoftware
   - type: LinkedIn
@@ -257,7 +254,7 @@ common:
     url: https://developer.ukg.com/general/docs/getting-started
   - type: Authentication
     url: https://developer.ukg.com/hcm/docs/authentication
-  - type: SignUp
+  - type: Signup
     url: https://www.ukg.com/contact-us
   - type: SpectralRules
     url: rules/ukg-spectral-rules.yml
