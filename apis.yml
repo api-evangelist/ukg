@@ -192,6 +192,10 @@ apis:
       - type: APIReference
         url: https://doc.people-doc.com/client/api/index-v2.html
 common:
+  - type: DomainSecurity
+    url: security/ukg-domain-security.yml
+  - type: Authentication
+    url: authentication/ukg-authentication.yml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/ukg/overview
   - type: Arazzo

@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/ukg-pro-hcm-openapi.yml, openapi/ukg-pro-wfm-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Basic authentication with service account credentials plus US-API-Key header
+  sources:
+  - openapi/ukg-pro-hcm-openapi.yml
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: OAuth 2.0 bearer token with WFM API key header
+  sources:
+  - openapi/ukg-pro-wfm-openapi.yml
