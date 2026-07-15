@@ -192,6 +192,8 @@ apis:
       - type: APIReference
         url: https://doc.people-doc.com/client/api/index-v2.html
 common:
+  - type: AgenticAccess
+    url: agentic-access/ukg-agentic-access.yml
   - type: DomainSecurity
     url: security/ukg-domain-security.yml
   - type: Authentication
