@@ -1,0 +1,102 @@
+openapi: 3.0.3
+info:
+  title: UKG Pro HCM Accruals API
+  description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
+  version: '2.0'
+  contact:
+    name: UKG Developer Support
+    url: https://developer.ukg.com
+  termsOfService: https://www.ukg.com/legal/terms
+  x-generated-from: documentation
+servers:
+- url: https://service.ultipro.com
+  description: UKG Pro HCM API (US)
+- url: https://service.ultipro.ca
+  description: UKG Pro HCM API (Canada)
+security:
+- basicAuth: []
+tags:
+- name: Accruals
+  description: Accrual balances and transactions
+paths:
+  /v1/employees/{employeeId}/accruals:
+    get:
+      operationId: getEmployeeAccruals
+      summary: UKG Pro WFM Get Employee Accruals
+      description: Retrieve accrual balances for an employee including vacation, sick, and PTO.
+      tags:
+      - Accruals
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Accrual balances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AccrualBalance'
+              examples:
+                getEmployeeAccruals200Example:
+                  summary: Default getEmployeeAccruals 200 response
+                  x-microcks-default: true
+                  value:
+                  - accrualCodeId: example-value
+                    accrualName: example-value
+                    balance: 1.0
+                    pendingBalance: 1.0
+                    takingBalance: 1.0
+                    asOfDate: '2026-01-15'
+        '404':
+          description: Employee not found
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    AccrualBalance:
+      type: object
+      description: Employee accrual balance for a time-off policy
+      properties:
+        accrualCodeId:
+          type: string
+          description: Accrual code identifier
+          example: EMP001
+        accrualName:
+          type: string
+          description: Accrual policy name
+          example: Vacation
+        balance:
+          type: number
+          format: double
+          description: Current available balance in hours
+          example: 40.0
+        pendingBalance:
+          type: number
+          format: double
+          description: Pending approved requests
+          example: 8.0
+        takingBalance:
+          type: number
+          format: double
+          description: Hours in approved future requests
+          example: 1.0
+        asOfDate:
+          type: string
+          format: date
+          description: Balance as of this date
+          example: '2026-01-15'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication with service account credentials plus US-API-Key header

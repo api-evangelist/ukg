@@ -1,0 +1,119 @@
+openapi: 3.0.3
+info:
+  title: UKG Pro HCM Accruals Benefits API
+  description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
+  version: '2.0'
+  contact:
+    name: UKG Developer Support
+    url: https://developer.ukg.com
+  termsOfService: https://www.ukg.com/legal/terms
+  x-generated-from: documentation
+servers:
+- url: https://service.ultipro.com
+  description: UKG Pro HCM API (US)
+- url: https://service.ultipro.ca
+  description: UKG Pro HCM API (Canada)
+security:
+- basicAuth: []
+tags:
+- name: Benefits
+  description: Benefits enrollment and plan information
+paths:
+  /personnel/v2/employees/{employeeId}/benefits-elections:
+    get:
+      operationId: getEmployeeBenefitsElections
+      summary: UKG Pro HCM Get Employee Benefits Elections
+      description: Retrieve active benefits elections for a specific employee.
+      tags:
+      - Benefits
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Benefits enrollment data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BenefitsElection'
+              examples:
+                getEmployeeBenefitsElections200Example:
+                  summary: Default getEmployeeBenefitsElections 200 response
+                  x-microcks-default: true
+                  value:
+                    employeeId: example-value
+                    planId: example-value
+                    planName: example-value
+                    benefitType: Medical
+                    enrollmentStatus: Active
+                    coverageTier: example-value
+                    employeeContribution: 1.0
+                    effectiveDate: '2026-01-15'
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    BenefitsElection:
+      type: object
+      description: Employee benefits enrollment information
+      properties:
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        planId:
+          type: string
+          description: Benefits plan identifier
+          example: PLAN-MED-001
+        planName:
+          type: string
+          description: Benefits plan name
+          example: Medical Plan - PPO
+        benefitType:
+          type: string
+          description: Type of benefit
+          example: Medical
+          enum:
+          - Medical
+          - Dental
+          - Vision
+          - Life
+          - Disability
+          - 401k
+          - HSA
+          - FSA
+        enrollmentStatus:
+          type: string
+          description: Enrollment status
+          example: Active
+          enum:
+          - Active
+          - Waived
+          - Terminated
+        coverageTier:
+          type: string
+          description: Coverage tier
+          example: Employee + Spouse
+        employeeContribution:
+          type: number
+          format: double
+          description: Employee contribution amount per pay period
+          example: 1.0
+        effectiveDate:
+          type: string
+          format: date
+          description: Coverage effective date
+          example: '2026-01-15'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication with service account credentials plus US-API-Key header

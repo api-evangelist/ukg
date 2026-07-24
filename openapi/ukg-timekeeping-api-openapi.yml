@@ -1,0 +1,306 @@
+openapi: 3.0.3
+info:
+  title: UKG Pro HCM Accruals Timekeeping API
+  description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
+  version: '2.0'
+  contact:
+    name: UKG Developer Support
+    url: https://developer.ukg.com
+  termsOfService: https://www.ukg.com/legal/terms
+  x-generated-from: documentation
+servers:
+- url: https://service.ultipro.com
+  description: UKG Pro HCM API (US)
+- url: https://service.ultipro.ca
+  description: UKG Pro HCM API (Canada)
+security:
+- basicAuth: []
+tags:
+- name: Timekeeping
+  description: Punches, time entries, and timecards
+paths:
+  /v1/employees/{employeeId}/timecards:
+    get:
+      operationId: getEmployeeTimecards
+      summary: UKG Pro WFM Get Employee Timecards
+      description: Retrieve timecard records for an employee within a date range.
+      tags:
+      - Timekeeping
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      - name: startDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+        description: Start date for timecard retrieval
+        example: '2026-01-01'
+      - name: endDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+        description: End date for timecard retrieval
+        example: '2026-01-14'
+      responses:
+        '200':
+          description: Employee timecards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Timecard'
+              examples:
+                getEmployeeTimecards200Example:
+                  summary: Default getEmployeeTimecards 200 response
+                  x-microcks-default: true
+                  value:
+                  - timecardId: example-value
+                    employeeId: example-value
+                    periodStart: '2026-01-15'
+                    periodEnd: '2026-01-15'
+                    totalHours: 1.0
+                    regularHours: 1.0
+                    overtimeHours: 1.0
+                    status: Open
+        '404':
+          description: Employee not found
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /v1/employees/{employeeId}/punches:
+    get:
+      operationId: getEmployeePunches
+      summary: UKG Pro WFM Get Employee Punches
+      description: Retrieve clock punch records for an employee.
+      tags:
+      - Timekeeping
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      - name: startDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Start date for punch retrieval
+        example: '2026-01-01'
+      - name: endDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: End date for punch retrieval
+        example: '2026-01-14'
+      responses:
+        '200':
+          description: Employee punch records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Punch'
+              examples:
+                getEmployeePunches200Example:
+                  summary: Default getEmployeePunches 200 response
+                  x-microcks-default: true
+                  value:
+                  - punchId: example-value
+                    employeeId: example-value
+                    punchTime: '2026-01-15T10:30:00Z'
+                    punchType: In
+                    locationId: example-value
+                    jobCode: example-value
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createPunch
+      summary: UKG Pro WFM Create Punch
+      description: Submit a clock punch for an employee (in, out, or transfer).
+      tags:
+      - Timekeeping
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      requestBody:
+        required: true
+        description: Punch details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PunchRequest'
+            examples:
+              createPunchRequestExample:
+                summary: Default createPunch request
+                x-microcks-default: true
+                value:
+                  punchTime: '2026-01-15T10:30:00Z'
+                  punchType: In
+                  locationId: example-value
+                  jobCode: example-value
+      responses:
+        '201':
+          description: Punch created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Punch'
+              examples:
+                createPunch201Example:
+                  summary: Default createPunch 201 response
+                  x-microcks-default: true
+                  value:
+                    punchId: example-value
+                    employeeId: example-value
+                    punchTime: '2026-01-15T10:30:00Z'
+                    punchType: In
+                    locationId: example-value
+                    jobCode: example-value
+        '400':
+          description: Invalid punch data
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    PunchRequest:
+      type: object
+      description: Request to create a clock punch
+      required:
+      - punchTime
+      - punchType
+      properties:
+        punchTime:
+          type: string
+          format: date-time
+          description: Punch timestamp
+          example: '2026-01-15T09:00:00Z'
+        punchType:
+          type: string
+          description: Type of punch
+          example: In
+          enum:
+          - In
+          - Out
+          - Transfer
+        locationId:
+          type: string
+          description: Location identifier
+          example: EMP001
+        jobCode:
+          type: string
+          description: Job code for this punch
+          example: example-value
+    Timecard:
+      type: object
+      description: Employee timecard for a pay period
+      properties:
+        timecardId:
+          type: string
+          description: Timecard identifier
+          example: EMP001
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        periodStart:
+          type: string
+          format: date
+          description: Pay period start date
+          example: '2026-01-15'
+        periodEnd:
+          type: string
+          format: date
+          description: Pay period end date
+          example: '2026-01-15'
+        totalHours:
+          type: number
+          format: double
+          description: Total hours worked
+          example: 80.0
+        regularHours:
+          type: number
+          format: double
+          description: Regular hours
+          example: 80.0
+        overtimeHours:
+          type: number
+          format: double
+          description: Overtime hours
+          example: 0.0
+        status:
+          type: string
+          description: Timecard approval status
+          example: Approved
+          enum:
+          - Open
+          - Submitted
+          - Approved
+          - Rejected
+    Punch:
+      type: object
+      description: Clock punch record
+      properties:
+        punchId:
+          type: string
+          description: Punch identifier
+          example: EMP001
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        punchTime:
+          type: string
+          format: date-time
+          description: Punch date and time
+          example: '2026-01-15T09:00:00Z'
+        punchType:
+          type: string
+          description: Type of punch
+          example: In
+          enum:
+          - In
+          - Out
+          - Transfer
+          - Meal Start
+          - Meal End
+        locationId:
+          type: string
+          description: Location where punch occurred
+          example: EMP001
+        jobCode:
+          type: string
+          description: Job code for this punch
+          example: example-value
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication with service account credentials plus US-API-Key header

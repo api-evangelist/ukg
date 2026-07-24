@@ -1,0 +1,190 @@
+openapi: 3.0.3
+info:
+  title: UKG Pro HCM Accruals Scheduling API
+  description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
+  version: '2.0'
+  contact:
+    name: UKG Developer Support
+    url: https://developer.ukg.com
+  termsOfService: https://www.ukg.com/legal/terms
+  x-generated-from: documentation
+servers:
+- url: https://service.ultipro.com
+  description: UKG Pro HCM API (US)
+- url: https://service.ultipro.ca
+  description: UKG Pro HCM API (Canada)
+security:
+- basicAuth: []
+tags:
+- name: Scheduling
+  description: Shifts, schedules, and schedule management
+paths:
+  /v1/schedules:
+    get:
+      operationId: listSchedules
+      summary: UKG Pro WFM List Schedules
+      description: Retrieve employee schedules for a location and date range.
+      tags:
+      - Scheduling
+      parameters:
+      - name: locationId
+        in: query
+        schema:
+          type: string
+        description: Location to retrieve schedules for
+        example: LOC-NYC
+      - name: startDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+        description: Start date for schedule retrieval
+        example: '2026-01-01'
+      - name: endDate
+        in: query
+        required: true
+        schema:
+          type: string
+          format: date
+        description: End date for schedule retrieval
+        example: '2026-01-07'
+      responses:
+        '200':
+          description: Schedule data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shift'
+              examples:
+                listSchedules200Example:
+                  summary: Default listSchedules 200 response
+                  x-microcks-default: true
+                  value:
+                  - shiftId: example-value
+                    employeeId: example-value
+                    locationId: example-value
+                    shiftDate: '2026-01-15'
+                    startTime: example-value
+                    endTime: example-value
+                    totalHours: 1.0
+                    jobCode: example-value
+                    status: Scheduled
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /v1/employees/{employeeId}/shifts:
+    get:
+      operationId: getEmployeeShifts
+      summary: UKG Pro WFM Get Employee Shifts
+      description: Retrieve scheduled shifts for a specific employee.
+      tags:
+      - Scheduling
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      - name: startDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: Start date
+        example: '2026-01-01'
+      - name: endDate
+        in: query
+        schema:
+          type: string
+          format: date
+        description: End date
+        example: '2026-01-14'
+      responses:
+        '200':
+          description: Employee scheduled shifts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Shift'
+              examples:
+                getEmployeeShifts200Example:
+                  summary: Default getEmployeeShifts 200 response
+                  x-microcks-default: true
+                  value:
+                  - shiftId: example-value
+                    employeeId: example-value
+                    locationId: example-value
+                    shiftDate: '2026-01-15'
+                    startTime: example-value
+                    endTime: example-value
+                    totalHours: 1.0
+                    jobCode: example-value
+                    status: Scheduled
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Shift:
+      type: object
+      description: Scheduled work shift
+      properties:
+        shiftId:
+          type: string
+          description: Shift identifier
+          example: EMP001
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        locationId:
+          type: string
+          description: Work location
+          example: LOC-NYC
+        shiftDate:
+          type: string
+          format: date
+          description: Date of the shift
+          example: '2026-01-15'
+        startTime:
+          type: string
+          description: Shift start time (HH:MM)
+          example: 09:00
+        endTime:
+          type: string
+          description: Shift end time (HH:MM)
+          example: '17:00'
+        totalHours:
+          type: number
+          format: double
+          description: Total scheduled hours
+          example: 8.0
+        jobCode:
+          type: string
+          description: Job code for the shift
+          example: example-value
+        status:
+          type: string
+          description: Shift status
+          example: Scheduled
+          enum:
+          - Scheduled
+          - Open
+          - Filled
+          - Cancelled
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication with service account credentials plus US-API-Key header

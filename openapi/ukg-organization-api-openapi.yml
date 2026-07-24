@@ -1,0 +1,162 @@
+openapi: 3.0.3
+info:
+  title: UKG Pro HCM Accruals Organization API
+  description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
+  version: '2.0'
+  contact:
+    name: UKG Developer Support
+    url: https://developer.ukg.com
+  termsOfService: https://www.ukg.com/legal/terms
+  x-generated-from: documentation
+servers:
+- url: https://service.ultipro.com
+  description: UKG Pro HCM API (US)
+- url: https://service.ultipro.ca
+  description: UKG Pro HCM API (Canada)
+security:
+- basicAuth: []
+tags:
+- name: Organization
+  description: Departments, locations, and cost centers
+paths:
+  /org/v2/departments:
+    get:
+      operationId: listDepartments
+      summary: UKG Pro HCM List Departments
+      description: Retrieve a list of all departments in the organization.
+      tags:
+      - Organization
+      parameters:
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+        description: Number of results per page
+        example: 100
+      responses:
+        '200':
+          description: List of departments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Department'
+              examples:
+                listDepartments200Example:
+                  summary: Default listDepartments 200 response
+                  x-microcks-default: true
+                  value:
+                  - departmentId: example-value
+                    departmentName: example-value
+                    parentDepartmentId: example-value
+                    managerId: example-value
+                    costCenterId: example-value
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /org/v2/locations:
+    get:
+      operationId: listLocations
+      summary: UKG Pro HCM List Locations
+      description: Retrieve a list of all work locations in the organization.
+      tags:
+      - Organization
+      parameters:
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+        description: Number of results per page
+        example: 100
+      responses:
+        '200':
+          description: List of locations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+              examples:
+                listLocations200Example:
+                  summary: Default listLocations 200 response
+                  x-microcks-default: true
+                  value:
+                  - locationId: example-value
+                    locationName: example-value
+                    address: example-value
+                    city: example-value
+                    stateProvince: example-value
+                    country: example-value
+                    postalCode: example-value
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Location:
+      type: object
+      description: Work location
+      properties:
+        locationId:
+          type: string
+          description: Location identifier
+          example: LOC-NYC
+        locationName:
+          type: string
+          description: Location name
+          example: New York Office
+        address:
+          type: string
+          description: Street address
+          example: 123 Main Street
+        city:
+          type: string
+          description: City
+          example: New York
+        stateProvince:
+          type: string
+          description: State or province
+          example: NY
+        country:
+          type: string
+          description: Country code
+          example: US
+        postalCode:
+          type: string
+          description: Postal or ZIP code
+          example: '10001'
+    Department:
+      type: object
+      description: Organizational department
+      properties:
+        departmentId:
+          type: string
+          description: Department identifier
+          example: DEPT-HR
+        departmentName:
+          type: string
+          description: Department name
+          example: Human Resources
+        parentDepartmentId:
+          type: string
+          description: Parent department identifier
+          example: EMP001
+        managerId:
+          type: string
+          description: Department manager employee ID
+          example: EMP001
+        costCenterId:
+          type: string
+          description: Associated cost center
+          example: CC-100
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication with service account credentials plus US-API-Key header

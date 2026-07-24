@@ -1,0 +1,428 @@
+openapi: 3.0.3
+info:
+  title: UKG Pro HCM Accruals Employees API
+  description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
+  version: '2.0'
+  contact:
+    name: UKG Developer Support
+    url: https://developer.ukg.com
+  termsOfService: https://www.ukg.com/legal/terms
+  x-generated-from: documentation
+servers:
+- url: https://service.ultipro.com
+  description: UKG Pro HCM API (US)
+- url: https://service.ultipro.ca
+  description: UKG Pro HCM API (Canada)
+security:
+- basicAuth: []
+tags:
+- name: Employees
+  description: Employee records and demographic data
+paths:
+  /personnel/v2/employee-ids:
+    get:
+      operationId: listEmployeeIds
+      summary: UKG Pro HCM List Employee IDs
+      description: Retrieve a list of all employee identifiers accessible to the authenticated service account.
+      tags:
+      - Employees
+      parameters:
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+        description: Number of results per page
+        example: 100
+      - name: page
+        in: query
+        schema:
+          type: integer
+        description: Page number
+        example: 1
+      responses:
+        '200':
+          description: Successful response with list of employee IDs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeIdList'
+              examples:
+                listEmployeeIds200Example:
+                  summary: Default listEmployeeIds 200 response
+                  x-microcks-default: true
+                  value:
+                    employeeIds:
+                    - example-value
+                    total: 1
+                    page: 1
+        '401':
+          description: Unauthorized - invalid credentials
+        '403':
+          description: Forbidden - insufficient permissions
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/employees:
+    get:
+      operationId: listEmployees
+      summary: UKG Pro HCM List Employees
+      description: Retrieve employee records with demographic and employment information.
+      tags:
+      - Employees
+      parameters:
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+        description: Number of results per page
+        example: 25
+      - name: page
+        in: query
+        schema:
+          type: integer
+        description: Page number for pagination
+        example: 1
+      - name: employeeId
+        in: query
+        schema:
+          type: string
+        description: Filter by specific employee ID
+        example: EMP001
+      responses:
+        '200':
+          description: List of employee records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeList'
+              examples:
+                listEmployees200Example:
+                  summary: Default listEmployees 200 response
+                  x-microcks-default: true
+                  value:
+                    employees:
+                    - {}
+                    total: 1
+                    page: 1
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/employees/{employeeId}:
+    get:
+      operationId: getEmployee
+      summary: UKG Pro HCM Get Employee
+      description: Retrieve detailed information for a specific employee.
+      tags:
+      - Employees
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Employee details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+              examples:
+                getEmployee200Example:
+                  summary: Default getEmployee 200 response
+                  x-microcks-default: true
+                  value:
+                    employeeId: example-value
+                    firstName: example-value
+                    lastName: example-value
+                    email: employee@example.com
+                    employmentStatus: Active
+                    hireDate: '2026-01-15'
+                    departmentId: example-value
+                    locationId: example-value
+                    jobTitle: example-value
+                    managerId: example-value
+        '404':
+          description: Employee not found
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /personnel/v2/employees/{employeeId}/jobs:
+    get:
+      operationId: getEmployeeJobs
+      summary: UKG Pro HCM Get Employee Jobs
+      description: Retrieve job history and current job assignment for an employee.
+      tags:
+      - Employees
+      parameters:
+      - name: employeeId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Employee identifier
+        example: EMP001
+      responses:
+        '200':
+          description: Employee job assignment details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeJob'
+              examples:
+                getEmployeeJobs200Example:
+                  summary: Default getEmployeeJobs 200 response
+                  x-microcks-default: true
+                  value:
+                    employeeId: example-value
+                    jobCode: example-value
+                    jobTitle: example-value
+                    departmentId: example-value
+                    positionId: example-value
+                    flsaStatus: Exempt
+                    employmentType: Full-Time
+                    effectiveDate: '2026-01-15'
+        '404':
+          description: Employee not found
+        '401':
+          description: Unauthorized
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /v1/employees:
+    get:
+      operationId: listWfmEmployees
+      summary: UKG Pro WFM List Employees
+      description: Retrieve employee records from the WFM system including workforce attributes.
+      tags:
+      - Employees
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+        description: Maximum number of records to return
+        example: 50
+      - name: offset
+        in: query
+        schema:
+          type: integer
+        description: Number of records to skip
+        example: 0
+      - name: locationId
+        in: query
+        schema:
+          type: string
+        description: Filter by work location
+        example: LOC-NYC
+      responses:
+        '200':
+          description: List of WFM employee records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WfmEmployee'
+              examples:
+                listWfmEmployees200Example:
+                  summary: Default listWfmEmployees 200 response
+                  x-microcks-default: true
+                  value:
+                  - employeeId: example-value
+                    firstName: example-value
+                    lastName: example-value
+                    badge: example-value
+                    homeLocationId: example-value
+                    jobCode: example-value
+                    workRule: example-value
+                    status: example-value
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    WfmEmployee:
+      type: object
+      description: Employee record in WFM system
+      properties:
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        firstName:
+          type: string
+          description: First name
+          example: Jane
+        lastName:
+          type: string
+          description: Last name
+          example: Smith
+        badge:
+          type: string
+          description: Badge or punch number
+          example: '12345'
+        homeLocationId:
+          type: string
+          description: Home location identifier
+          example: LOC-NYC
+        jobCode:
+          type: string
+          description: Primary job code
+          example: CASHIER
+        workRule:
+          type: string
+          description: Pay rule for overtime and break calculations
+          example: Standard-40hr
+        status:
+          type: string
+          description: Employment status
+          example: Active
+    EmployeeIdList:
+      type: object
+      description: Paginated list of employee identifiers
+      properties:
+        employeeIds:
+          type: array
+          items:
+            type: string
+          description: Array of employee identifiers
+          example: EMP001
+        total:
+          type: integer
+          description: Total number of employees
+          example: 1
+        page:
+          type: integer
+          description: Current page number
+          example: 1
+    EmployeeList:
+      type: object
+      description: Paginated list of employee records
+      properties:
+        employees:
+          type: array
+          items:
+            $ref: '#/components/schemas/Employee'
+          example: example-value
+        total:
+          type: integer
+          description: Total number of records
+          example: 1
+        page:
+          type: integer
+          description: Current page
+          example: 1
+    EmployeeJob:
+      type: object
+      description: Employee job assignment and classification details
+      properties:
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        jobCode:
+          type: string
+          description: Job code or position code
+          example: JOB-HRANA
+        jobTitle:
+          type: string
+          description: Job title
+          example: HR Analyst
+        departmentId:
+          type: string
+          description: Department identifier
+          example: EMP001
+        positionId:
+          type: string
+          description: Position identifier
+          example: POS-00123
+        flsaStatus:
+          type: string
+          description: FLSA classification
+          example: Exempt
+          enum:
+          - Exempt
+          - Non-Exempt
+        employmentType:
+          type: string
+          description: Employment type
+          example: Full-Time
+          enum:
+          - Full-Time
+          - Part-Time
+          - Contractor
+          - Temporary
+        effectiveDate:
+          type: string
+          format: date
+          description: Effective date of current assignment
+          example: '2026-01-15'
+    Employee:
+      type: object
+      description: Employee record with demographic and employment information
+      properties:
+        employeeId:
+          type: string
+          description: Unique employee identifier
+          example: EMP001
+        firstName:
+          type: string
+          description: Employee first name
+          example: Jane
+        lastName:
+          type: string
+          description: Employee last name
+          example: Smith
+        email:
+          type: string
+          format: email
+          description: Work email address
+          example: jsmith@company.com
+        employmentStatus:
+          type: string
+          description: Current employment status
+          example: Active
+          enum:
+          - Active
+          - Inactive
+          - Terminated
+          - Leave
+        hireDate:
+          type: string
+          format: date
+          description: Original hire date
+          example: '2022-06-01'
+        departmentId:
+          type: string
+          description: Department identifier
+          example: DEPT-HR
+        locationId:
+          type: string
+          description: Work location identifier
+          example: LOC-NYC
+        jobTitle:
+          type: string
+          description: Current job title
+          example: Senior HR Analyst
+        managerId:
+          type: string
+          description: Manager employee identifier
+          example: EMP042
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Basic authentication with service account credentials plus US-API-Key header
