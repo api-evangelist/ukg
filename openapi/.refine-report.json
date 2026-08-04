@@ -1,0 +1,28 @@
+{
+  "provider": "ukg",
+  "sources": [
+    "ukg-accruals-api-openapi.yml",
+    "ukg-benefits-api-openapi.yml",
+    "ukg-employees-api-openapi.yml",
+    "ukg-organization-api-openapi.yml",
+    "ukg-payroll-api-openapi.yml",
+    "ukg-personnel-actions-api-openapi.yml",
+    "ukg-scheduling-api-openapi.yml",
+    "ukg-timekeeping-api-openapi.yml"
+  ],
+  "outputs": [
+    "ukg-accruals-api-openapi.yml",
+    "ukg-benefits-api-openapi.yml",
+    "ukg-employees-api-openapi.yml",
+    "ukg-organization-api-openapi.yml",
+    "ukg-payroll-api-openapi.yml",
+    "ukg-personnel-actions-api-openapi.yml",
+    "ukg-scheduling-api-openapi.yml",
+    "ukg-timekeeping-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
