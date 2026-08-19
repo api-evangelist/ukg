@@ -1,0 +1,325 @@
+{
+  "item": [
+    {
+      "id": "a709936c-c0f3-4471-95c1-1311addca7ff",
+      "name": "Organization",
+      "description": {
+        "content": "Departments, locations, and cost centers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "50c5f114-1772-48cc-8a42-81b7fcb7f69d",
+          "name": "UKG Pro HCM List Departments",
+          "request": {
+            "name": "UKG Pro HCM List Departments",
+            "description": {
+              "content": "Retrieve a list of all departments in the organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "org",
+                "v2",
+                "departments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>",
+                  "description": "Number of results per page"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f384ffc-cd99-4e99-a9c9-2898863920cd",
+              "name": "List of departments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "org",
+                    "v2",
+                    "departments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"departmentId\": \"example-value\",\n    \"departmentName\": \"example-value\",\n    \"parentDepartmentId\": \"example-value\",\n    \"managerId\": \"example-value\",\n    \"costCenterId\": \"example-value\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d11772d0-a3cc-48ae-bf1a-553a78a33e0f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "org",
+                    "v2",
+                    "departments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "85666751-cd41-4127-89c7-6a7bf9dec7c0",
+          "name": "UKG Pro HCM List Locations",
+          "request": {
+            "name": "UKG Pro HCM List Locations",
+            "description": {
+              "content": "Retrieve a list of all work locations in the organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "org",
+                "v2",
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "<integer>",
+                  "description": "Number of results per page"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c81ef3de-8289-40e8-804f-6af824aa047e",
+              "name": "List of locations",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "org",
+                    "v2",
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"locationId\": \"example-value\",\n    \"locationName\": \"example-value\",\n    \"address\": \"example-value\",\n    \"city\": \"example-value\",\n    \"stateProvince\": \"example-value\",\n    \"country\": \"example-value\",\n    \"postalCode\": \"example-value\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "44cd6e7f-02a8-4829-9443-aae554304280",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "org",
+                    "v2",
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "100"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.ultipro.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2a5d2ece-f947-4dbb-8baa-eb10a027f9ae",
+    "name": "UKG Pro HCM Accruals Organization API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.\n\nContact Support:\n Name: UKG Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

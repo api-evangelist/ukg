@@ -1,0 +1,703 @@
+{
+  "item": [
+    {
+      "id": "fc4a7aa2-03ea-42ae-9ce7-3365c1bf86ea",
+      "name": "Timekeeping",
+      "description": {
+        "content": "Punches, time entries, and timecards",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "03a17ac9-b169-4d68-9632-283df51633f1",
+          "name": "UKG Pro WFM Get Employee Timecards",
+          "request": {
+            "name": "UKG Pro WFM Get Employee Timecards",
+            "description": {
+              "content": "Retrieve timecard records for an employee within a date range.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employees",
+                ":employeeId",
+                "timecards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>",
+                  "description": "(Required) Start date for timecard retrieval"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>",
+                  "description": "(Required) End date for timecard retrieval"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeId",
+                  "description": "(Required) Employee identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ec7169f-b7a4-4a5a-92f8-56d3714f52f6",
+              "name": "Employee timecards",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "timecards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-01-14"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"timecardId\": \"example-value\",\n    \"employeeId\": \"example-value\",\n    \"periodStart\": \"2026-01-15\",\n    \"periodEnd\": \"2026-01-15\",\n    \"totalHours\": 1,\n    \"regularHours\": 1,\n    \"overtimeHours\": 1,\n    \"status\": \"Open\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01a48193-a0ec-454d-b573-0a62d8fe4669",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "timecards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-01-14"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5c66cea8-ebb6-4381-ae4f-05fe2a5925d6",
+              "name": "Employee not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "timecards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-01-14"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b078bf75-11be-4d26-9003-536940acb5d3",
+          "name": "UKG Pro WFM Get Employee Punches",
+          "request": {
+            "name": "UKG Pro WFM Get Employee Punches",
+            "description": {
+              "content": "Retrieve clock punch records for an employee.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employees",
+                ":employeeId",
+                "punches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>",
+                  "description": "Start date for punch retrieval"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>",
+                  "description": "End date for punch retrieval"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeId",
+                  "description": "(Required) Employee identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4178d84-1197-4873-a480-0f4381eeeb42",
+              "name": "Employee punch records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "punches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-01-14"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"punchId\": \"example-value\",\n    \"employeeId\": \"example-value\",\n    \"punchTime\": \"2026-01-15T10:30:00Z\",\n    \"punchType\": \"In\",\n    \"locationId\": \"example-value\",\n    \"jobCode\": \"example-value\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9aa3628a-7d99-440f-9167-6c4c4a6ae310",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "punches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-01-14"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ecafb7f0-3381-49dc-9826-ca1cfc533e2b",
+          "name": "UKG Pro WFM Create Punch",
+          "request": {
+            "name": "UKG Pro WFM Create Punch",
+            "description": {
+              "content": "Submit a clock punch for an employee (in, out, or transfer).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employees",
+                ":employeeId",
+                "punches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeId",
+                  "description": "(Required) Employee identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"punchTime\": \"<dateTime>\",\n  \"punchType\": \"<string>\",\n  \"locationId\": \"<string>\",\n  \"jobCode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f6082c2c-7268-4036-b6bf-06a1cb915655",
+              "name": "Punch created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "punches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"punchTime\": \"2026-01-15T10:30:00Z\",\n  \"punchType\": \"In\",\n  \"locationId\": \"example-value\",\n  \"jobCode\": \"example-value\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"punchId\": \"example-value\",\n  \"employeeId\": \"example-value\",\n  \"punchTime\": \"2026-01-15T10:30:00Z\",\n  \"punchType\": \"In\",\n  \"locationId\": \"example-value\",\n  \"jobCode\": \"example-value\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4dc839ca-8639-4368-9a29-dc4a5dad95eb",
+              "name": "Invalid punch data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "punches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"punchTime\": \"2026-01-15T10:30:00Z\",\n  \"punchType\": \"In\",\n  \"locationId\": \"example-value\",\n  \"jobCode\": \"example-value\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "abeda7f0-02e2-47f0-b96d-78ed2e501e64",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "punches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"punchTime\": \"2026-01-15T10:30:00Z\",\n  \"punchType\": \"In\",\n  \"locationId\": \"example-value\",\n  \"jobCode\": \"example-value\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.ultipro.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6d38c828-fb7c-4351-85f4-e20f15adca9b",
+    "name": "UKG Pro HCM Accruals Timekeeping API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.\n\nContact Support:\n Name: UKG Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

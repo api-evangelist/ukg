@@ -1,0 +1,246 @@
+{
+  "item": [
+    {
+      "id": "98ac64f1-c6c0-42c3-9b30-0c76722fb787",
+      "name": "Personnel Actions",
+      "description": {
+        "content": "Job changes, status changes, and employment actions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1ab69d28-0e89-4d99-9fe3-6b21bd1ef5c1",
+          "name": "UKG Pro HCM Create Personnel Change Request",
+          "request": {
+            "name": "UKG Pro HCM Create Personnel Change Request",
+            "description": {
+              "content": "Submit a personnel action change request such as a job change, status change, or compensation adjustment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "personnel",
+                "v2",
+                "change-requests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employeeId\": \"<string>\",\n  \"actionType\": \"<string>\",\n  \"effectiveDate\": \"<date>\",\n  \"reason\": \"<string>\",\n  \"newDepartmentId\": \"<string>\",\n  \"newJobTitle\": \"<string>\",\n  \"newPayRate\": \"<double>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1641f8f5-c6b4-432b-bf2a-fba3e9b5a1cd",
+              "name": "Change request created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "change-requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employeeId\": \"example-value\",\n  \"actionType\": \"Job Change\",\n  \"effectiveDate\": \"2026-01-15\",\n  \"reason\": \"example-value\",\n  \"newDepartmentId\": \"example-value\",\n  \"newJobTitle\": \"example-value\",\n  \"newPayRate\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"requestId\": \"example-value\",\n  \"status\": \"Pending\",\n  \"submittedAt\": \"2026-01-15T10:30:00Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ee4958d-171e-4208-b884-3abd23be5607",
+              "name": "Invalid request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "change-requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employeeId\": \"example-value\",\n  \"actionType\": \"Job Change\",\n  \"effectiveDate\": \"2026-01-15\",\n  \"reason\": \"example-value\",\n  \"newDepartmentId\": \"example-value\",\n  \"newJobTitle\": \"example-value\",\n  \"newPayRate\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a1e9aedf-2790-4878-af3d-d35b5d520c70",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "change-requests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employeeId\": \"example-value\",\n  \"actionType\": \"Job Change\",\n  \"effectiveDate\": \"2026-01-15\",\n  \"reason\": \"example-value\",\n  \"newDepartmentId\": \"example-value\",\n  \"newJobTitle\": \"example-value\",\n  \"newPayRate\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.ultipro.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bce02475-6673-4626-a6e5-f1381a71bdcf",
+    "name": "UKG Pro HCM Accruals Personnel Actions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.\n\nContact Support:\n Name: UKG Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

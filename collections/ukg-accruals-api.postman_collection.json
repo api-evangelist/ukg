@@ -1,0 +1,245 @@
+{
+  "item": [
+    {
+      "id": "d35029c4-3562-4bb9-b69e-294eac609b32",
+      "name": "Accruals",
+      "description": {
+        "content": "Accrual balances and transactions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "85261897-f0b4-4195-8bdf-b008aa5a09df",
+          "name": "UKG Pro WFM Get Employee Accruals",
+          "request": {
+            "name": "UKG Pro WFM Get Employee Accruals",
+            "description": {
+              "content": "Retrieve accrual balances for an employee including vacation, sick, and PTO.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employees",
+                ":employeeId",
+                "accruals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeId",
+                  "description": "(Required) Employee identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0c661985-919a-4a6a-8f4f-a3d9ac28bd41",
+              "name": "Accrual balances",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "accruals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"accrualCodeId\": \"example-value\",\n    \"accrualName\": \"example-value\",\n    \"balance\": 1,\n    \"pendingBalance\": 1,\n    \"takingBalance\": 1,\n    \"asOfDate\": \"2026-01-15\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "928fd1b5-669a-4a11-a384-cb8f9c7dd7cd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "accruals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "587b268a-2159-4813-bb7b-498b9bbf65f2",
+              "name": "Employee not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "accruals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.ultipro.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a0aba708-09c5-4203-998b-139d1f3df07e",
+    "name": "UKG Pro HCM Accruals API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.\n\nContact Support:\n Name: UKG Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,570 @@
+{
+  "item": [
+    {
+      "id": "227f1816-cb9b-4ea2-8855-919b86945f9f",
+      "name": "Payroll",
+      "description": {
+        "content": "Payroll data and check history",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a381afc2-3e81-40c3-b21a-671d8764d112",
+          "name": "UKG Pro HCM Get Employee Pay Rates",
+          "request": {
+            "name": "UKG Pro HCM Get Employee Pay Rates",
+            "description": {
+              "content": "Retrieve current and historical pay rates for an employee.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "personnel",
+                "v2",
+                "employees",
+                ":employeeId",
+                "pay-rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeId",
+                  "description": "(Required) Employee identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bd05920f-ac05-4733-8d2e-3ef5284c6ddd",
+              "name": "Pay rate information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "employees",
+                    ":employeeId",
+                    "pay-rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"employeeId\": \"example-value\",\n  \"payType\": \"Salary\",\n  \"basePay\": 1,\n  \"payCurrency\": \"example-value\",\n  \"payFrequency\": \"Weekly\",\n  \"effectiveDate\": \"2026-01-15\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "100c004f-40fb-4003-8bd6-34219ebd9348",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "employees",
+                    ":employeeId",
+                    "pay-rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cc9ce1ae-c29c-4fab-ba17-db89db1254c1",
+              "name": "Employee not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "employees",
+                    ":employeeId",
+                    "pay-rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3144aef-8c8c-460d-a26b-a243c73fb416",
+          "name": "UKG Pro HCM Get Employee Direct Deposits",
+          "request": {
+            "name": "UKG Pro HCM Get Employee Direct Deposits",
+            "description": {
+              "content": "Retrieve direct deposit banking information for an employee.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "personnel",
+                "v2",
+                "employees",
+                ":employeeId",
+                "direct-deposits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeId",
+                  "description": "(Required) Employee identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0fa2a786-6cca-4d6b-a331-5040e78c8394",
+              "name": "Direct deposit accounts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "employees",
+                    ":employeeId",
+                    "direct-deposits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"accountId\": \"example-value\",\n    \"bankName\": \"example-value\",\n    \"accountType\": \"Checking\",\n    \"depositType\": \"Amount\",\n    \"depositAmount\": 1,\n    \"priority\": 1\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c422865-269f-49fb-b89f-8c2ce15d28ad",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "employees",
+                    ":employeeId",
+                    "direct-deposits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "82a81d2d-de30-487e-9d88-f6f1390ae89b",
+          "name": "UKG Pro HCM List Pay Statements",
+          "request": {
+            "name": "UKG Pro HCM List Pay Statements",
+            "description": {
+              "content": "Retrieve pay statement history for employees.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "payroll",
+                "v1",
+                "pay-statements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "employeeId",
+                  "value": "<string>",
+                  "description": "Filter by employee ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>",
+                  "description": "Start date for pay statement range"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>",
+                  "description": "End date for pay statement range"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e5bfc30a-7416-4c0c-8b69-e692cf2582d0",
+              "name": "List of pay statements",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payroll",
+                    "v1",
+                    "pay-statements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employeeId",
+                      "value": "EMP001"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-03-31"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"statementId\": \"example-value\",\n    \"employeeId\": \"example-value\",\n    \"payPeriodStart\": \"2026-01-15\",\n    \"payPeriodEnd\": \"2026-01-15\",\n    \"payDate\": \"2026-01-15\",\n    \"grossPay\": 1,\n    \"netPay\": 1,\n    \"federalTaxWithheld\": 1,\n    \"stateTaxWithheld\": 1,\n    \"socialSecurityTax\": 1,\n    \"medicareTax\": 1,\n    \"currency\": \"example-value\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e431bed6-60c4-4992-a1e9-38e40885b518",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "payroll",
+                    "v1",
+                    "pay-statements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "employeeId",
+                      "value": "EMP001"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-03-31"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.ultipro.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9afe7393-5ad4-4226-845e-89b7a33166b3",
+    "name": "UKG Pro HCM Accruals Payroll API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.\n\nContact Support:\n Name: UKG Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UKG Pro HCM Accruals Employees API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Employees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM List Employee IDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employee-ids",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query",
+                "description": "Number of results per page"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of all employee identifiers accessible to the authenticated service account."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM List Employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "25",
+                "type": "query",
+                "description": "Number of results per page"
+              },
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number for pagination"
+              },
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "query",
+                "description": "Filter by specific employee ID"
+              }
+            ]
+          },
+          "docs": "Retrieve employee records with demographic and employment information."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve detailed information for a specific employee."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee Jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId/jobs",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve job history and current job assignment for an employee."
+        },
+        {
+          "info": {
+            "name": "UKG Pro WFM List Employees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/v1/employees",
+            "params": [
+              {
+                "name": "limit",
+                "value": "50",
+                "type": "query",
+                "description": "Maximum number of records to return"
+              },
+              {
+                "name": "offset",
+                "value": "0",
+                "type": "query",
+                "description": "Number of records to skip"
+              },
+              {
+                "name": "locationId",
+                "value": "LOC-NYC",
+                "type": "query",
+                "description": "Filter by work location"
+              }
+            ]
+          },
+          "docs": "Retrieve employee records from the WFM system including workforce attributes."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

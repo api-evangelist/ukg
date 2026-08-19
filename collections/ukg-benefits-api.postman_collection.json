@@ -1,0 +1,198 @@
+{
+  "item": [
+    {
+      "id": "27cfb559-fcfb-450b-9022-701447a257c4",
+      "name": "Benefits",
+      "description": {
+        "content": "Benefits enrollment and plan information",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4b4c8289-b8fd-4a05-8274-a34e40ec6b21",
+          "name": "UKG Pro HCM Get Employee Benefits Elections",
+          "request": {
+            "name": "UKG Pro HCM Get Employee Benefits Elections",
+            "description": {
+              "content": "Retrieve active benefits elections for a specific employee.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "personnel",
+                "v2",
+                "employees",
+                ":employeeId",
+                "benefits-elections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeId",
+                  "description": "(Required) Employee identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5da5897c-262c-41e0-b5dc-de9f696e29f3",
+              "name": "Benefits enrollment data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "employees",
+                    ":employeeId",
+                    "benefits-elections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"employeeId\": \"example-value\",\n  \"planId\": \"example-value\",\n  \"planName\": \"example-value\",\n  \"benefitType\": \"Medical\",\n  \"enrollmentStatus\": \"Active\",\n  \"coverageTier\": \"example-value\",\n  \"employeeContribution\": 1,\n  \"effectiveDate\": \"2026-01-15\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7b7a9ceb-3a84-46de-836f-77c9a3e91172",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "personnel",
+                    "v2",
+                    "employees",
+                    ":employeeId",
+                    "benefits-elections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.ultipro.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a61f5f6b-cba1-4bef-a51e-96ef6aba2a7b",
+    "name": "UKG Pro HCM Accruals Benefits API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.\n\nContact Support:\n Name: UKG Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

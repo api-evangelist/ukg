@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UKG Pro HCM Accruals Personnel Actions API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Personnel Actions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM Create Personnel Change Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://service.ultipro.com/personnel/v2/change-requests",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit a personnel action change request such as a job change, status change, or compensation adjustment."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

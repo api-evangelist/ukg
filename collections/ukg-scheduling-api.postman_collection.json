@@ -1,0 +1,391 @@
+{
+  "item": [
+    {
+      "id": "b7a0bdd0-7284-4187-b39a-9f8636c7051a",
+      "name": "Scheduling",
+      "description": {
+        "content": "Shifts, schedules, and schedule management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2da795d0-5f39-4649-b8fc-a728f5fcb314",
+          "name": "UKG Pro WFM List Schedules",
+          "request": {
+            "name": "UKG Pro WFM List Schedules",
+            "description": {
+              "content": "Retrieve employee schedules for a location and date range.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "schedules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "locationId",
+                  "value": "<string>",
+                  "description": "Location to retrieve schedules for"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>",
+                  "description": "(Required) Start date for schedule retrieval"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>",
+                  "description": "(Required) End date for schedule retrieval"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3902bd65-4462-47ba-9d2b-9f0043363e75",
+              "name": "Schedule data",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "schedules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locationId",
+                      "value": "LOC-NYC"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-01-07"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"shiftId\": \"example-value\",\n    \"employeeId\": \"example-value\",\n    \"locationId\": \"example-value\",\n    \"shiftDate\": \"2026-01-15\",\n    \"startTime\": \"example-value\",\n    \"endTime\": \"example-value\",\n    \"totalHours\": 1,\n    \"jobCode\": \"example-value\",\n    \"status\": \"Scheduled\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3af372e0-1b10-4fa3-9f10-04ee348606bd",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "schedules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "locationId",
+                      "value": "LOC-NYC"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-01-07"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37c1c4e1-9190-4ab1-8ac2-e6a6946c74b5",
+          "name": "UKG Pro WFM Get Employee Shifts",
+          "request": {
+            "name": "UKG Pro WFM Get Employee Shifts",
+            "description": {
+              "content": "Retrieve scheduled shifts for a specific employee.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "employees",
+                ":employeeId",
+                "shifts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>",
+                  "description": "Start date"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>",
+                  "description": "End date"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "employeeId",
+                  "description": "(Required) Employee identifier"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13cdd2a5-76b6-4092-b11f-3ff91b09f1f5",
+              "name": "Employee scheduled shifts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "shifts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-01-14"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"shiftId\": \"example-value\",\n    \"employeeId\": \"example-value\",\n    \"locationId\": \"example-value\",\n    \"shiftDate\": \"2026-01-15\",\n    \"startTime\": \"example-value\",\n    \"endTime\": \"example-value\",\n    \"totalHours\": 1,\n    \"jobCode\": \"example-value\",\n    \"status\": \"Scheduled\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c981f75-6947-44d8-9830-cf17f8fd60d6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "employees",
+                    ":employeeId",
+                    "shifts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "2026-01-01"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "2026-01-14"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "employeeId",
+                      "description": "(Required) Employee identifier"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://service.ultipro.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8c7bfbd8-5dc2-47b1-9b70-36a44c22b46d",
+    "name": "UKG Pro HCM Accruals Scheduling API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.\n\nContact Support:\n Name: UKG Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

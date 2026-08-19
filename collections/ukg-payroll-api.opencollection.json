@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UKG Pro HCM Accruals Payroll API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payroll",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee Pay Rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId/pay-rates",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve current and historical pay rates for an employee."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee Direct Deposits",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId/direct-deposits",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve direct deposit banking information for an employee."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM List Pay Statements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/payroll/v1/pay-statements",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "query",
+                "description": "Filter by employee ID"
+              },
+              {
+                "name": "startDate",
+                "value": "2026-01-01",
+                "type": "query",
+                "description": "Start date for pay statement range"
+              },
+              {
+                "name": "endDate",
+                "value": "2026-03-31",
+                "type": "query",
+                "description": "End date for pay statement range"
+              }
+            ]
+          },
+          "docs": "Retrieve pay statement history for employees."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

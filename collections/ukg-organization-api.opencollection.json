@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UKG Pro HCM Accruals Organization API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organization",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM List Departments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/org/v2/departments",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query",
+                "description": "Number of results per page"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of all departments in the organization."
+        },
+        {
+          "info": {
+            "name": "UKG Pro HCM List Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/org/v2/locations",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "100",
+                "type": "query",
+                "description": "Number of results per page"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of all work locations in the organization."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

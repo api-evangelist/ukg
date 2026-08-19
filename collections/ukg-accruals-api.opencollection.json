@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UKG Pro HCM Accruals API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accruals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro WFM Get Employee Accruals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/v1/employees/:employeeId/accruals",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve accrual balances for an employee including vacation, sick, and PTO."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

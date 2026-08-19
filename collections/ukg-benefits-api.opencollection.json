@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "UKG Pro HCM Accruals Benefits API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Benefits",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UKG Pro HCM Get Employee Benefits Elections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://service.ultipro.com/personnel/v2/employees/:employeeId/benefits-elections",
+            "params": [
+              {
+                "name": "employeeId",
+                "value": "EMP001",
+                "type": "path",
+                "description": "Employee identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve active benefits elections for a specific employee."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
