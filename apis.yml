@@ -22,6 +22,14 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ukg.png
 tags:
+  - HCM
+  - Workforce Management
+  - HR
+  - Payroll
+  - Time and Attendance
+  - Benefits
+  - Scheduling
+tags_raw:
   - Human Capital Management
   - HCM
   - Workforce Management
@@ -44,6 +52,11 @@ apis:
   humanURL: https://doc.people-doc.com/api/?urls.primaryName=Client
   baseURL: https://api.people-doc.com
   tags:
+  - HR Service Delivery
+  - Case Management
+  - Document-Management
+  - Employee Requests
+  tags_raw:
   - HR Service Delivery
   - Case Management
   - Document Management
