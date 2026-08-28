@@ -11,8 +11,11 @@ info:
     and executed without opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: ukgProHcmApi
-  url: ../openapi/ukg-pro-hcm-openapi.yml
+- name: employeesApi
+  url: ../openapi/ukg-employees-api-openapi.yml
+  type: openapi
+- name: payrollApi
+  url: ../openapi/ukg-payroll-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: payroll-statement-review

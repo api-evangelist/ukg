@@ -12,8 +12,11 @@ info:
     read and executed without opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: ukgProWfmApi
-  url: ../openapi/ukg-pro-wfm-openapi.yml
+- name: employeesApi
+  url: ../openapi/ukg-employees-api-openapi.yml
+  type: openapi
+- name: timekeepingApi
+  url: ../openapi/ukg-timekeeping-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: timecard-period-review

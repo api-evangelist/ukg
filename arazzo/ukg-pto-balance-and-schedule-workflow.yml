@@ -12,8 +12,11 @@ info:
     opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: ukgProWfmApi
-  url: ../openapi/ukg-pro-wfm-openapi.yml
+- name: accrualsApi
+  url: ../openapi/ukg-accruals-api-openapi.yml
+  type: openapi
+- name: schedulingApi
+  url: ../openapi/ukg-scheduling-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: pto-balance-and-schedule

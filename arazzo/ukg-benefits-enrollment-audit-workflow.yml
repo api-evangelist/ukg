@@ -12,8 +12,11 @@ info:
     without opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: ukgProHcmApi
-  url: ../openapi/ukg-pro-hcm-openapi.yml
+- name: benefitsApi
+  url: ../openapi/ukg-benefits-api-openapi.yml
+  type: openapi
+- name: employeesApi
+  url: ../openapi/ukg-employees-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: benefits-enrollment-audit
