@@ -23,6 +23,16 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "ukg-accruals-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ukg-benefits-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ukg-employees-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ukg-organization-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ukg-payroll-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ukg-personnel-actions-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ukg-scheduling-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ukg-timekeeping-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }

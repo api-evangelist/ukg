@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: UKG Pro HCM Accruals Payroll API
   description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
@@ -160,67 +160,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    PayStatement:
-      type: object
-      description: Employee pay statement for a single pay period
-      properties:
-        statementId:
-          type: string
-          description: Pay statement identifier
-          example: EMP001
-        employeeId:
-          type: string
-          description: Employee identifier
-          example: EMP001
-        payPeriodStart:
-          type: string
-          format: date
-          description: Pay period start date
-          example: '2026-01-15'
-        payPeriodEnd:
-          type: string
-          format: date
-          description: Pay period end date
-          example: '2026-01-15'
-        payDate:
-          type: string
-          format: date
-          description: Check or deposit date
-          example: '2026-01-15'
-        grossPay:
-          type: number
-          format: double
-          description: Gross pay amount
-          example: 1.0
-        netPay:
-          type: number
-          format: double
-          description: Net pay amount
-          example: 1.0
-        federalTaxWithheld:
-          type: number
-          format: double
-          description: Federal income tax withheld
-          example: 1.0
-        stateTaxWithheld:
-          type: number
-          format: double
-          description: State income tax withheld
-          example: 1.0
-        socialSecurityTax:
-          type: number
-          format: double
-          description: Social Security tax withheld
-          example: 1.0
-        medicareTax:
-          type: number
-          format: double
-          description: Medicare tax withheld
-          example: 1.0
-        currency:
-          type: string
-          description: Currency code
-          example: USD
     PayRate:
       type: object
       description: Employee pay rate information
@@ -296,6 +235,67 @@ components:
           type: integer
           description: Processing priority order
           example: 1
+    PayStatement:
+      type: object
+      description: Employee pay statement for a single pay period
+      properties:
+        statementId:
+          type: string
+          description: Pay statement identifier
+          example: EMP001
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        payPeriodStart:
+          type: string
+          format: date
+          description: Pay period start date
+          example: '2026-01-15'
+        payPeriodEnd:
+          type: string
+          format: date
+          description: Pay period end date
+          example: '2026-01-15'
+        payDate:
+          type: string
+          format: date
+          description: Check or deposit date
+          example: '2026-01-15'
+        grossPay:
+          type: number
+          format: double
+          description: Gross pay amount
+          example: 1.0
+        netPay:
+          type: number
+          format: double
+          description: Net pay amount
+          example: 1.0
+        federalTaxWithheld:
+          type: number
+          format: double
+          description: Federal income tax withheld
+          example: 1.0
+        stateTaxWithheld:
+          type: number
+          format: double
+          description: State income tax withheld
+          example: 1.0
+        socialSecurityTax:
+          type: number
+          format: double
+          description: Social Security tax withheld
+          example: 1.0
+        medicareTax:
+          type: number
+          format: double
+          description: Medicare tax withheld
+          example: 1.0
+        currency:
+          type: string
+          description: Currency code
+          example: USD
   securitySchemes:
     basicAuth:
       type: http
