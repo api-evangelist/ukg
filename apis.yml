@@ -7,6 +7,18 @@ description: >-
   Developer Hub provides REST APIs, webhook subscriptions, and People Fabric APIs for building HR integrations, payroll
   connectors, and workforce analytics applications.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: self-serve
