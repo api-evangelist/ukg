@@ -14,11 +14,8 @@ info:
     opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: ukgProHcmApi
-  url: ../openapi/ukg-pro-hcm-openapi.yml
-  type: openapi
-- name: ukgProWfmApi
-  url: ../openapi/ukg-pro-wfm-openapi.yml
+- name: employeesApi
+  url: ../openapi/ukg-employees-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: cross-system-employee-reconcile
@@ -40,7 +37,7 @@ workflows:
     description: >-
       Read the authoritative HCM employee record including the home location used
       to scope the WFM lookup.
-    operationPath: '{$sourceDescriptions.ukgProHcmApi.url}#/paths/~1personnel~1v2~1employees~1{employeeId}/get'
+    operationPath: '{$sourceDescriptions.employeesApi.url}#/paths/~1personnel~1v2~1employees~1{employeeId}/get'
     parameters:
     - name: employeeId
       in: path
@@ -56,7 +53,7 @@ workflows:
     description: >-
       Query the WFM roster scoped to the employee's HCM home location and branch
       on whether any WFM records came back.
-    operationPath: '{$sourceDescriptions.ukgProWfmApi.url}#/paths/~1v1~1employees/get'
+    operationPath: '{$sourceDescriptions.employeesApi.url}#/paths/~1v1~1employees/get'
     parameters:
     - name: locationId
       in: query
