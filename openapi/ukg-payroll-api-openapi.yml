@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: UKG Pro HCM Accruals Payroll API
+  title: UKG Pro HCM Payroll API
   description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
   version: '2.0'
   contact:
@@ -160,6 +160,42 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    DirectDeposit:
+      type: object
+      description: Employee direct deposit banking information
+      properties:
+        accountId:
+          type: string
+          description: Account identifier
+          example: EMP001
+        bankName:
+          type: string
+          description: Bank name
+          example: First National Bank
+        accountType:
+          type: string
+          description: Account type
+          example: Checking
+          enum:
+          - Checking
+          - Savings
+        depositType:
+          type: string
+          description: Deposit distribution type
+          example: Remainder
+          enum:
+          - Amount
+          - Percentage
+          - Remainder
+        depositAmount:
+          type: number
+          format: double
+          description: Deposit amount or percentage
+          example: 1.0
+        priority:
+          type: integer
+          description: Processing priority order
+          example: 1
     PayRate:
       type: object
       description: Employee pay rate information
@@ -199,42 +235,6 @@ components:
           format: date
           description: Effective date of pay rate
           example: '2026-01-15'
-    DirectDeposit:
-      type: object
-      description: Employee direct deposit banking information
-      properties:
-        accountId:
-          type: string
-          description: Account identifier
-          example: EMP001
-        bankName:
-          type: string
-          description: Bank name
-          example: First National Bank
-        accountType:
-          type: string
-          description: Account type
-          example: Checking
-          enum:
-          - Checking
-          - Savings
-        depositType:
-          type: string
-          description: Deposit distribution type
-          example: Remainder
-          enum:
-          - Amount
-          - Percentage
-          - Remainder
-        depositAmount:
-          type: number
-          format: double
-          description: Deposit amount or percentage
-          example: 1.0
-        priority:
-          type: integer
-          description: Processing priority order
-          example: 1
     PayStatement:
       type: object
       description: Employee pay statement for a single pay period

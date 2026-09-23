@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: UKG Pro HCM Accruals Personnel Actions API
+  title: UKG Pro HCM Personnel Actions API
   description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
   version: '2.0'
   contact:
@@ -69,6 +69,28 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    PersonnelChangeResponse:
+      type: object
+      description: Response from a personnel change request submission
+      properties:
+        requestId:
+          type: string
+          description: Change request identifier
+          example: CHG-2026-00123
+        status:
+          type: string
+          description: Processing status
+          example: Pending
+          enum:
+          - Pending
+          - Approved
+          - Rejected
+          - Completed
+        submittedAt:
+          type: string
+          format: date-time
+          description: Submission timestamp
+          example: '2026-01-15T10:30:00Z'
     PersonnelChangeRequest:
       type: object
       description: Request for a personnel action change
@@ -114,28 +136,6 @@ components:
           format: double
           description: New pay rate amount (for pay changes)
           example: 1.0
-    PersonnelChangeResponse:
-      type: object
-      description: Response from a personnel change request submission
-      properties:
-        requestId:
-          type: string
-          description: Change request identifier
-          example: CHG-2026-00123
-        status:
-          type: string
-          description: Processing status
-          example: Pending
-          enum:
-          - Pending
-          - Approved
-          - Rejected
-          - Completed
-        submittedAt:
-          type: string
-          format: date-time
-          description: Submission timestamp
-          example: '2026-01-15T10:30:00Z'
   securitySchemes:
     basicAuth:
       type: http

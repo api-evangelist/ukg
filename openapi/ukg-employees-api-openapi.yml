@@ -1,20 +1,20 @@
 openapi: 3.2.0
 info:
-  title: UKG Pro HCM Accruals Employees API
-  description: The UKG Pro HCM API provides programmatic access to human capital management data including employees, personnel actions, benefits, payroll, performance, and organizational structure. Supports REST-based web services with Basic Authentication and API key authorization, enabling integrations with HR systems, payroll processors, benefits administrators, and analytics platforms. Base URL for US tenants is https://service.ultipro.com.
-  version: '2.0'
+  title: Ukg Employees API
   contact:
     name: UKG Developer Support
     url: https://developer.ukg.com
   termsOfService: https://www.ukg.com/legal/terms
   x-generated-from: documentation
+  version: '1.0'
+  description: 'Operations tagged Employees across 2 of this provider''s published API definitions: ukg-pro-hcm-openapi.yml, ukg-pro-wfm-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://service.ultipro.com
   description: UKG Pro HCM API (US)
 - url: https://service.ultipro.ca
   description: UKG Pro HCM API (Canada)
-security:
-- basicAuth: []
+- url: https://api.ultipro.com/workforce/v1
+  description: UKG Pro WFM API
 tags:
 - name: Employees
   description: Employee records and demographic data
@@ -62,6 +62,13 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      security:
+      - basicAuth: []
+    servers:
+    - url: https://service.ultipro.com
+      description: UKG Pro HCM API (US)
+    - url: https://service.ultipro.ca
+      description: UKG Pro HCM API (Canada)
   /personnel/v2/employees:
     get:
       operationId: listEmployees
@@ -111,6 +118,13 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      security:
+      - basicAuth: []
+    servers:
+    - url: https://service.ultipro.com
+      description: UKG Pro HCM API (US)
+    - url: https://service.ultipro.ca
+      description: UKG Pro HCM API (Canada)
   /personnel/v2/employees/{employeeId}:
     get:
       operationId: getEmployee
@@ -155,6 +169,13 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      security:
+      - basicAuth: []
+    servers:
+    - url: https://service.ultipro.com
+      description: UKG Pro HCM API (US)
+    - url: https://service.ultipro.ca
+      description: UKG Pro HCM API (Canada)
   /personnel/v2/employees/{employeeId}/jobs:
     get:
       operationId: getEmployeeJobs
@@ -197,6 +218,13 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      security:
+      - basicAuth: []
+    servers:
+    - url: https://service.ultipro.com
+      description: UKG Pro HCM API (US)
+    - url: https://service.ultipro.ca
+      description: UKG Pro HCM API (Canada)
   /v1/employees:
     get:
       operationId: listWfmEmployees
@@ -252,79 +280,13 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      security:
+      - bearerAuth: []
+    servers:
+    - url: https://api.ultipro.com/workforce/v1
+      description: UKG Pro WFM API
 components:
   schemas:
-    WfmEmployee:
-      type: object
-      description: Employee record in WFM system
-      properties:
-        employeeId:
-          type: string
-          description: Employee identifier
-          example: EMP001
-        firstName:
-          type: string
-          description: First name
-          example: Jane
-        lastName:
-          type: string
-          description: Last name
-          example: Smith
-        badge:
-          type: string
-          description: Badge or punch number
-          example: '12345'
-        homeLocationId:
-          type: string
-          description: Home location identifier
-          example: LOC-NYC
-        jobCode:
-          type: string
-          description: Primary job code
-          example: CASHIER
-        workRule:
-          type: string
-          description: Pay rule for overtime and break calculations
-          example: Standard-40hr
-        status:
-          type: string
-          description: Employment status
-          example: Active
-    EmployeeIdList:
-      type: object
-      description: Paginated list of employee identifiers
-      properties:
-        employeeIds:
-          type: array
-          items:
-            type: string
-          description: Array of employee identifiers
-          example: EMP001
-        total:
-          type: integer
-          description: Total number of employees
-          example: 1
-        page:
-          type: integer
-          description: Current page number
-          example: 1
-    EmployeeList:
-      type: object
-      description: Paginated list of employee records
-      properties:
-        employees:
-          type: array
-          items:
-            $ref: '#/components/schemas/Employee'
-          example: example-value
-        total:
-          type: integer
-          description: Total number of records
-          example: 1
-        page:
-          type: integer
-          description: Current page
-          example: 1
     EmployeeJob:
       type: object
       description: Employee job assignment and classification details
@@ -421,8 +383,86 @@ components:
           type: string
           description: Manager employee identifier
           example: EMP042
+    EmployeeIdList:
+      type: object
+      description: Paginated list of employee identifiers
+      properties:
+        employeeIds:
+          type: array
+          items:
+            type: string
+          description: Array of employee identifiers
+          example: EMP001
+        total:
+          type: integer
+          description: Total number of employees
+          example: 1
+        page:
+          type: integer
+          description: Current page number
+          example: 1
+    EmployeeList:
+      type: object
+      description: Paginated list of employee records
+      properties:
+        employees:
+          type: array
+          items:
+            $ref: '#/components/schemas/Employee'
+          example: example-value
+        total:
+          type: integer
+          description: Total number of records
+          example: 1
+        page:
+          type: integer
+          description: Current page
+          example: 1
+    WfmEmployee:
+      type: object
+      description: Employee record in WFM system
+      properties:
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        firstName:
+          type: string
+          description: First name
+          example: Jane
+        lastName:
+          type: string
+          description: Last name
+          example: Smith
+        badge:
+          type: string
+          description: Badge or punch number
+          example: '12345'
+        homeLocationId:
+          type: string
+          description: Home location identifier
+          example: LOC-NYC
+        jobCode:
+          type: string
+          description: Primary job code
+          example: CASHIER
+        workRule:
+          type: string
+          description: Pay rule for overtime and break calculations
+          example: Standard-40hr
+        status:
+          type: string
+          description: Employment status
+          example: Active
   securitySchemes:
     basicAuth:
       type: http
       scheme: basic
       description: Basic authentication with service account credentials plus US-API-Key header
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token with WFM API key header
+x-refined-from:
+- ukg-pro-hcm-openapi.yml
+- ukg-pro-wfm-openapi.yml
