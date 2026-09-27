@@ -188,6 +188,69 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    PunchRequest:
+      type: object
+      description: Request to create a clock punch
+      required:
+      - punchTime
+      - punchType
+      properties:
+        punchTime:
+          type: string
+          format: date-time
+          description: Punch timestamp
+          example: '2026-01-15T09:00:00Z'
+        punchType:
+          type: string
+          description: Type of punch
+          example: In
+          enum:
+          - In
+          - Out
+          - Transfer
+        locationId:
+          type: string
+          description: Location identifier
+          example: EMP001
+        jobCode:
+          type: string
+          description: Job code for this punch
+          example: example-value
+    Punch:
+      type: object
+      description: Clock punch record
+      properties:
+        punchId:
+          type: string
+          description: Punch identifier
+          example: EMP001
+        employeeId:
+          type: string
+          description: Employee identifier
+          example: EMP001
+        punchTime:
+          type: string
+          format: date-time
+          description: Punch date and time
+          example: '2026-01-15T09:00:00Z'
+        punchType:
+          type: string
+          description: Type of punch
+          example: In
+          enum:
+          - In
+          - Out
+          - Transfer
+          - Meal Start
+          - Meal End
+        locationId:
+          type: string
+          description: Location where punch occurred
+          example: EMP001
+        jobCode:
+          type: string
+          description: Job code for this punch
+          example: example-value
     Timecard:
       type: object
       description: Employee timecard for a pay period
@@ -234,69 +297,6 @@ components:
           - Submitted
           - Approved
           - Rejected
-    Punch:
-      type: object
-      description: Clock punch record
-      properties:
-        punchId:
-          type: string
-          description: Punch identifier
-          example: EMP001
-        employeeId:
-          type: string
-          description: Employee identifier
-          example: EMP001
-        punchTime:
-          type: string
-          format: date-time
-          description: Punch date and time
-          example: '2026-01-15T09:00:00Z'
-        punchType:
-          type: string
-          description: Type of punch
-          example: In
-          enum:
-          - In
-          - Out
-          - Transfer
-          - Meal Start
-          - Meal End
-        locationId:
-          type: string
-          description: Location where punch occurred
-          example: EMP001
-        jobCode:
-          type: string
-          description: Job code for this punch
-          example: example-value
-    PunchRequest:
-      type: object
-      description: Request to create a clock punch
-      required:
-      - punchTime
-      - punchType
-      properties:
-        punchTime:
-          type: string
-          format: date-time
-          description: Punch timestamp
-          example: '2026-01-15T09:00:00Z'
-        punchType:
-          type: string
-          description: Type of punch
-          example: In
-          enum:
-          - In
-          - Out
-          - Transfer
-        locationId:
-          type: string
-          description: Location identifier
-          example: EMP001
-        jobCode:
-          type: string
-          description: Job code for this punch
-          example: example-value
   securitySchemes:
     bearerAuth:
       type: http

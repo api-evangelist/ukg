@@ -287,6 +287,41 @@ paths:
       description: UKG Pro WFM API
 components:
   schemas:
+    EmployeeList:
+      type: object
+      description: Paginated list of employee records
+      properties:
+        employees:
+          type: array
+          items:
+            $ref: '#/components/schemas/Employee'
+          example: example-value
+        total:
+          type: integer
+          description: Total number of records
+          example: 1
+        page:
+          type: integer
+          description: Current page
+          example: 1
+    EmployeeIdList:
+      type: object
+      description: Paginated list of employee identifiers
+      properties:
+        employeeIds:
+          type: array
+          items:
+            type: string
+          description: Array of employee identifiers
+          example: EMP001
+        total:
+          type: integer
+          description: Total number of employees
+          example: 1
+        page:
+          type: integer
+          description: Current page number
+          example: 1
     EmployeeJob:
       type: object
       description: Employee job assignment and classification details
@@ -383,41 +418,6 @@ components:
           type: string
           description: Manager employee identifier
           example: EMP042
-    EmployeeIdList:
-      type: object
-      description: Paginated list of employee identifiers
-      properties:
-        employeeIds:
-          type: array
-          items:
-            type: string
-          description: Array of employee identifiers
-          example: EMP001
-        total:
-          type: integer
-          description: Total number of employees
-          example: 1
-        page:
-          type: integer
-          description: Current page number
-          example: 1
-    EmployeeList:
-      type: object
-      description: Paginated list of employee records
-      properties:
-        employees:
-          type: array
-          items:
-            $ref: '#/components/schemas/Employee'
-          example: example-value
-        total:
-          type: integer
-          description: Total number of records
-          example: 1
-        page:
-          type: integer
-          description: Current page
-          example: 1
     WfmEmployee:
       type: object
       description: Employee record in WFM system
