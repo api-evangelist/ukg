@@ -99,6 +99,30 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    Department:
+      type: object
+      description: Organizational department
+      properties:
+        departmentId:
+          type: string
+          description: Department identifier
+          example: DEPT-HR
+        departmentName:
+          type: string
+          description: Department name
+          example: Human Resources
+        parentDepartmentId:
+          type: string
+          description: Parent department identifier
+          example: EMP001
+        managerId:
+          type: string
+          description: Department manager employee ID
+          example: EMP001
+        costCenterId:
+          type: string
+          description: Associated cost center
+          example: CC-100
     Location:
       type: object
       description: Work location
@@ -131,30 +155,6 @@ components:
           type: string
           description: Postal or ZIP code
           example: '10001'
-    Department:
-      type: object
-      description: Organizational department
-      properties:
-        departmentId:
-          type: string
-          description: Department identifier
-          example: DEPT-HR
-        departmentName:
-          type: string
-          description: Department name
-          example: Human Resources
-        parentDepartmentId:
-          type: string
-          description: Parent department identifier
-          example: EMP001
-        managerId:
-          type: string
-          description: Department manager employee ID
-          example: EMP001
-        costCenterId:
-          type: string
-          description: Associated cost center
-          example: CC-100
   securitySchemes:
     basicAuth:
       type: http
