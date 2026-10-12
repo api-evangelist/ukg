@@ -1,0 +1,5054 @@
+generated: '2026-10-12'
+method: searched
+checked:
+- https://marketplace.ukg.com/
+marketplace_apps:
+- marketplace: own
+  channel: partner-built
+  app: ukg
+  url: https://marketplace.ukg.com/
+  app_count: 336
+  adapter: sweep-hr-stores.py:appdirect
+  listed: 336
+  detail_fetched: 250
+edges:
+- partner_name: Ingentis org.manager
+  app: Ingentis org.manager
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/348264/ingentis-orgmanager
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Boomi
+  app: Boomi
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/645182/boomi
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: OpenSesame
+  app: OpenSesame
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/436684/opensesame
+  category: Learning & Performance
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PayActiv
+  app: UKG Wallet for UKG Pro®
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/238880/ukg-wallet-for-ukg-pro
+  category: Payroll
+  partner_domain: payactiv.com.au
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Emburse Professional
+  app: Emburse Professional
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/620527/emburse-professional
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: UKG Bryte AI
+  app: UKG Bryte AI
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/567119/ukg-bryte-ai
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: UKG Screen by HireRight
+  app: UKG Screen by HireRight
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/320899/ukg-screen-by-hireright
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Points North – Construction Payroll Compliance
+  app: Points North – Construction Payroll Compliance
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/401708/points-north-construction-payroll-compliance
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Andgo
+  app: Andgo
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/260427/andgo
+  category: Solution Type
+  partner_domain: andgosystems.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Globalization Partners
+  app: Globalization Partners
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/407533/globalization-partners
+  category: Featured
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Emburse Enterprise
+  app: Emburse Enterprise
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/620526/emburse-enterprise
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: UKG Shiftboard
+  app: UKG Shiftboard
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/426658/ukg-shiftboard
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: MetaSource – Document Scanning and Conversion Services
+  app: MetaSource – Document Scanning and Conversion Services
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/341459/metasource-document-scanning-and-conversion-services
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Vee Software
+  app: Connect to AD
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/412112/connect-to-ad
+  category: Business Administration
+  partner_domain: connecttoad.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ZipRecruiter
+  app: ZipRecruiter
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/417126/ziprecruiter
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Guusto
+  app: Guusto
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/446749/guusto
+  category: Employee Well-Being
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: IMVize
+  app: IMVIZE
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/458736/imvize
+  category: UKG Products
+  partner_domain: imvize.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: This is Alice
+  app: Alice
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/339028/alice
+  category: Benefits & Compensation
+  partner_domain: thisisalice.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: WorkJam
+  app: WorkJam
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/443982/workjam
+  category: Featured
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Eaton Square Limited
+  app: Eaton Square Limited
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/481090/eaton-square-limited
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Equifax - Work Opportunity Tax Credit
+  app: Equifax - Work Opportunity Tax Credit
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/450546/equifax---work-opportunity-tax-credit
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Oracle NetSuite
+  app: Oracle NetSuite
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321522/oracle-netsuite
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Radiol, S.A.
+  app: RADIOL, S.A.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321445/radiol-sa
+  category: Languages Supported
+  partner_domain: radiol.net
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: UKG Flow for Slack - Pro WFM
+  app: UKG Flow for Slack - Pro WFM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321565/ukg-flow-for-slack---pro-wfm
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Connected Data Solutions
+  app: Connected Data Solutions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/577957/connected-data-solutions
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: When
+  app: When
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/575749/when
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Gosa Group
+  app: Gosa Group
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321604/gosa-group
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: NeoSystemsCorp
+  app: NeoSystems
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321634/neosystems
+  category: Languages Supported
+  partner_domain: neosystemscorp.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HRchitect
+  app: HRchitect
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321610/hrchitect
+  category: UKG Products
+  partner_domain: hrchitect.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Atlantic Employee Screening - Powered by TazWorks
+  app: Atlantic Employee Screening - Powered by TazWorks
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321259/atlantic-employee-screening---powered-by-tazworks
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Simpli5, powered by 5 Dynamics
+  app: Simpli5, powered by 5 Dynamics
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/446747/simpli5-powered-by-5-dynamics
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Xoxoday Empuls
+  app: Xoxoday Empuls
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/397073/xoxoday-empuls
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: alliantis
+  app: alliantis
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/800833/alliantis
+  category: Consulting & Implementation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: UKG Incentives – Powered by Uber for Business
+  app: UKG Incentives – Powered by Uber for Business
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/373302/ukg-incentives-powered-by-uber-for-business
+  category: Employee Well-Being
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Aflac – Absence Management Solution
+  app: Aflac – Absence Management Solution
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/463441/aflac-absence-management-solution
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Walton Management Services - VeriSafeJobs
+  app: Walton Management Services - VeriSafeJobs
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/351840/walton-management-services---verisafejobs
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Hive Perform
+  app: Hive Perform
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/400421/hive-perform
+  category: Learning & Performance
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Vocantas
+  app: Vocantas
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/221336/vocantas
+  category: Languages Supported
+  partner_domain: vocantas.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: WEX
+  app: WEX
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321405/wex
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HealthNET Systems Consulting Inc.
+  app: HealthNET Systems Consulting, Inc.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321342/healthnet-systems-consulting-inc
+  category: UKG Products
+  partner_domain: healthnetconsulting.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HRSoft - AWARDview
+  app: HRSoft - AWARDview
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/408595/hrsoft---awardview
+  category: Employee Well-Being
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Motive - Workforce Management
+  app: Motive - Workforce Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/435849/motive---workforce-management
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: SD Worx
+  app: SD Worx
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/551176/sd-worx
+  category: Consulting & Implementation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ManageEngine ADManager Plus
+  app: ManageEngine ADManager Plus
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321487/manageengine-admanager-plus
+  category: Industry
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Connors Group
+  app: LaborPro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/296842/laborpro
+  category: Industry
+  partner_domain: connorsllc.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Axsium Group
+  app: Axsium Group
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321304/axsium-group
+  category: Featured
+  partner_domain: axsiumgroup.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Ataway
+  app: Ataway
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/415995/ataway
+  category: Solution Type
+  partner_domain: ataway.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Mo - Celebrate moments that matter
+  app: Mo - Celebrate moments that matter
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/486911/mo---celebrate-moments-that-matter
+  category: Employee Well-Being
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HR1Systems
+  app: HR1Systems, LLC
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/416471/hr1systems-llc
+  category: Consulting & Implementation
+  partner_domain: hr1systems.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ScottMadden
+  app: ScottMadden
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/426645/scottmadden
+  category: Industry
+  partner_domain: scottmadden.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Alliance Background
+  app: AB Global – Powered by Accio Data
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/367086/ab-global-powered-by-accio-data
+  category: Languages Supported
+  partner_domain: alliancebackground.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Laminex, Inc (dba ID Shop)
+  app: Asure ID - Enterprise Version
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/311197/asure-id---enterprise-version
+  category: Languages Supported
+  partner_domain: laminex.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: AG5 Skills Management Software
+  app: AG5 Skills Management Software
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/451029/ag5-skills-management-software
+  category: Learning & Performance
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Greenhouse
+  app: Greenhouse
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321427/greenhouse
+  category: Recruiting & Candidate Screening
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Betterworks – Enterprise Edition
+  app: Betterworks – Enterprise Edition
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/371763/betterworks-enterprise-edition
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CareRev
+  app: CareRev
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/348258/carerev
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: KickTech
+  app: KickTech
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/410953/kicktech
+  category: Languages Supported
+  partner_domain: kicktech.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Prudential - PruExchange
+  app: Prudential - PruExchange
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/563060/prudential---pruexchange
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: First Advantage
+  app: First Advantage
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321415/first-advantage
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Tandem, S.A.
+  app: Tandem
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321484/tandem
+  category: Languages Supported
+  partner_domain: tandemweb.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Instant
+  app: Instant Pay
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/320625/instant-pay
+  category: Languages Supported
+  partner_domain: instant.co
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Augmentir
+  app: Augmentir
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/452628/augmentir
+  category: Learning & Performance
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CTI - MyTaxCreditPro
+  app: CTI - MyTaxCreditPro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/555296/cti---mytaxcreditpro
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: T2B Solutions Inc.- Employee Navigator-UKG Pro Payroll Integration
+  app: T2B Solutions Inc.- Employee Navigator-UKG Pro Payroll Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/469701/t2b-solutions-inc--employee-navigator-ukg-pro-payroll-integration
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Walton Management Services - Unemployment Insurance (UI) Cost Control
+  app: Walton Management Services - Unemployment Insurance (UI) Cost Control
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/411420/walton-management-services---unemployment-insurance-ui-cost-control
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Sage Intacct
+  app: Sage Intacct
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/576453/sage-intacct
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HyBridge Solutions, Inc.
+  app: HyBridge Solutions, Inc. | An Argano Company
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321385/hybridge-solutions-inc-an-argano-company
+  category: UKG Products
+  partner_domain: hybridgesolutions.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Clariti Solutions
+  app: Clariti Solutions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/642017/clariti-solutions
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Kombo
+  app: Kombo
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/518256/kombo
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: WFM Hub
+  app: WFM Hub
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/811533/wfm-hub
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Income and Employment Verification from Equifax, Powered by the Work Number
+  app: Income and Employment Verification from Equifax, Powered by the Work Number
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321411/income-and-employment-verification-from-equifax-powered-by-the-work-number
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Tavio Integrations
+  app: Tavio Integrations
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/647297/tavio-integrations
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PosterElite - Labor Law Poster Services
+  app: PosterElite - Labor Law Poster Services
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/412652/posterelite---labor-law-poster-services
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Centric Consulting
+  app: Centric Consulting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/414923/centric-consulting
+  category: UKG Products
+  partner_domain: centricconsulting.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Icon
+  app: Icon
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/833159/icon
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Jobvite
+  app: Jobvite
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321472/jobvite
+  category: Recruiting & Candidate Screening
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Mosaic Consulting Group - Mosaic Insights Analytics
+  app: Mosaic Consulting Group - Mosaic Insights Analytics
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/374580/mosaic-consulting-group---mosaic-insights-analytics
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: LinkedIn Learning
+  app: LinkedIn Learning
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/776283/linkedin-learning
+  category: Learning & Performance
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Achievers
+  app: Achievers
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321238/achievers
+  category: Employee Well-Being
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Modulus Data
+  app: ERP Integration by Flexspring
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/363972/erp-integration-by-flexspring
+  category: Solution Type
+  partner_domain: modulusdata.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: VidCruiter Interview Management System
+  app: VidCruiter Interview Management System
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/505268/vidcruiter-interview-management-system
+  category: Recruiting & Candidate Screening
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Signal Software
+  app: Signal Software
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/520194/signal-software
+  category: Industry
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Gate121 - ShiftMatch™
+  app: Gate121 - ShiftMatch™
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/392868/gate121---shiftmatch
+  category: Industry
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Optina
+  app: C&M Consulting - OptiForce
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/422621/cm-consulting---optiforce
+  category: Geo-Regions
+  partner_domain: optina.io
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Firstup
+  app: Firstup
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/477518/firstup
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Deel
+  app: Deel
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321531/deel
+  category: Payroll
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Even.com
+  app: OnePay @Work
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/223397/onepay-work
+  category: Payroll
+  partner_domain: even.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HR Path
+  app: HR Path
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/770280/hr-path
+  category: Consulting & Implementation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Leena AI - Enterprise Autonomous Agent powered by Generative AI
+  app: Leena AI - Enterprise Autonomous Agent powered by Generative AI
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/458473/leena-ai---enterprise-autonomous-agent-powered-by-generative-ai
+  category: Featured
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Coligos
+  app: Coligos Consulting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321288/coligos-consulting
+  category: Geo-Regions
+  partner_domain: coligos.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HRSoft Compensation Management
+  app: HRSoft Compensation Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321433/hrsoft-compensation-management
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ShiftMed
+  app: ShiftMed
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/869502/shiftmed
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Doneboard
+  app: Doneboard
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/481086/doneboard
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Axsium Group
+  app: Axsium OPS
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/238988/axsium-ops
+  category: Solution Type
+  partner_domain: axsiumgroup.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PointClickCare Census Import
+  app: PointClickCare Census Import
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/313521/pointclickcare-census-import
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PayTech
+  app: PayTech
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321636/paytech
+  category: Geo-Regions
+  partner_domain: paytech.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PerformYard
+  app: PerformYard
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/371175/performyard
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Connors Group
+  app: Connors Group
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321310/connors-group
+  category: Geo-Regions
+  partner_domain: connorsllc.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ScreeningOne - Powered by TazWorks
+  app: ScreeningOne - Powered by TazWorks
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321561/screeningone---powered-by-tazworks
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Workato
+  app: Workato
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/328525/workato
+  category: Industry
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Hireology
+  app: Hireology
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/385536/hireology
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: activpayroll
+  app: activpayroll
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321241/activpayroll
+  category: Payroll
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: candidate.fyi
+  app: candidate.fyi
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/572168/candidatefyi
+  category: Recruiting & Candidate Screening
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Asher Group
+  app: Hyper-Reach
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/296988/hyper-reach
+  category: Solution Type
+  partner_domain: ashergroup.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ACE WFM
+  app: ACE WFM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/457784/ace-wfm
+  category: Industry
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Interview Scheduling with Google Calendar Integration
+  app: Interview Scheduling with Google Calendar Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/790128/interview-scheduling-with-google-calendar-integration
+  category: Recruiting & Candidate Screening
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Prolucent
+  app: Prolucent
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/435916/prolucent
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ABS Team GmbH
+  app: ABS Team - Professional Services UKG Pro Workforce Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/470876/abs-team---professional-services-ukg-pro-workforce-management
+  category: Consulting & Implementation
+  partner_domain: abs-team.de
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Nurse.com by Relias
+  app: Nurse.com by Relias
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/556132/nursecom-by-relias
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: VICTIG Background Checks - Powered by TazWorks
+  app: VICTIG Background Checks - Powered by TazWorks
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321589/victig-background-checks---powered-by-tazworks
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Lever
+  app: Lever
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/328884/lever
+  category: Recruiting & Candidate Screening
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Benefitfocus
+  app: Benefitfocus
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321262/benefitfocus
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: QuickBooks Online
+  app: QuickBooks Online
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/534196/quickbooks-online
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Infosys
+  app: Infosys Limited
+  partner: infosys
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321324/infosys-limited
+  category: Languages Supported
+  partner_domain: infosys.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Kudos® Employee Recognition
+  app: Kudos® Employee Recognition
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/417363/kudos-employee-recognition
+  category: Employee Well-Being
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Zaddons - Scheduling Tools
+  app: Zaddons - Scheduling Tools
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/376752/zaddons---scheduling-tools
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HRTM Consulting
+  app: HRTM Consulting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321319/hrtm-consulting
+  category: UKG Products
+  partner_domain: hrtimemgm.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: iBTR
+  app: iBTR
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/406396/ibtr
+  category: Languages Supported
+  partner_domain: ibtr.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Zaddons – Bidding Solutions
+  app: Zaddons – Bidding Solutions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/413684/zaddons-bidding-solutions
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Aquera ATS Onboarding Integration for UKG
+  app: Aquera ATS Onboarding Integration for UKG
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/463912/aquera-ats-onboarding-integration-for-ukg
+  category: Recruiting & Candidate Screening
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: YOOBIC
+  app: YOOBIC
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/437481/yoobic
+  category: Featured
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Simpplr One
+  app: Simpplr One
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/348993/simpplr-one
+  category: Featured
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Data Facts  – Powered by Accio
+  app: Data Facts  – Powered by Accio
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321399/data-facts-powered-by-accio
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Employee Navigator Benefits Integration
+  app: Employee Navigator Benefits Integration
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/563052/employee-navigator-benefits-integration
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Finch
+  app: Finch
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/418381/finch
+  category: Industry
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Forms for UKG by Forms Fulfillment
+  app: Forms for UKG by Forms Fulfillment
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/393633/forms-for-ukg-by-forms-fulfillment
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Cornerstone
+  app: Cornerstone Learning Suite
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/253748/cornerstone-learning-suite
+  category: Learning & Performance
+  partner_domain: csod.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: TestAssure
+  app: TestAssure
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/221280/testassure
+  category: Compliance Reporting & Filing
+  partner_domain: testassure.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: In-Workforce
+  app: In-Workforce
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/783124/in-workforce
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: TripLog
+  app: TripLog
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/417357/triplog
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: KPMG
+  app: KPMG
+  partner: kpmg
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/449385/kpmg
+  category: Geo-Regions
+  partner_domain: kpmg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Textmetrics - the AI Writing Assistant
+  app: Textmetrics - the AI Writing Assistant
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/401162/textmetrics---the-ai-writing-assistant
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ShiftMed Webhook
+  app: ShiftMed Webhook
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/401933/shiftmed-webhook
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PlanSource
+  app: PlanSource
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321541/plansource
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Sendero Consulting
+  app: Sendero
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/426207/sendero
+  category: Industry
+  partner_domain: senderoconsulting.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: The SWB Group
+  app: The SWB Group
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321520/the-swb-group
+  category: Geo-Regions
+  partner_domain: theswbgroup.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Relias
+  app: Relias
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/306423/relias
+  category: Compliance Reporting & Filing
+  partner_domain: relias.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Checkr
+  app: Checkr
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/871744/checkr
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: WorkTango
+  app: WorkTango
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/440601/worktango
+  category: Employee Well-Being
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: RCM Technologies, Inc.
+  app: RCM Technologies, Inc.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/410781/rcm-technologies-inc
+  category: UKG Products
+  partner_domain: rcmt.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HireCredit
+  app: HireCredit
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/221276/hirecredit
+  category: Languages Supported
+  partner_domain: hirecredit.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Axonify
+  app: Axonify
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/258568/axonify
+  category: Learning & Performance
+  partner_domain: axonify.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Simms & Associates
+  app: Simms & Associates
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321492/simms-associates
+  category: Languages Supported
+  partner_domain: simms-associates.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Walton Management Services
+  app: Walton Management Services
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321595/walton-management-services
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Ping Identity
+  app: Ping Identity
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321540/ping-identity
+  category: Business Administration
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Branch
+  app: Branch
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/239295/branch
+  category: Payroll
+  partner_domain: branchapp.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Emissary Texting
+  app: Emissary Texting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/403076/emissary-texting
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Modulus Data
+  app: Flexspring
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/354237/flexspring
+  category: Solution Type
+  partner_domain: modulusdata.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Modulus Data
+  app: POS Integration by Flexspring
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/341416/pos-integration-by-flexspring
+  category: Solution Type
+  partner_domain: modulusdata.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: 360Learning
+  app: 360Learning
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/435831/360learning
+  category: Learning & Performance
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: RiseKit
+  app: RiseKit
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/428021/risekit
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: InCheck – Powered by TazWorks
+  app: InCheck – Powered by TazWorks
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321442/incheck-powered-by-tazworks
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ISG
+  app: ISG
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321619/isg
+  category: Consulting & Implementation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: DISA Global Solutions
+  app: DISA Global Solutions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/638926/disa-global-solutions
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Sift
+  app: Sift
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/350598/sift
+  category: Business Administration
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CBIG, LLC
+  app: CBIG, LLC
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321309/cbig-llc
+  category: Languages Supported
+  partner_domain: cbig.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Delaero, Inc.
+  app: Delaero
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/413326/delaero
+  category: UKG Products
+  partner_domain: delaero.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Muse CheckBoost™
+  app: Muse CheckBoost™
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/501534/muse-checkboost
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Nelco Solutions
+  app: Nelco Solutions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/407860/nelco-solutions
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HCLTech
+  app: HCLTech
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321606/hcltech
+  category: Consulting & Implementation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Prevue Assessments
+  app: Prevue Assessments
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/417375/prevue-assessments
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Schoox
+  app: Schoox
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321559/schoox
+  category: Learning & Performance
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Aclaimant
+  app: Aclaimant
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/452630/aclaimant
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ClearCo Learning Management
+  app: ClearCo Learning Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321268/clearco-learning-management
+  category: Learning & Performance
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Arvo Tech
+  app: Arvo Tech
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/587864/arvo-tech
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Mosaic-CG
+  app: Mosaic Consulting Group
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321633/mosaic-consulting-group
+  category: Languages Supported
+  partner_domain: mosaic-cg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Phenom - Intelligent Talent Experience
+  app: Phenom - Intelligent Talent Experience
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/365814/phenom---intelligent-talent-experience
+  category: Featured
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PuzzleHR
+  app: PuzzleHR
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/405242/puzzlehr
+  category: Languages Supported
+  partner_domain: puzzlehr.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: UNUM Group
+  app: Unum – HR Connect
+  partner: unum
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/254848/unum-hr-connect
+  category: Benefits & Compensation
+  partner_domain: unum.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Connected Data Solutions Ltd- SignPost
+  app: Connected Data Solutions Ltd- SignPost
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/383601/connected-data-solutions-ltd--signpost
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Brex Expense Management for UKG
+  app: Brex Expense Management for UKG
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/424129/brex-expense-management-for-ukg
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Payscale - Payfactors
+  app: Payscale - Payfactors
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321535/payscale---payfactors
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: OneLogin
+  app: OneLogin
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321519/onelogin
+  category: Business Administration
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: TestAssure
+  app: Agilea Solutions, Inc.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/427721/agilea-solutions-inc
+  category: Consulting & Implementation
+  partner_domain: testassure.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: JazzHR
+  app: JazzHR
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/396851/jazzhr
+  category: Recruiting & Candidate Screening
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CoreHCM
+  app: CORE HCM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321297/core-hcm
+  category: Languages Supported
+  partner_domain: corehcm.net
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Okta
+  app: Okta
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321514/okta
+  category: Business Administration
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: cyberark
+  app: CyberArk Identity
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/339880/cyberark-identity
+  category: Business Administration
+  partner_domain: cyberark.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Salary.com - CompXL
+  app: Salary.com - CompXL
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/365805/salarycom---compxl
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Decusoft - Compose
+  app: Decusoft - Compose
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/435829/decusoft---compose
+  category: Featured
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Business Partners, Inc.
+  app: Business Partners Inc.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321307/business-partners-inc
+  category: Consulting & Implementation
+  partner_domain: buspartners.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Employee Cycle - HR Analytics Dashboard
+  app: Employee Cycle - HR Analytics Dashboard
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/400340/employee-cycle---hr-analytics-dashboard
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: InfoSync
+  app: InfoSync
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/325851/infosync
+  category: Languages Supported
+  partner_domain: issvc.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Zipline
+  app: Zipline
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/453490/zipline
+  category: Featured
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HR Strategies Consulting Inc.
+  app: HR Strategies Consulting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/407910/hr-strategies-consulting
+  category: Geo-Regions
+  partner_domain: hrstrategiesconsulting.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Com4Global
+  app: COM4 Global
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321291/com4-global
+  category: Languages Supported
+  partner_domain: com4global.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: UKG Wallet for UKG Ready® and UKG Pro WFM™
+  app: UKG Wallet for UKG Ready® and UKG Pro WFM™
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/762406/ukg-wallet-for-ukg-ready-and-ukg-pro-wfm
+  category: Payroll
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HRMS Solutions
+  app: Ascend, Inc. | An Argano Company
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/454563/ascend-inc-an-argano-company
+  category: UKG Products
+  partner_domain: hrmssolutions.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Objectiva Software Solutions
+  app: Nagarro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/221304/nagarro
+  category: Solution Type
+  partner_domain: objectivasoftware.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Payroll Integrations
+  app: Payroll Integrations
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/494623/payroll-integrations
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: AccuSourceHR
+  app: AccuSourceHR
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/436241/accusourcehr
+  category: Geo-Regions
+  partner_domain: accusourcehr.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Eljun LLC – Enterprise Automation with iPaaS
+  app: Eljun LLC – Enterprise Automation with iPaaS
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/359802/eljun-llc-enterprise-automation-with-ipaas
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: JK Seva
+  app: JK Seva, Inc
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321327/jk-seva-inc
+  category: UKG Products
+  partner_domain: jkseva.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: 15Five
+  app: 15Five
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/387882/15five
+  category: Featured
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: The MacLaren Group
+  app: The MacLaren Group
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321391/the-maclaren-group
+  category: Consulting & Implementation
+  partner_domain: maclarengroup.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Aquera ITSM Ticketing Integration for UKG
+  app: Aquera ITSM Ticketing Integration for UKG
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/468959/aquera-itsm-ticketing-integration-for-ukg
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: UKG Flow for Microsoft Teams
+  app: UKG Flow for Microsoft Teams
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/440612/ukg-flow-for-microsoft-teams
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: WOTC.COM
+  app: WOTC.com
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/296973/wotccom
+  category: Industry
+  partner_domain: wotc.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Accushield
+  app: Accushield
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/316356/accushield
+  category: Solution Type
+  partner_domain: accushield.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: LeaveLogic
+  app: LeaveLogic
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/307266/leavelogic
+  category: Geo-Regions
+  partner_domain: leavelogic.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Wikiworks - VYN
+  app: Wikiworks - VYN
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/560900/wikiworks---vyn
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Tech Mahindra
+  app: Tech Mahindra
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/363156/tech-mahindra
+  category: Languages Supported
+  partner_domain: techmahindra.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Alight
+  app: Strada
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321301/strada
+  category: Industry
+  partner_domain: ngahr.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CloudApper
+  app: CloudApper AI TimeClock
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/225809/cloudapper-ai-timeclock
+  category: UKG Products
+  partner_domain: cloudapper.ai
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Passport Workforce
+  app: Passport Workforce
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/393261/passport-workforce
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Smart WFM
+  app: Smart WFM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321696/smart-wfm
+  category: UKG Products
+  partner_domain: smartwfm.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Pave
+  app: Pave
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/444254/pave
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Merge
+  app: Merge
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/405871/merge
+  category: Industry
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Kashable
+  app: Kashable
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/445440/kashable
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Beeline Professional
+  app: Beeline Professional
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/457537/beeline-professional
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ClearStar
+  app: ClearStar – Global Background Screening
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/333390/clearstar-global-background-screening
+  category: Solution Type
+  partner_domain: clearstar.net
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ClearCourse Consulting
+  app: ClearCourse Consulting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321283/clearcourse-consulting
+  category: Consulting & Implementation
+  partner_domain: clearcoursehcm.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Laminex, Inc (dba ID Shop)
+  app: ID Shop – CardsOnline / ID Server.com
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/311200/id-shop-cardsonline-id-servercom
+  category: Languages Supported
+  partner_domain: laminex.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CareerBuilder Talent Acquisition Suite
+  app: CareerBuilder Talent Acquisition Suite
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/358530/careerbuilder-talent-acquisition-suite
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Assembly
+  app: Assembly
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/382563/assembly
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Carefeed
+  app: Carefeed
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/417370/carefeed
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Udemy
+  app: Udemy
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/572222/udemy
+  category: Learning & Performance
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Trusaic PayParity®
+  app: Trusaic PayParity®
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/376503/trusaic-payparity
+  category: Compliance Reporting & Filing
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PreciseCheck
+  app: PreciseCheck  Powered by deverus
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/343959/precisecheck-powered-by-deverus
+  category: Solution Type
+  partner_domain: precisecheck.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Veritable Screening - Powered by deverus
+  app: Veritable Screening - Powered by deverus
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321588/veritable-screening---powered-by-deverus
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ClearCo Unified Talent Platform
+  app: ClearCo Unified Talent Platform
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/398588/clearco-unified-talent-platform
+  category: Recruiting & Candidate Screening
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Intuit Turbo Tax
+  app: Intuit Turbo Tax
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321466/intuit-turbo-tax
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Culture Partners
+  app: Culture Partners
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/403094/culture-partners
+  category: Languages Supported
+  partner_domain: culture.io
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Asurint
+  app: Asurint
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321258/asurint
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Remodel Health Data Sync
+  app: Remodel Health Data Sync
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/631177/remodel-health-data-sync
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Nephele Consulting Services, LLC
+  app: Nephele Consulting Services, LLC
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/500081/nephele-consulting-services-llc
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Dailypay
+  app: DailyPay
+  partner: dailypay
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/292145/dailypay
+  category: Payroll
+  partner_domain: dailypay.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: TalentReef
+  app: Mitratech TalentReef
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/372231/mitratech-talentreef
+  category: Recruiting & Candidate Screening
+  partner_domain: talentreef.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: JobTarget
+  app: JobTarget
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/524730/jobtarget
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: iCIMS
+  app: ICIMS
+  partner: icims
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321436/icims
+  category: Recruiting & Candidate Screening
+  partner_domain: icims.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CIChecked – Powered by Accio Data
+  app: CIChecked – Powered by Accio Data
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321292/cichecked-powered-by-accio-data
+  category: Industry
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Fair Screen
+  app: Fair Screen Background Checks - Powered by TazWorks
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/408532/fair-screen-background-checks---powered-by-tazworks
+  category: Geo-Regions
+  partner_domain: fairscreen.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Accenture
+  app: Accenture
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/346563/accenture
+  category: Consulting & Implementation
+  partner_domain: workforceinsight.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: DataSmith
+  app: DataSmith - File Integrations, API
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/430249/datasmith---file-integrations-api
+  category: Consulting & Implementation
+  partner_domain: thedatasmith.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Accio Data
+  app: Accio Data
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321237/accio-data
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Ankura Consulting
+  app: Ankura Consulting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321693/ankura-consulting
+  category: Geo-Regions
+  partner_domain: ankura.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Beekeeper
+  app: Beekeeper Digital Workplace Platform
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/308544/beekeeper-digital-workplace-platform
+  category: Solution Type
+  partner_domain: beekeeper.io
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Willory
+  app: Willory
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321654/willory
+  category: Consulting & Implementation
+  partner_domain: willory.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Salary.com - CompAnalyst
+  app: Salary.com - CompAnalyst
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/425279/salarycom---companalyst
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Diverst
+  app: Diverst
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/403931/diverst
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: SplashBI People Analytics
+  app: SplashBI People Analytics
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/390219/splashbi-people-analytics
+  category: UKG Products
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: OrgChart
+  app: OrgChart
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/331420/orgchart
+  category: Solution Type
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Auditocity
+  app: Auditocity
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/427362/auditocity
+  category: Compliance Reporting & Filing
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Radancy
+  app: Radancy
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/331417/radancy
+  category: Languages Supported
+  partner_domain: radancy.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: EmpInfo, Inc.
+  app: EmpInfo
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/255796/empinfo
+  category: UKG Products
+  partner_domain: empinfo.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Blueprint Technologies Pvt Ltd
+  app: Blueprint Technologies Pvt Ltd
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/334849/blueprint-technologies-pvt-ltd
+  category: Languages Supported
+  partner_domain: bpterp.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Talroo
+  app: Talroo
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/454706/talroo
+  category: Languages Supported
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Mirza
+  app: Mirza
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/486912/mirza
+  category: Benefits & Compensation
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Ramp Expense Management
+  app: Ramp Expense Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/436697/ramp-expense-management
+  category: Geo-Regions
+  partner_domain: ukg.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Modulus Data
+  app: Pre-Employment Candidate Assessment Integration by Flexspring
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/341440/pre-employment-candidate-assessment-integration-by-flexspring
+  category: Solution Type
+  partner_domain: modulusdata.com
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: NXTThing RPO
+  app: NXTThing RPO
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/391197/nxtthing-rpo
+  category: Recruiting & Candidate Screening
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: MedTrainer
+  app: MedTrainer
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/382146/medtrainer
+  category: Compliance Reporting & Filing
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CRM Integration by Flexspring
+  app: CRM Integration by Flexspring
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/408596/crm-integration-by-flexspring
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Rain Technologies Inc
+  app: Rain Technologies Inc.
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/395742/rain-technologies-inc
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ACA Filings Powered by Trusaic
+  app: ACA Filings Powered by Trusaic
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/458242/aca-filings-powered-by-trusaic
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Nagarro
+  app: Nagarro
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/647447/nagarro
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Hub International
+  app: Hub International
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321618/hub-international
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: UKG Pro™ for Microsoft Entra ID
+  app: UKG Pro™ for Microsoft Entra ID
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/368607/ukg-pro-for-microsoft-entra-id
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Bentek
+  app: Bentek
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/816520/bentek
+  category: Benefits & Compensation
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Automated UKG to SAP Concur by Aquera
+  app: Automated UKG to SAP Concur by Aquera
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/449080/automated-ukg-to-sap-concur-by-aquera
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Tax Credit Co.
+  app: Experian Employer Services – Work Opportunity Tax Credit
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/227272/experian-employer-services-work-opportunity-tax-credit
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Spencer Thomas Group
+  app: Spencer Thomas Group
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321651/spencer-thomas-group
+  category: Consulting & Implementation
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PayPal
+  app: PayPal
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/449925/paypal
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: TeamWork Online
+  app: TeamWork Online
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321579/teamwork-online
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Appcast
+  app: Appcast
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321253/appcast
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HCM Unlocked
+  app: HCM Unlocked Consulting & Managed Services
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/425270/hcm-unlocked-consulting-managed-services
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: LinkedIn
+  app: LinkedIn
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/233296/linkedin
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Oliver Law S
+  app: OLS Access Control
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/290955/ols-access-control
+  category: Business Administration
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Equifax - Unemployment Cost Management
+  app: Equifax - Unemployment Cost Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/442389/equifax---unemployment-cost-management
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: PredictiveHR
+  app: PredictiveHR
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/417608/predictivehr
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: hireEZ
+  app: hireEZ
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/400196/hireez
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Electric IT Hub
+  app: Electric IT Hub
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/602365/electric-it-hub
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Go1
+  app: Go1
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/872478/go1
+  category: Learning & Performance
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: 15Five Compensation - Powered by Comprehensive
+  app: 15Five Compensation - Powered by Comprehensive
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/553523/15five-compensation---powered-by-comprehensive
+  category: Industry
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Improv
+  app: Improv
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321321/improv
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CovalenceInc
+  app: Covalence Consulting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321298/covalence-consulting
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: E-Verify
+  app: E-Verify Connector
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/233308/e-verify-connector
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Toast POS
+  app: Toast POS
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/821569/toast-pos
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Human Interest
+  app: Human Interest
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/319734/human-interest
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Press Ganey
+  app: Press Ganey
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/497096/press-ganey
+  category: Compliance Reporting & Filing
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Harver
+  app: Harver
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321526/harver
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: RSM LLP
+  app: RSM US LLP
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321657/rsm-us-llp
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Atos
+  app: Atos
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321277/atos
+  category: Industry
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Pebl – Global Employment Layer for UKG
+  app: Pebl – Global Employment Layer for UKG
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/803084/pebl-global-employment-layer-for-ukg
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Prime Care Technologies
+  app: primeARCHIVE
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/294216/primearchive
+  category: Compliance Reporting & Filing
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Vintage Hill Consulting
+  app: Vintage Hill Consulting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/406382/vintage-hill-consulting
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: 'First Advantage: Tax Credit and Incentive Screening'
+  app: 'First Advantage: Tax Credit and Incentive Screening'
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/409084/first-advantage-tax-credit-and-incentive-screening
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: CloudApper
+  app: CloudApper AI Platform
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/425010/cloudapper-ai-platform
+  category: Featured
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Marsh
+  app: Marsh
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/872530/marsh
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Disclo
+  app: Disclo
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/621210/disclo
+  category: Compliance Reporting & Filing
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Asher Group
+  app: Hyper-Reach WFM Telephony
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/239448/hyper-reach-wfm-telephony
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Tata Consultancy Services
+  app: Tata Consultancy Services
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/511013/tata-consultancy-services
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Aegis Hawaii Inc dba Aegis Payroll
+  app: Aegis Hawaii Inc dba Aegis Payroll
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/671736/aegis-hawaii-inc-dba-aegis-payroll
+  category: Compliance Reporting & Filing
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Argano
+  app: Argano
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/856497/argano
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: THINKTIME LLC
+  app: UKG Pro Task Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/252731/ukg-pro-task-management
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Awardco
+  app: Awardco
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/452631/awardco
+  category: Employee Well-Being
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Mercer
+  app: Mercer
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/442321/mercer
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Sability
+  app: Sability
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321132/sability
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HRComputes
+  app: HRComputes
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321613/hrcomputes
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: WFM Experts - UKG Pro WFM
+  app: WFM Experts - UKG Pro WFM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/650095/wfm-experts---ukg-pro-wfm
+  category: Industry
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: MM Hayes
+  app: MM Hayes - Workforce Access
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/237664/mm-hayes---workforce-access
+  category: Business Administration
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Ginger–UKG Pro WFM on Teams
+  app: Ginger–UKG Pro WFM on Teams
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/417197/gingerukg-pro-wfm-on-teams
+  category: Featured
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Modulus Data
+  app: Applicant Tracking System Integration by Flexspring
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321495/applicant-tracking-system-integration-by-flexspring
+  category: Recruiting & Candidate Screening
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Docusign for UKG Document Manager
+  app: Docusign for UKG Document Manager
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/425281/docusign-for-ukg-document-manager
+  category: Featured
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Nintex Employee Onboarding
+  app: Nintex Employee Onboarding
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/616222/nintex-employee-onboarding
+  category: Data & Analytics
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: AlignHCM
+  app: Align HCM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321244/align-hcm
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Healthcare IT Leaders
+  app: Healthcare IT Leaders
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321316/healthcare-it-leaders
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Deltek Vantagepoint
+  app: Deltek Vantagepoint
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/485871/deltek-vantagepoint
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Eightfold Talent Intelligence Platform
+  app: Eightfold Talent Intelligence Platform
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/445285/eightfold-talent-intelligence-platform
+  category: Featured
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: ATS Sync
+  app: ATS Sync
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321448/ats-sync
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Income and Employment Verification from Equifax (Canada)
+  app: Income and Employment Verification from Equifax (Canada)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321408/income-and-employment-verification-from-equifax-canada
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Lightcast Professional Services
+  app: Lightcast Professional Services
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/645183/lightcast-professional-services
+  category: Learning & Performance
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Workstream Technologies, Inc.
+  app: Workstream
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/387360/workstream
+  category: Recruiting & Candidate Screening
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: EPI-USE
+  app: EPI-USE
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321313/epi-use
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Zoom
+  app: Zoom
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/556136/zoom
+  category: Industry
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Authentic Consulting Group
+  app: Authentic Consulting Group
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/541668/authentic-consulting-group
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Scanoptics – Document Scanning and Data Conversion Services
+  app: Scanoptics – Document Scanning and Data Conversion Services
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/366645/scanoptics-document-scanning-and-data-conversion-services
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: HRSoft - PERFORMview
+  app: HRSoft - PERFORMview
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/361554/hrsoft---performview
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: RJ Reliance
+  app: RJ Reliance
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/408467/rj-reliance
+  category: Consulting & Implementation
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Aquera 360 HR & Identity Integration for UKG
+  app: Aquera 360 HR & Identity Integration for UKG
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/352554/aquera-360-hr-identity-integration-for-ukg
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Cangrade
+  app: Cangrade
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/364431/cangrade
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Butterfly.ai
+  app: Butterfly.ai
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/293657/butterflyai
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Cognizant Technology Solutions
+  app: Cognizant Technology Solutions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321450/cognizant-technology-solutions
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Seequelle
+  app: Seequelle
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/321648/seequelle
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: BenefitScape - BeneSphere
+  app: BenefitScape - BeneSphere
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/861101/benefitscape---benesphere
+  category: Benefits & Compensation
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Criteria
+  app: Criteria
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/436694/criteria
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Aclarian ERP
+  app: Aclarian ERP
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/759656/aclarian-erp
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Inspyr Solutions (fka TekPartners Solutions)
+  app: INSPYR Solutions, LLC
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321652/inspyr-solutions-llc
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Speakap
+  app: Speakap
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/260799/speakap
+  category: Industry
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Equifax I-9 Management
+  app: Equifax I-9 Management
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/416210/equifax-i-9-management
+  category: UKG Products
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: Grupo Ono
+  app: Grupo Ono
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/424403/grupo-ono
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: SCM Consultores
+  app: GoodRabbit
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/321676/goodrabbit
+  category: Languages Supported
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: eQuest
+  app: eQuest OFCCP Compliance
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/223949/equest-ofccp-compliance
+  category: Compliance Reporting & Filing
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: eQuest
+  app: The eQuest Blast Network
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/223945/the-equest-blast-network
+  category: Geo-Regions
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: eQuestXpress
+  app: eQuestXpress
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://marketplace.ukg.com/apps/374058/equestxpress
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
+- partner_name: eQuest
+  app: eQuest Premium
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.ukg.com/apps/223953/equest-premium
+  category: Solution Type
+  partner_domain: null
+  detected_by: sweep-hr-stores.py
+  detected: '2026-10-12'
