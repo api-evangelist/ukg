@@ -17,7 +17,6 @@
   arazzo: null
 - slug: ukg-boomi
   label: Boomi
-  partner: boomi
   partner_name: Boomi
   category: Solution Type
   type: marketplace
@@ -186,7 +185,6 @@
   arazzo: null
 - slug: ukg-guusto
   label: Guusto
-  partner: guusto
   partner_name: Guusto
   category: Employee Well-Being
   type: marketplace
@@ -643,7 +641,6 @@
   arazzo: null
 - slug: ukg-greenhouse
   label: Greenhouse
-  partner: greenhouse
   partner_name: Greenhouse
   category: Recruiting & Candidate Screening
   type: marketplace
@@ -824,7 +821,6 @@
   arazzo: null
 - slug: ukg-kombo
   label: Kombo
-  partner: kombo
   partner_name: Kombo
   category: UKG Products
   type: marketplace
@@ -1173,7 +1169,6 @@
   arazzo: null
 - slug: ukg-workato
   label: Workato
-  partner: workato
   partner_name: Workato
   category: Industry
   type: marketplace
@@ -1306,7 +1301,6 @@
   arazzo: null
 - slug: ukg-lever
   label: Lever
-  partner: lever
   partner_name: Lever
   category: Recruiting & Candidate Screening
   type: marketplace
@@ -1428,7 +1422,6 @@
   arazzo: null
 - slug: ukg-yoobic
   label: YOOBIC
-  partner: yoobic
   partner_name: YOOBIC
   category: Featured
   type: marketplace
@@ -1477,7 +1470,6 @@
   arazzo: null
 - slug: ukg-finch
   label: Finch
-  partner: finch
   partner_name: Finch
   category: Industry
   type: marketplace
@@ -1587,7 +1579,6 @@
   arazzo: null
 - slug: ukg-plansource
   label: PlanSource
-  partner: plansource
   partner_name: PlanSource
   category: Benefits & Compensation
   type: marketplace
@@ -1636,7 +1627,6 @@
   arazzo: null
 - slug: ukg-checkr
   label: Checkr
-  partner: checkr
   partner_name: Checkr
   category: Solution Type
   type: marketplace
@@ -1721,7 +1711,6 @@
   arazzo: null
 - slug: ukg-ping-identity
   label: Ping Identity
-  partner: ping-identity
   partner_name: Ping Identity
   category: Business Administration
   type: marketplace
@@ -1758,7 +1747,6 @@
   arazzo: null
 - slug: ukg-360learning
   label: 360Learning
-  partner: 360learning
   partner_name: 360Learning
   category: Learning & Performance
   type: marketplace
@@ -1819,7 +1807,6 @@
   arazzo: null
 - slug: ukg-sift
   label: Sift
-  partner: sift
   partner_name: Sift
   category: Business Administration
   type: marketplace
@@ -1916,7 +1903,6 @@
   arazzo: null
 - slug: ukg-aclaimant
   label: Aclaimant
-  partner: aclaimant
   partner_name: Aclaimant
   category: Geo-Regions
   type: marketplace
@@ -2038,7 +2024,6 @@
   arazzo: null
 - slug: ukg-onelogin
   label: OneLogin
-  partner: onelogin
   partner_name: OneLogin
   category: Business Administration
   type: marketplace
@@ -2075,7 +2060,6 @@
   arazzo: null
 - slug: ukg-okta
   label: Okta
-  partner: okta
   partner_name: Okta
   category: Business Administration
   type: marketplace
@@ -2088,7 +2072,6 @@
   arazzo: null
 - slug: ukg-cyberark
   label: cyberark
-  partner: cyberark
   partner_name: cyberark
   category: Business Administration
   type: marketplace
@@ -2449,7 +2432,6 @@
   arazzo: null
 - slug: ukg-merge
   label: Merge
-  partner: merge
   partner_name: Merge
   category: Industry
   type: marketplace
@@ -2956,7 +2938,6 @@
   arazzo: null
 - slug: ukg-medtrainer
   label: MedTrainer
-  partner: medtrainer
   partner_name: MedTrainer
   category: Compliance Reporting & Filing
   type: marketplace
@@ -3089,7 +3070,6 @@
   arazzo: null
 - slug: ukg-paypal
   label: PayPal
-  partner: paypal
   partner_name: PayPal
   category: Solution Type
   type: marketplace
@@ -3138,7 +3118,6 @@
   arazzo: null
 - slug: ukg-linkedin
   label: LinkedIn
-  partner: linkedin
   partner_name: LinkedIn
   category: Solution Type
   type: marketplace
@@ -3211,7 +3190,6 @@
   arazzo: null
 - slug: ukg-go1
   label: Go1
-  partner: go1
   partner_name: Go1
   category: Learning & Performance
   type: marketplace
@@ -3308,7 +3286,6 @@
   arazzo: null
 - slug: ukg-harver
   label: Harver
-  partner: harver
   partner_name: Harver
   category: Solution Type
   type: marketplace
@@ -3681,7 +3658,6 @@
   arazzo: null
 - slug: ukg-zoom
   label: Zoom
-  partner: zoom
   partner_name: Zoom
   category: Industry
   type: marketplace
