@@ -3896,3 +3896,16 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: ukg-toast-own
+  label: Toast (own)
+  partner: toast
+  partner_name: Toast (own)
+  category: Payroll
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://pos.toasttab.com/partners/directory/UKG
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
